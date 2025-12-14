@@ -1,0 +1,1364 @@
+[
+  {
+    "id": "o001",
+    "type": "occupation",
+    "name_jp": "大学者",
+    "rating": 28,
+    "image_url": "agricola_images/occe3academic.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o002",
+    "type": "occupation",
+    "name_jp": "曲芸師",
+    "rating": 49,
+    "image_url": "agricola_images/occk4acrobat.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o003",
+    "type": "occupation",
+    "name_jp": "養父母",
+    "rating": 54,
+    "image_url": "agricola_images/occk1adoptiveparents.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o004",
+    "type": "occupation",
+    "name_jp": "家畜飼い",
+    "rating": 85,
+    "image_url": "agricola_images/occk4animalbreeder.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o005",
+    "type": "occupation",
+    "name_jp": "家畜追い",
+    "rating": 71,
+    "image_url": "agricola_images/occi3animaldealer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o006",
+    "type": "occupation",
+    "name_jp": "家畜主",
+    "rating": 32,
+    "image_url": "agricola_images/occk4animalhandler.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o007",
+    "type": "occupation",
+    "name_jp": "家畜守",
+    "rating": 25,
+    "image_url": "agricola_images/occe4animalkeeper.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o008",
+    "type": "occupation",
+    "name_jp": "調教師",
+    "rating": 32,
+    "image_url": "agricola_images/occk1animaltamer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o009",
+    "type": "occupation",
+    "name_jp": "猛獣使い",
+    "rating": 18,
+    "image_url": "agricola_images/occk4animaltrainer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o010",
+    "type": "occupation",
+    "name_jp": "骨細工",
+    "rating": 21,
+    "image_url": "agricola_images/occk4basinmaker.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o011",
+    "type": "occupation",
+    "name_jp": "かご編み",
+    "rating": 32,
+    "image_url": "agricola_images/occe4basketmaker.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o012",
+    "type": "occupation",
+    "name_jp": "イチゴ集め",
+    "rating": 80,
+    "image_url": "agricola_images/occe3berrypicker.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o013",
+    "type": "occupation",
+    "name_jp": "ほら吹き",
+    "rating": 95,
+    "image_url": "agricola_images/occe3braggart.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o014",
+    "type": "occupation",
+    "name_jp": "パン屋",
+    "rating": 32,
+    "image_url": "agricola_images/occe3breadseller.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o015",
+    "type": "occupation",
+    "name_jp": "レンガ貼り",
+    "rating": 61,
+    "image_url": "agricola_images/occi1bricklayer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o016",
+    "type": "occupation",
+    "name_jp": "ブラシ作り",
+    "rating": 45,
+    "image_url": "agricola_images/occe3brushmaker.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o017",
+    "type": "occupation",
+    "name_jp": "柴結び",
+    "rating": 75,
+    "image_url": "agricola_images/occk3brushwoodcollector.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o018",
+    "type": "occupation",
+    "name_jp": "商人",
+    "rating": 65,
+    "image_url": "agricola_images/occi3businessman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o019",
+    "type": "occupation",
+    "name_jp": "精肉屋",
+    "rating": 20,
+    "image_url": "agricola_images/occi1butcher.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o020",
+    "type": "occupation",
+    "name_jp": "家具職人",
+    "rating": 30,
+    "image_url": "agricola_images/occi3cabinetmaker.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o021",
+    "type": "occupation",
+    "name_jp": "大工",
+    "rating": 57,
+    "image_url": "agricola_images/occe1carpenter.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o022",
+    "type": "occupation",
+    "name_jp": "牛飼い",
+    "rating": 53,
+    "image_url": "agricola_images/occk4cattlebreeder.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o023",
+    "type": "occupation",
+    "name_jp": "牛使い",
+    "rating": 37,
+    "image_url": "agricola_images/occe4cattlewhisperer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o024",
+    "type": "occupation",
+    "name_jp": "収入役",
+    "rating": 89,
+    "image_url": "agricola_images/occi1chamberlain.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o025",
+    "type": "occupation",
+    "name_jp": "炭焼き",
+    "rating": 92,
+    "image_url": "agricola_images/occe3charcoalburner.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o026",
+    "type": "occupation",
+    "name_jp": "族長",
+    "rating": 69,
+    "image_url": "agricola_images/occe1chief.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o027",
+    "type": "occupation",
+    "name_jp": "族長の娘",
+    "rating": 62,
+    "image_url": "agricola_images/occe1chiefsdaughter.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o028",
+    "type": "occupation",
+    "name_jp": "共同体長",
+    "rating": 50,
+    "image_url": "agricola_images/occi1churchwarden.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o029",
+    "type": "occupation",
+    "name_jp": "レンガ運び",
+    "rating": 47,
+    "image_url": "agricola_images/occe1claydeliveryman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o030",
+    "type": "occupation",
+    "name_jp": "穴掘り",
+    "rating": 31,
+    "image_url": "agricola_images/occi4claydigger.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o031",
+    "type": "occupation",
+    "name_jp": "レンガ焼き",
+    "rating": 45,
+    "image_url": "agricola_images/occe4clayfirer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o032",
+    "type": "occupation",
+    "name_jp": "レンガ大工",
+    "rating": 54,
+    "image_url": "agricola_images/occi1clayhutbuilder.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o033",
+    "type": "occupation",
+    "name_jp": "レンガ混ぜ",
+    "rating": 51,
+    "image_url": "agricola_images/occe1claymixer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o034",
+    "type": "occupation",
+    "name_jp": "レンガ積み",
+    "rating": 44,
+    "image_url": "agricola_images/occi1clayplasterer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o035",
+    "type": "occupation",
+    "name_jp": "レンガ屋",
+    "rating": 63,
+    "image_url": "agricola_images/occe4clayseller.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o036",
+    "type": "occupation",
+    "name_jp": "レンガ職人",
+    "rating": 66,
+    "image_url": "agricola_images/occk1clayworker.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o037",
+    "type": "occupation",
+    "name_jp": "奇術師",
+    "rating": 32,
+    "image_url": "agricola_images/occe4conjurer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o038",
+    "type": "occupation",
+    "name_jp": "修理屋",
+    "rating": 60,
+    "image_url": "agricola_images/occe1conservator.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o039",
+    "type": "occupation",
+    "name_jp": "村長",
+    "rating": 63,
+    "image_url": "agricola_images/occk3constable.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o040",
+    "type": "occupation",
+    "name_jp": "コック",
+    "rating": 58,
+    "image_url": "agricola_images/occe4cook.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o041",
+    "type": "occupation",
+    "name_jp": "脱穀職人",
+    "rating": 42,
+    "image_url": "agricola_images/occi4cornprofiteer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o042",
+    "type": "occupation",
+    "name_jp": "営農家",
+    "rating": 44,
+    "image_url": "agricola_images/occk4countryman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o043",
+    "type": "occupation",
+    "name_jp": "牛の飼育師",
+    "rating": 48,
+    "image_url": "agricola_images/occi3cowherd.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o044",
+    "type": "occupation",
+    "name_jp": "踊り手",
+    "rating": 68,
+    "image_url": "agricola_images/occe4dancer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o045",
+    "type": "occupation",
+    "name_jp": "港湾労働者",
+    "rating": 52,
+    "image_url": "agricola_images/occe1dockworker.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o046",
+    "type": "occupation",
+    "name_jp": "職業訓練士",
+    "rating": 92,
+    "image_url": "agricola_images/occk4educator.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o047",
+    "type": "occupation",
+    "name_jp": "大農場管理人",
+    "rating": 57,
+    "image_url": "agricola_images/occe3estatemanager.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o048",
+    "type": "occupation",
+    "name_jp": "農場管理",
+    "rating": 62,
+    "image_url": "agricola_images/occi1farmsteward.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o049",
+    "type": "occupation",
+    "name_jp": "農場主",
+    "rating": 62,
+    "image_url": "agricola_images/occe4farmer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o050",
+    "type": "occupation",
+    "name_jp": "柵立て",
+    "rating": 51,
+    "image_url": "agricola_images/occi1fencebuilder.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o051",
+    "type": "occupation",
+    "name_jp": "柵運び",
+    "rating": 46,
+    "image_url": "agricola_images/occi1fencedeliveryman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o052",
+    "type": "occupation",
+    "name_jp": "柵見張り",
+    "rating": 67,
+    "image_url": "agricola_images/occk1fenceoverseer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o053",
+    "type": "occupation",
+    "name_jp": "柵作り",
+    "rating": 69,
+    "image_url": "agricola_images/occi4fencer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o054",
+    "type": "occupation",
+    "name_jp": "畑守",
+    "rating": 85,
+    "image_url": "agricola_images/occe4fieldwarden.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o055",
+    "type": "occupation",
+    "name_jp": "畑番",
+    "rating": 85,
+    "image_url": "agricola_images/occi1fieldwatchman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o056",
+    "type": "occupation",
+    "name_jp": "畑作人",
+    "rating": 15,
+    "image_url": "agricola_images/occi3fieldworker.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o057",
+    "type": "occupation",
+    "name_jp": "畑農",
+    "rating": 35,
+    "image_url": "agricola_images/occi1fieldsman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o058",
+    "type": "occupation",
+    "name_jp": "漁師",
+    "rating": 39,
+    "image_url": "agricola_images/occe3fisherman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o059",
+    "type": "occupation",
+    "name_jp": "職場長",
+    "rating": 32,
+    "image_url": "agricola_images/occk4foreman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o060",
+    "type": "occupation",
+    "name_jp": "林務官",
+    "rating": 20,
+    "image_url": "agricola_images/occk1forester.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o061",
+    "type": "occupation",
+    "name_jp": "梁打ち",
+    "rating": 30,
+    "image_url": "agricola_images/occk1framebuilder.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o062",
+    "type": "occupation",
+    "name_jp": "庭師",
+    "rating": 63,
+    "image_url": "agricola_images/occi1gardener.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o063",
+    "type": "occupation",
+    "name_jp": "八百屋",
+    "rating": 51,
+    "image_url": "agricola_images/occe3greengrocer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o064",
+    "type": "occupation",
+    "name_jp": "小売人",
+    "rating": 90,
+    "image_url": "agricola_images/occe1grocer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o065",
+    "type": "occupation",
+    "name_jp": "馬手",
+    "rating": 28,
+    "image_url": "agricola_images/occi4groom.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o066",
+    "type": "occupation",
+    "name_jp": "ギルド長",
+    "rating": 57,
+    "image_url": "agricola_images/occe3guildmaster.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o067",
+    "type": "occupation",
+    "name_jp": "収穫手伝い",
+    "rating": 35,
+    "image_url": "agricola_images/occi3harvesthelper.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o068",
+    "type": "occupation",
+    "name_jp": "家長",
+    "rating": 70,
+    "image_url": "agricola_images/occe4headofthefamily.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o069",
+    "type": "occupation",
+    "name_jp": "柵管理人",
+    "rating": 66,
+    "image_url": "agricola_images/occe1hedgekeeper.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o070",
+    "type": "occupation",
+    "name_jp": "小作人",
+    "rating": 53,
+    "image_url": "agricola_images/occe3yeomanfarmer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o071",
+    "type": "occupation",
+    "name_jp": "小さい庭師",
+    "rating": 49,
+    "image_url": "agricola_images/occe4hobbyfarmer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o072",
+    "type": "occupation",
+    "name_jp": "執事",
+    "rating": 45,
+    "image_url": "agricola_images/occk3housesteward.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o073",
+    "type": "occupation",
+    "name_jp": "小屋大工",
+    "rating": 83,
+    "image_url": "agricola_images/occe4hutbuilder.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o074",
+    "type": "occupation",
+    "name_jp": "旅芸人",
+    "rating": 28,
+    "image_url": "agricola_images/occi4juggler.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o075",
+    "type": "occupation",
+    "name_jp": "畑商人",
+    "rating": 53,
+    "image_url": "agricola_images/occe3landagent.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o076",
+    "type": "occupation",
+    "name_jp": "居候",
+    "rating": 61,
+    "image_url": "agricola_images/occi1layabout.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o077",
+    "type": "occupation",
+    "name_jp": "君主",
+    "rating": 71,
+    "image_url": "agricola_images/occe1lordofthemanor.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o078",
+    "type": "occupation",
+    "name_jp": "愛人",
+    "rating": 95,
+    "image_url": "agricola_images/occk3lover.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o079",
+    "type": "occupation",
+    "name_jp": "魔術使い",
+    "rating": 63,
+    "image_url": "agricola_images/occk4magician.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o080",
+    "type": "occupation",
+    "name_jp": "メイド",
+    "rating": 28,
+    "image_url": "agricola_images/occe1maid.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o081",
+    "type": "occupation",
+    "name_jp": "召使",
+    "rating": 36,
+    "image_url": "agricola_images/occi1manservant.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o082",
+    "type": "occupation",
+    "name_jp": "工場主",
+    "rating": 51,
+    "image_url": "agricola_images/occk3manufacturer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o083",
+    "type": "occupation",
+    "name_jp": "てき屋",
+    "rating": 49,
+    "image_url": "agricola_images/occi3marketcrier.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o084",
+    "type": "occupation",
+    "name_jp": "露天商の女",
+    "rating": 80,
+    "image_url": "agricola_images/occk1marketwomen.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o085",
+    "type": "occupation",
+    "name_jp": "左官屋",
+    "rating": 75,
+    "image_url": "agricola_images/occe1mason.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o086",
+    "type": "occupation",
+    "name_jp": "パン焼き長老",
+    "rating": 23,
+    "image_url": "agricola_images/occe4masterbaker.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o087",
+    "type": "occupation",
+    "name_jp": "醸造師",
+    "rating": 32,
+    "image_url": "agricola_images/occe1masterbrewer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o088",
+    "type": "occupation",
+    "name_jp": "建築士",
+    "rating": 53,
+    "image_url": "agricola_images/occe1masterbuilder.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o089",
+    "type": "occupation",
+    "name_jp": "営林士",
+    "rating": 48,
+    "image_url": "agricola_images/occe4masterforester.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o090",
+    "type": "occupation",
+    "name_jp": "羊飼い親方",
+    "rating": 40,
+    "image_url": "agricola_images/occe4mastershepherd.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o091",
+    "type": "occupation",
+    "name_jp": "肉屋",
+    "rating": 20,
+    "image_url": "agricola_images/occe1meatseller.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o092",
+    "type": "occupation",
+    "name_jp": "托鉢僧",
+    "rating": 54,
+    "image_url": "agricola_images/occe1mendicant.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o093",
+    "type": "occupation",
+    "name_jp": "販売人",
+    "rating": 44,
+    "image_url": "agricola_images/occe1merchant.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o094",
+    "type": "occupation",
+    "name_jp": "産婆",
+    "rating": 42,
+    "image_url": "agricola_images/occi4midwife.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o095",
+    "type": "occupation",
+    "name_jp": "乳搾り",
+    "rating": 75,
+    "image_url": "agricola_images/occi4milkinghand.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o096",
+    "type": "occupation",
+    "name_jp": "キノコ探し",
+    "rating": 54,
+    "image_url": "agricola_images/occe1mushroomcollector.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o097",
+    "type": "occupation",
+    "name_jp": "網漁師",
+    "rating": 34,
+    "image_url": "agricola_images/occi1netfisherman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o098",
+    "type": "occupation",
+    "name_jp": "有機農業者",
+    "rating": 50,
+    "image_url": "agricola_images/occk1organicfarmer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o099",
+    "type": "occupation",
+    "name_jp": "乗馬従者",
+    "rating": 39,
+    "image_url": "agricola_images/occi4outrider.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o100",
+    "type": "occupation",
+    "name_jp": "牧師",
+    "rating": 35,
+    "image_url": "agricola_images/occe4pastor.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o101",
+    "type": "occupation",
+    "name_jp": "パトロン",
+    "rating": 63,
+    "image_url": "agricola_images/occe4patron.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o102",
+    "type": "occupation",
+    "name_jp": "ぶらつき学生",
+    "rating": 46,
+    "image_url": "agricola_images/occk4perpetualstudent.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o103",
+    "type": "occupation",
+    "name_jp": "出来高労働者",
+    "rating": 95,
+    "image_url": "agricola_images/occk1pieceworker.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o104",
+    "type": "occupation",
+    "name_jp": "猪飼い",
+    "rating": 45,
+    "image_url": "agricola_images/occi4pigbreeder.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o105",
+    "type": "occupation",
+    "name_jp": "猪漁師",
+    "rating": 20,
+    "image_url": "agricola_images/occi4pigcatcher.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o106",
+    "type": "occupation",
+    "name_jp": "猪使い",
+    "rating": 40,
+    "image_url": "agricola_images/occk4pigwhisperer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o107",
+    "type": "occupation",
+    "name_jp": "鋤職人",
+    "rating": 68,
+    "image_url": "agricola_images/occe1plowdriver.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o108",
+    "type": "occupation",
+    "name_jp": "鋤鍛冶",
+    "rating": 51,
+    "image_url": "agricola_images/occe1plowmaker.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o109",
+    "type": "occupation",
+    "name_jp": "鋤手",
+    "rating": 68,
+    "image_url": "agricola_images/occk1plowman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o110",
+    "type": "occupation",
+    "name_jp": "陶工",
+    "rating": 31,
+    "image_url": "agricola_images/occe3potter.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o111",
+    "type": "occupation",
+    "name_jp": "人形使い",
+    "rating": 77,
+    "image_url": "agricola_images/occi4puppeteer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o112",
+    "type": "occupation",
+    "name_jp": "石持ち",
+    "rating": 42,
+    "image_url": "agricola_images/occe3quarryman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o113",
+    "type": "occupation",
+    "name_jp": "農夫",
+    "rating": 35,
+    "image_url": "agricola_images/occi4rancher.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o114",
+    "type": "occupation",
+    "name_jp": "ネズミ捕り",
+    "rating": 67,
+    "image_url": "agricola_images/occe3ratcatcher.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o115",
+    "type": "occupation",
+    "name_jp": "葦買い付け人",
+    "rating": 57,
+    "image_url": "agricola_images/occi4reedbuyer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o116",
+    "type": "occupation",
+    "name_jp": "葦集め",
+    "rating": 80,
+    "image_url": "agricola_images/occe3reedcollector.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o117",
+    "type": "occupation",
+    "name_jp": "代官",
+    "rating": 55,
+    "image_url": "agricola_images/occe3reeve.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o118",
+    "type": "occupation",
+    "name_jp": "改築屋",
+    "rating": 51,
+    "image_url": "agricola_images/occe1renovator.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o119",
+    "type": "occupation",
+    "name_jp": "資材商人",
+    "rating": 64,
+    "image_url": "agricola_images/occk1resourceseller.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o120",
+    "type": "occupation",
+    "name_jp": "火酒作り",
+    "rating": 53,
+    "image_url": "agricola_images/occk1schnapsdistiller.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o121",
+    "type": "occupation",
+    "name_jp": "学者",
+    "rating": 74,
+    "image_url": "agricola_images/occk1scholar.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o122",
+    "type": "occupation",
+    "name_jp": "季節労働者",
+    "rating": 77,
+    "image_url": "agricola_images/occe1seasonalworker.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o123",
+    "type": "occupation",
+    "name_jp": "種屋",
+    "rating": 60,
+    "image_url": "agricola_images/occk3seedseller.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o124",
+    "type": "occupation",
+    "name_jp": "畑好き",
+    "rating": 40,
+    "image_url": "agricola_images/occk4serf.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o125",
+    "type": "occupation",
+    "name_jp": "羊農",
+    "rating": 78,
+    "image_url": "agricola_images/occk3sheepfarmer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o126",
+    "type": "occupation",
+    "name_jp": "羊使い",
+    "rating": 27,
+    "image_url": "agricola_images/occi4sheepwhisperer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o127",
+    "type": "occupation",
+    "name_jp": "羊飼い",
+    "rating": 15,
+    "image_url": "agricola_images/occe4shepherd.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o128",
+    "type": "occupation",
+    "name_jp": "羊番",
+    "rating": 24,
+    "image_url": "agricola_images/occk4shepherdboy.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o129",
+    "type": "occupation",
+    "name_jp": "畜殺人",
+    "rating": 49,
+    "image_url": "agricola_images/occk3slaughterman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o130",
+    "type": "occupation",
+    "name_jp": "小農夫",
+    "rating": 15,
+    "image_url": "agricola_images/occk1smallholder.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o131",
+    "type": "occupation",
+    "name_jp": "成り上がり",
+    "rating": 57,
+    "image_url": "agricola_images/occi4socialclimber.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o132",
+    "type": "occupation",
+    "name_jp": "厩番",
+    "rating": 41,
+    "image_url": "agricola_images/occe1stablehand.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o133",
+    "type": "occupation",
+    "name_jp": "厩作り",
+    "rating": 11,
+    "image_url": "agricola_images/occe1stablemaster.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o134",
+    "type": "occupation",
+    "name_jp": "家畜の世話人",
+    "rating": 50,
+    "image_url": "agricola_images/occe4stockman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o135",
+    "type": "occupation",
+    "name_jp": "石打ち",
+    "rating": 47,
+    "image_url": "agricola_images/occk4stonebreaker.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o136",
+    "type": "occupation",
+    "name_jp": "石買い付け人",
+    "rating": 63,
+    "image_url": "agricola_images/occi4stonebuyer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o137",
+    "type": "occupation",
+    "name_jp": "石運び",
+    "rating": 44,
+    "image_url": "agricola_images/occe1stonecarrier.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o138",
+    "type": "occupation",
+    "name_jp": "石工",
+    "rating": 32,
+    "image_url": "agricola_images/occi1stonecarver.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o139",
+    "type": "occupation",
+    "name_jp": "石切り",
+    "rating": 65,
+    "image_url": "agricola_images/occe3stonecutter.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o140",
+    "type": "occupation",
+    "name_jp": "倉庫主",
+    "rating": 47,
+    "image_url": "agricola_images/occk4storehouseclerk.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o141",
+    "type": "occupation",
+    "name_jp": "倉庫番",
+    "rating": 40,
+    "image_url": "agricola_images/occk4storehousekeeper.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o142",
+    "type": "occupation",
+    "name_jp": "昔語り",
+    "rating": 44,
+    "image_url": "agricola_images/occe4storyteller.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o143",
+    "type": "occupation",
+    "name_jp": "街頭の音楽家",
+    "rating": 39,
+    "image_url": "agricola_images/occi4streetmusician.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o144",
+    "type": "occupation",
+    "name_jp": "ブタ飼い",
+    "rating": 54,
+    "image_url": "agricola_images/occe4swineherd.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o145",
+    "type": "occupation",
+    "name_jp": "ごますり",
+    "rating": 41,
+    "image_url": "agricola_images/occi4sycophant.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o146",
+    "type": "occupation",
+    "name_jp": "革なめし工",
+    "rating": 49,
+    "image_url": "agricola_images/occk3tanner.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o147",
+    "type": "occupation",
+    "name_jp": "毒見役",
+    "rating": 89,
+    "image_url": "agricola_images/occi4taster.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o148",
+    "type": "occupation",
+    "name_jp": "家畜小作人",
+    "rating": 46,
+    "image_url": "agricola_images/occe4tenantfarmer.jpg",
+    "combos": [
+      {
+        "target_id": "m091",
+        "reason": "空中で返す"
+      }
+    ]
+  },
+  {
+    "id": "o149",
+    "type": "occupation",
+    "name_jp": "屋根がけ",
+    "rating": 79,
+    "image_url": "agricola_images/occe3thatcher.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o150",
+    "type": "occupation",
+    "name_jp": "ブリキ職人",
+    "rating": 63,
+    "image_url": "agricola_images/occk3tinsmith.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o151",
+    "type": "occupation",
+    "name_jp": "行商人",
+    "rating": 55,
+    "image_url": "agricola_images/occk1travelingsalesman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o152",
+    "type": "occupation",
+    "name_jp": "旋盤職人",
+    "rating": 29,
+    "image_url": "agricola_images/occe3turner.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o153",
+    "type": "occupation",
+    "name_jp": "家庭教師",
+    "rating": 67,
+    "image_url": "agricola_images/occe1tutor.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o154",
+    "type": "occupation",
+    "name_jp": "庭職人",
+    "rating": 71,
+    "image_url": "agricola_images/occe4undergardener.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o155",
+    "type": "occupation",
+    "name_jp": "獣医",
+    "rating": 19,
+    "image_url": "agricola_images/occk4veterinarian.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o156",
+    "type": "occupation",
+    "name_jp": "村の長老",
+    "rating": 49,
+    "image_url": "agricola_images/occi3villageelder.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o157",
+    "type": "occupation",
+    "name_jp": "水運び",
+    "rating": 41,
+    "image_url": "agricola_images/occi1watercarrier.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o158",
+    "type": "occupation",
+    "name_jp": "職工",
+    "rating": 26,
+    "image_url": "agricola_images/occk4weaver.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o159",
+    "type": "occupation",
+    "name_jp": "井戸掘り",
+    "rating": 60,
+    "image_url": "agricola_images/occi1wellbuilder.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o160",
+    "type": "occupation",
+    "name_jp": "乳母",
+    "rating": 76,
+    "image_url": "agricola_images/occk1wetnurse.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o161",
+    "type": "occupation",
+    "name_jp": "材木買い付け人",
+    "rating": 75,
+    "image_url": "agricola_images/occi3woodbuyer.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o162",
+    "type": "occupation",
+    "name_jp": "彫刻家",
+    "rating": 57,
+    "image_url": "agricola_images/occk1woodcarver.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o163",
+    "type": "occupation",
+    "name_jp": "木材集め",
+    "rating": 55,
+    "image_url": "agricola_images/occi1woodcollector.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o164",
+    "type": "occupation",
+    "name_jp": "木材運び",
+    "rating": 59,
+    "image_url": "agricola_images/occk1wooddeliveryman.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o165",
+    "type": "occupation",
+    "name_jp": "木材配り",
+    "rating": 54,
+    "image_url": "agricola_images/occk1wooddistributor.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o166",
+    "type": "occupation",
+    "name_jp": "木こり",
+    "rating": 77,
+    "image_url": "agricola_images/occe1woodcutter.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o167",
+    "type": "occupation",
+    "name_jp": "木大工",
+    "rating": 48,
+    "image_url": "agricola_images/occe3woodenhutbuilder.jpg",
+    "combos": ""
+  },
+  {
+    "id": "o168",
+    "type": "occupation",
+    "name_jp": "自由農夫",
+    "rating": 43,
+    "image_url": "agricola_images/occi3hidefarmer.jpg",
+    "combos": [
+      {
+        "target_id": "o148",
+        "reason": "空中で返す"
+      }
+    ]
+  },
+  {
+    "id": "o169",
+    "type": "occupation",
+    "name_jp": "パン職人",
+    "rating": 64,
+    "image_url": "agricola_images/occe1baker.jpg",
+    "combos": ""
+  }
+]

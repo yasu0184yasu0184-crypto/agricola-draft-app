@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Agricola Draft Practice</title>
+    <style>
+        body { font-family: sans-serif; }
+        .hand { border: 1px solid #ccc; padding: 10px; margin: 10px; display: flex; flex-wrap: wrap; }
+        .card { cursor: pointer; background: #f0f0f0; margin: 5px; padding: 5px; width: 150px; position: relative; text-align: center; }
+        .selected { background: #ffff00; }
+        button { margin: 10px; }
+        .picked-list { display: flex; flex-wrap: wrap; }
+        #okButton { font-size: 24px; padding: 10px 20px; }
+        .card img { max-width: 100%; height: auto; } /* 画像サイズ調整 */
+        .combo-mark { color: red; background: yellow; font-size: 14px; font-weight: bold; position: absolute; top: 5px; right: 5px; padding: 2px 4px; border-radius: 4px; } /* 黄色背景赤文字で"コンボ" */
+        #comboInfo { border: 1px solid #ddd; padding: 10px; margin: 10px; background: #f9f9f9; font-size: 14px; } /* コンボ理由表示枠 */
+    </style>
+</head>
+<body>
+    <h1>アグリコラ ドラフト練習</h1>
+    <div id="turnInfo"></div> <!-- 番手表示 -->
+    <button onclick="loadCards()">ドラフト開始</button>
+    <div id="playerHand"></div>
+    <div id="comboInfo"></div> <!-- コンボ理由表示 -->
+    <div id="status"></div>
+    <div id="pickedCards"></div>
+
+    <script>
+        let occupations = [];
+        let minors = [];
+        let players = Array(5).fill().map(() => ({ occHand: [], minHand: [], pickedOcc: [], pickedMin: [] }));
+        let currentPlayer = 0;
+        let playerTurn = 1; // 番手保持
+        let round = 0;
+        let selectedOccIndex = -1;
+        let selectedMinIndex = -1;
+
+        function shuffle(array) {
+            let shuffled = array.slice();
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        async function loadCards() {
+            try {
+                const occResponse = await fetch('occupation.json');
+                if (!occResponse.ok) {
+                    throw new Error(`occupation.jsonの読み込みエラー: ${occResponse.status}`);
+                }
+                occupations = await occResponse.json();
+
+                const minResponse = await fetch('minor.json');
+                if (!minResponse.ok) {
+                    throw new Error(`minor.jsonの読み込みエラー: ${minResponse.status}`);
+                }
+                minors = await minResponse.json();
+
+                startDraft();
+            } catch (error) {
+                alert('JSONファイルの読み込みに失敗しました。ファイル名やパスを確認してね。エラー: ' + error.message);
+            }
+        }
+
+        function startDraft() {
+            // 番手をランダム決定 (1-5)
+            playerTurn = Math.floor(Math.random() * 5) + 1;
+            updateTurnInfo(); // 表示更新
+
+            // デッキシャッフル＆配布（5人7枚ずつ、E/I/K全カードからランダム35枚ずつ抽出）
+            let occDeck = shuffle(occupations).slice(0, 35);
+            let minDeck = shuffle(minors).slice(0, 35);
+            for (let i = 0; i < 5; i++) {
+                players[i].occHand = occDeck.splice(0, 7);
+                players[i].minHand = minDeck.splice(0, 7);
+                players[i].pickedOcc = [];
+                players[i].pickedMin = [];
+            }
+            round = 0;
+            selectedOccIndex = -1;
+            selectedMinIndex = -1;
+            showHand();
+        }
+
+        function updateTurnInfo() {
+            document.getElementById('turnInfo').innerHTML = `<p style="font-weight: bold; color: blue;">あなたの番手: ${playerTurn}番手</p>`;
+        }
+
+        function showHand() {
+            updateTurnInfo(); // 毎回更新で消えないように
+
+            // 手札をrating降順ソート（表示時のみ、ピックには影響なし）
+            const sortedOccHand = [...players[0].occHand].sort((a, b) => (b.rating || 0) - (a.rating || 0));
+            const sortedMinHand = [...players[0].minHand].sort((a, b) => (b.rating || 0) - (a.rating || 0));
+
+            const handDiv = document.getElementById('playerHand');
+            handDiv.innerHTML = '<h2>プレイヤー1の手札</h2>';
+            handDiv.innerHTML += '<div class="hand"><h3>職業</h3>' + sortedOccHand.map((c) => {
+                const originalIndex = players[0].occHand.findIndex(card => card.name_jp === c.name_jp); // name_jpでマッチ（ユニーク前提）
+                const isSelected = originalIndex === selectedOccIndex;
+                const combos = checkCombos(c, players[0].pickedOcc.concat(players[0].pickedMin).concat(players[0].occHand).concat(players[0].minHand)); // 候補同士+手札を含む
+                const hasCombo = combos.length > 0;
+                const comboMark = hasCombo ? `<span class="combo-mark">コンボ</span>` : '';
+                const imgTag = c.image_url ? `<img src="${c.image_url}" alt="${c.name_jp || '不明'}" onerror="this.src='agricola_images/placeholder.jpg'">` : '';
+                return `<div class="card ${isSelected ? 'selected' : ''}" onclick="pickCard('occ', ${originalIndex}); showComboReason('${c.name_jp}', '${combos.join('\\n')}')">${imgTag} <br>${c.name_jp || '不明'} ${c.rating || '?'}${comboMark}</div>`;
+            }).join('') + '</div>';
+            handDiv.innerHTML += '<div class="hand"><h3>進歩</h3>' + sortedMinHand.map((c) => {
+                const originalIndex = players[0].minHand.findIndex(card => card.name_jp === c.name_jp);
+                const isSelected = originalIndex === selectedMinIndex;
+                const combos = checkCombos(c, players[0].pickedOcc.concat(players[0].pickedMin).concat(players[0].occHand).concat(players[0].minHand)); // 候補同士+手札を含む
+                const hasCombo = combos.length > 0;
+                const comboMark = hasCombo ? `<span class="combo-mark">コンボ</span>` : '';
+                const imgTag = c.image_url ? `<img src="${c.image_url}" alt="${c.name_jp || '不明'}" onerror="this.src='agricola_images/placeholder.jpg'">` : '';
+                return `<div class="card ${isSelected ? 'selected' : ''}" onclick="pickCard('min', ${originalIndex}); showComboReason('${c.name_jp}', '${combos.join('\\n')}')">${imgTag} <br>${c.name_jp || '不明'} ${c.rating || '?'}${comboMark}</div>`;
+            }).join('') + '</div>';
+            
+            const pickedDiv = document.getElementById('pickedCards');
+            pickedDiv.innerHTML = '<h2>プレイヤー1の選んだカード</h2>';
+            pickedDiv.innerHTML += '<div class="picked-list"><h3>職業</h3>' + players[0].pickedOcc.map(c => {
+                const imgTag = c.image_url ? `<img src="${c.image_url}" alt="${c.name_jp || '不明'}" onerror="this.src='agricola_images/placeholder.jpg'">` : '';
+                return `<div class="card">${imgTag} <br>${c.name_jp || '不明'} ${c.rating || '?'}</div>`;
+            }).join('') + '</div>';
+            pickedDiv.innerHTML += '<div class="picked-list"><h3>進歩</h3>' + players[0].pickedMin.map(c => {
+                const imgTag = c.image_url ? `<img src="${c.image_url}" alt="${c.name_jp || '不明'}" onerror="this.src='agricola_images/placeholder.jpg'">` : '';
+                return `<div class="card">${imgTag} <br>${c.name_jp || '不明'} ${c.rating || '?'}</div>`;
+            }).join('') + '</div>';
+
+            document.getElementById('status').innerHTML = `<button id="okButton" onclick="passHand()" ${selectedOccIndex === -1 || selectedMinIndex === -1 ? 'disabled' : ''}>OK</button>`;
+        }
+
+        function pickCard(type, index) {
+            if (type === 'occ') {
+                selectedOccIndex = index;
+            } else {
+                selectedMinIndex = index;
+            }
+            showHand();
+        }
+
+        function passHand() {
+            if (selectedOccIndex === -1 || selectedMinIndex === -1) return;
+
+            // プレイヤー1のピック
+            const pickedOcc = players[0].occHand.splice(selectedOccIndex, 1)[0];
+            const pickedMin = players[0].minHand.splice(selectedMinIndex, 1)[0];
+            players[0].pickedOcc.push(pickedOcc);
+            players[0].pickedMin.push(pickedMin);
+
+            // 他のプレイヤー（AI）は評価値(rating)優先ピック（ないカードはランダム）
+            for (let i = 1; i < 5; i++) {
+                // 職業: rating降順ソートして最高の1枚ピック
+                players[i].occHand.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+                const bestOcc = players[i].occHand.shift(); // 最初の（最高）取る
+                players[i].pickedOcc.push(bestOcc);
+
+                // 進歩: 同上
+                players[i].minHand.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+                const bestMin = players[i].minHand.shift();
+                players[i].pickedMin.push(bestMin);
+            }
+
+            // 手札回転: 職業時計回り、進歩反時計回り
+            const nextOcc = players.map(p => p.occHand);
+            const nextMin = players.map(p => p.minHand);
+            for (let i = 0; i < 5; i++) {
+                players[i].occHand = nextOcc[(i + 1) % 5];
+                players[i].minHand = nextMin[(i + 4) % 5];
+            }
+
+            round++;
+            selectedOccIndex = -1;
+            selectedMinIndex = -1;
+
+            if (round < 7) {
+                showHand();
+            } else {
+                document.getElementById('status').innerHTML = 'ドラフト終了！';
+                showHand(); // 最終手札はピック済みなので表示更新
+                alert('ドラフト終了！プレイヤー1の選んだカードを確認してね。');
+            }
+        }
+
+        // コンボチェック関数（JSONに"combos"キーがある前提: c.combos = [{target_id: "ID", reason: "説明"} ]）
+        function checkCombos(card, allCards) {
+            if (!card.combos) return [];
+            return card.combos.filter(combo => allCards.some(p => p.id === combo.target_id)).map(combo => combo.reason);
+        }
+
+        // コンボ理由表示関数
+        function showComboReason(cardName, reasons) {
+            document.getElementById('comboInfo').innerHTML = `<h3>${cardName}のコンボ理由</h3><p>${reasons.replace(/\\n/g, '<br>')}</p>`;
+        }
+    </script>
+</body>
+</html>
