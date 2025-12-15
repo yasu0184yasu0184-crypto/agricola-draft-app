@@ -12,11 +12,12 @@
         .picked-list { display: flex; flex-wrap: wrap; }
         #okButton { font-size: 24px; padding: 10px 20px; }
         .card img { max-width: 100%; height: auto; } /* 画像サイズ調整 */
-        .round-section { margin: 10px; padding: 10px; border: 1px solid #ddd; }
+        .round-section { margin: 10px; padding: 10px; border: 1px solid #ddd; display: flex; align-items: center; flex-wrap: wrap; }
         .round-select { margin: 5px; font-size: 2em; } /* プルダウンサイズ2倍 */
         .round-label { font-size: 1em; } /* 表示サイズ半分 */
         .round-input { font-size: 2em; width: 200px; } /* 入力枠サイズ2倍調整 */
         .action-group { display: flex; flex-wrap: nowrap; align-items: center; } /* 飯以降同じ行 */
+        .round-header { margin-right: 5px; font-size: 1.5em; font-weight: bold; } /* R表記調整 */
     </style>
 </head>
 <body>
@@ -211,6 +212,7 @@
                 roundActionsDiv.innerHTML += `<div class="round-section"><h3>R${r}</h3>` +
                     createInput('1手目:') +
                     createInput('2手目:') +
+                    '<br>' + // 飯以降開行
                     '<div class="action-group">' +
                     createSelect('飯', [0,1,2,3,4,5,6,7,8]) +
                     createSelect('木', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]) +
