@@ -13,7 +13,10 @@
         #okButton { font-size: 24px; padding: 10px 20px; }
         .card img { max-width: 100%; height: auto; } /* 画像サイズ調整 */
         .round-section { margin: 10px; padding: 10px; border: 1px solid #ddd; }
-        .round-input { margin: 5px; width: 100px; } /* 入力スペース調整 */
+        .round-select { margin: 5px; font-size: 2em; } /* プルダウンサイズ2倍 */
+        .round-label { font-size: 1em; } /* 表示サイズ半分 */
+        .round-input { font-size: 2em; width: 200px; } /* 入力枠サイズ2倍調整 */
+        .action-group { display: flex; flex-wrap: nowrap; align-items: center; } /* 飯以降同じ行 */
     </style>
 </head>
 <body>
@@ -69,7 +72,7 @@
         function startDraft() {
             // 番手をランダム決定 (1-5)
             playerTurn = Math.floor(Math.random() * 5) + 1;
-            updateTurnInfo(); // 表示更新
+            // updateTurnInfo(); // 番手表示なし
 
             // デッキシャッフル＆配布（5人7枚ずつ、E/I/K全カードからランダム35枚ずつ抽出）
             let occDeck = shuffle(occupations).slice(0, 35);
@@ -87,19 +90,19 @@
             showHand();
         }
 
-        function updateTurnInfo() {
-            document.getElementById('turnInfo').innerHTML = `<p style="font-weight: bold; color: blue;">あなたの番手: ${playerTurn}番手</p>`;
-        }
+        // function updateTurnInfo() {
+        //     document.getElementById('turnInfo').innerHTML = `<p style="font-weight: bold; color: blue;">あなたの番手: ${playerTurn}番手</p>`;
+        // }
 
         function showHand() {
-            updateTurnInfo(); // 毎回更新で消えないように
+            // updateTurnInfo(); // 番手表示なし
 
             // 手札をrating降順ソート（表示時のみ、ピックには影響なし）
             const sortedOccHand = [...players[0].occHand].sort((a, b) => (b.rating || 0) - (a.rating || 0));
             const sortedMinHand = [...players[0].minHand].sort((a, b) => (b.rating || 0) - (a.rating || 0));
 
             const handDiv = document.getElementById('playerHand');
-            handDiv.innerHTML = '<h2>プレイヤー1の手札</h2>';
+            handDiv.innerHTML = '<h2>' + playerTurn + '番手の手札</h2>'; // 番手に置き換え
             handDiv.innerHTML += '<div class="hand"><h3>職業</h3>' + sortedOccHand.map((c) => {
                 const originalIndex = players[0].occHand.findIndex(card => card.name_jp === c.name_jp); // name_jpでマッチ（ユニーク前提）
                 const isSelected = originalIndex === selectedOccIndex;
@@ -114,7 +117,7 @@
             }).join('') + '</div>';
             
             const pickedDiv = document.getElementById('pickedCards');
-            pickedDiv.innerHTML = '<h2>プレイヤー1の選んだカード</h2>';
+            pickedDiv.innerHTML = '<h2>' + playerTurn + '番手の選んだカード</h2>'; // 番手に置き換え
             pickedDiv.innerHTML += '<div class="picked-list"><h3>職業</h3>' + players[0].pickedOcc.map(c => {
                 const imgTag = c.image_url ? `<img src="${c.image_url}" alt="${c.name_jp || '不明'}" onerror="this.src='agricola_images/placeholder.jpg'">` : '';
                 return `<div class="card">${imgTag} <br>${c.name_jp || '不明'} ${c.rating || '?'}</div>`;
@@ -208,17 +211,21 @@
                 roundActionsDiv.innerHTML += `<div class="round-section"><h3>R${r}</h3>` +
                     createInput('1手目:') +
                     createInput('2手目:') +
+                    '<div class="action-group">' +
                     createSelect('飯', [0,1,2,3,4,5,6,7,8]) +
                     createSelect('木', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]) +
                     createSelect('レ', [0,1,2,3,4,5,6]) +
                     createSelect('葦', [0,1,2,3,4,5]) +
                     createSelect('石', [0,1,2,3]) +
+                    createSelect('麦', [0,1,2,3,4]) +
+                    createSelect('野', [0,1,2,3,4]) +
+                    '</div>' +
                     '</div>';
             }
         }
 
         function createInput(label) {
-            return `<label>${label} <input type="text" class="round-input" pattern="^[ぁ-ゖ]+$" title="全角ひらがなのみ入力してください"></label>`;
+            return `<label class="round-label">${label} <input type="text" class="round-input" pattern="^[ぁ-ゖ]+$" title="全角ひらがなのみ入力してください"></label>`;
         }
 
         function createSelect(label, options) {
@@ -227,7 +234,7 @@
                 select += `<option value="${opt}">${opt}</option>`;
             });
             select += '</select>';
-            return `<label>${label} ${select}</label>`;
+            return `<label class="round-label">${label} ${select}</label>`;
         }
     </script>
 </body>
