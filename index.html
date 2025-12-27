@@ -6,25 +6,34 @@
     <style>
         body { font-family: sans-serif; }
         .hand { border: 1px solid #ccc; padding: 10px; margin: 10px; display: flex; flex-wrap: wrap; }
-        .card { cursor: pointer; background: #f0f0f0; margin: 5px; padding: 5px; width: 150px; text-align: center; }
+        .card { cursor: pointer; background: #f0f0f0; margin: 5px; padding: 5px; width: 150px; position: relative; text-align: center; }
         .selected { background: #ffff00; }
         button { margin: 10px; }
         .picked-list { display: flex; flex-wrap: wrap; }
         #okButton { font-size: 24px; padding: 10px 20px; }
         .card img { max-width: 100%; height: auto; } /* 画像サイズ調整 */
+        .combo-mark { color: red; background: yellow; font-size: 14px; font-weight: bold; position: absolute; top: 5px; right: 5px; padding: 2px 4px; border-radius: 4px; } /* 黄色背景赤文字で"コンボ" */
+        #comboInfo { border: 1px solid #ddd; padding: 10px; margin: 10px; background: #f9f9f9; font-size: 14px; } /* コンボ理由表示枠 */
         .round-section { margin: 10px; padding: 10px; border: 1px solid #ddd; display: flex; align-items: center; flex-wrap: wrap; }
         .round-select { margin: 5px; font-size: 2em; } /* プルダウンサイズ2倍 */
         .round-label { font-size: 1em; } /* 表示サイズ半分 */
         .round-input { font-size: 2em; width: 200px; } /* 入力枠サイズ2倍調整 */
         .action-group { display: flex; flex-wrap: nowrap; align-items: center; } /* 飯以降同じ行 */
-        .round-header { margin-right: 5px; font-size: 1.5em; font-weight: bold; } /* R表記調整 */
+        .round-header { margin-right: 10px; font-size: 1.5em; font-weight: bold; } /* R表記調整, スペース追加 */
     </style>
 </head>
 <body>
     <h1>アグリコラ ドラフト練習</h1>
-    <div id="turnInfo"></div> <!-- 番手表示 -->
-    <button onclick="loadCards()">ドラフト開始</button>
+    <div id="ratingSelection">
+        <label>Ratingタイプ選択:</label>
+        <select id="ratingType">
+            <option value="rating_a">理論</option>
+            <option value="rating_b">ボドゲニスト</option>
+        </select>
+        <button onclick="loadCards()">ドラフト開始</button>
+    </div>
     <div id="playerHand"></div>
+    <div id="comboInfo"></div> <!-- コンボ理由表示 -->
     <div id="status"></div>
     <div id="pickedCards"></div>
     <div id="roundActions" style="display: none;"></div> <!-- ドラフト後ラウンド選択UI -->
@@ -38,6 +47,7 @@
         let round = 0;
         let selectedOccIndex = -1;
         let selectedMinIndex = -1;
+        let selectedRating = 'rating_a'; // デフォルト
 
         const commands = ["木4", "木3", "SP", "大進歩", "レン3", "レン2", "レン6", "葦2", "葦1", "石1葦1木1", "飯-0職業", "飯-1職業", "小劇場", "漁", "畑", "麦", "種まき", "日雇い"];
 
@@ -51,6 +61,7 @@
         }
 
         async function loadCards() {
+            selectedRating = document.getElementById('ratingType').value; // 選択されたratingタイプ
             try {
                 const occResponse = await fetch('occupation.json');
                 if (!occResponse.ok) {
@@ -63,6 +74,28 @@
                     throw new Error(`minor.jsonの読み込みエラー: ${minResponse.status}`);
                 }
                 minors = await minResponse.json();
+
+                // combosが文字列なら配列に変換
+                occupations.forEach(c => {
+                    if (typeof c.combos === 'string') {
+                        try {
+                            c.combos = JSON.parse(c.combos);
+                        } catch (e) {
+                            console.error('Combos parse error for occupation:', c.name_jp, e);
+                            c.combos = [];
+                        }
+                    }
+                });
+                minors.forEach(c => {
+                    if (typeof c.combos === 'string') {
+                        try {
+                            c.combos = JSON.parse(c.combos);
+                        } catch (e) {
+                            console.error('Combos parse error for minor:', c.name_jp, e);
+                            c.combos = [];
+                        }
+                    }
+                });
 
                 startDraft();
             } catch (error) {
@@ -88,6 +121,7 @@
             selectedOccIndex = -1;
             selectedMinIndex = -1;
             document.getElementById('roundActions').style.display = 'none'; // 非表示リセット
+            // document.getElementById('ratingSelection').style.display = 'none'; // ボタン消さない
             showHand();
         }
 
@@ -99,33 +133,39 @@
             // updateTurnInfo(); // 番手表示なし
 
             // 手札をrating降順ソート（表示時のみ、ピックには影響なし）
-            const sortedOccHand = [...players[0].occHand].sort((a, b) => (b.rating || 0) - (a.rating || 0));
-            const sortedMinHand = [...players[0].minHand].sort((a, b) => (b.rating || 0) - (a.rating || 0));
+            const sortedOccHand = [...players[0].occHand].sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0)); // 選択されたrating使用
+            const sortedMinHand = [...players[0].minHand].sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0));
 
             const handDiv = document.getElementById('playerHand');
             handDiv.innerHTML = '<h2>' + playerTurn + '番手の手札</h2>'; // 番手に置き換え
             handDiv.innerHTML += '<div class="hand"><h3>職業</h3>' + sortedOccHand.map((c) => {
                 const originalIndex = players[0].occHand.findIndex(card => card.name_jp === c.name_jp); // name_jpでマッチ（ユニーク前提）
                 const isSelected = originalIndex === selectedOccIndex;
+                const combos = checkCombos(c, players[0].pickedOcc.concat(players[0].pickedMin).concat(players[0].occHand).concat(players[0].minHand)); // 候補同士+手札を含む
+                const hasCombo = combos.length > 0;
+                const comboMark = hasCombo ? `<span class="combo-mark">コンボ</span>` : '';
                 const imgTag = c.image_url ? `<img src="${c.image_url}" alt="${c.name_jp || '不明'}" onerror="this.src='agricola_images/placeholder.jpg'">` : '';
-                return `<div class="card ${isSelected ? 'selected' : ''}" onclick="pickCard('occ', ${originalIndex})">${imgTag} <br>${c.name_jp || '不明'} ${c.rating || '?'}</div>`;
+                return `<div class="card ${isSelected ? 'selected' : ''}" onclick="pickCard('occ', ${originalIndex}); showComboReason('${c.name_jp}', '${combos.join('\\n')}')">${imgTag} <br>${c.name_jp || '不明'} ${c[selectedRating] || '?'}${comboMark}</div>`;
             }).join('') + '</div>';
             handDiv.innerHTML += '<div class="hand"><h3>進歩</h3>' + sortedMinHand.map((c) => {
                 const originalIndex = players[0].minHand.findIndex(card => card.name_jp === c.name_jp);
                 const isSelected = originalIndex === selectedMinIndex;
+                const combos = checkCombos(c, players[0].pickedOcc.concat(players[0].pickedMin).concat(players[0].occHand).concat(players[0].minHand)); // 候補同士+手札を含む
+                const hasCombo = combos.length > 0;
+                const comboMark = hasCombo ? `<span class="combo-mark">コンボ</span>` : '';
                 const imgTag = c.image_url ? `<img src="${c.image_url}" alt="${c.name_jp || '不明'}" onerror="this.src='agricola_images/placeholder.jpg'">` : '';
-                return `<div class="card ${isSelected ? 'selected' : ''}" onclick="pickCard('min', ${originalIndex})">${imgTag} <br>${c.name_jp || '不明'} ${c.rating || '?'}</div>`;
+                return `<div class="card ${isSelected ? 'selected' : ''}" onclick="pickCard('min', ${originalIndex}); showComboReason('${c.name_jp}', '${combos.join('\\n')}')">${imgTag} <br>${c.name_jp || '不明'} ${c[selectedRating] || '?'}${comboMark}</div>`;
             }).join('') + '</div>';
             
             const pickedDiv = document.getElementById('pickedCards');
             pickedDiv.innerHTML = '<h2>' + playerTurn + '番手の選んだカード</h2>'; // 番手に置き換え
             pickedDiv.innerHTML += '<div class="picked-list"><h3>職業</h3>' + players[0].pickedOcc.map(c => {
                 const imgTag = c.image_url ? `<img src="${c.image_url}" alt="${c.name_jp || '不明'}" onerror="this.src='agricola_images/placeholder.jpg'">` : '';
-                return `<div class="card">${imgTag} <br>${c.name_jp || '不明'} ${c.rating || '?'}</div>`;
+                return `<div class="card">${imgTag} <br>${c.name_jp || '不明'} ${c[selectedRating] || '?'}</div>`;
             }).join('') + '</div>';
             pickedDiv.innerHTML += '<div class="picked-list"><h3>進歩</h3>' + players[0].pickedMin.map(c => {
                 const imgTag = c.image_url ? `<img src="${c.image_url}" alt="${c.name_jp || '不明'}" onerror="this.src='agricola_images/placeholder.jpg'">` : '';
-                return `<div class="card">${imgTag} <br>${c.name_jp || '不明'} ${c.rating || '?'}</div>`;
+                return `<div class="card">${imgTag} <br>${c.name_jp || '不明'} ${c[selectedRating] || '?'}</div>`;
             }).join('') + '</div>';
 
             document.getElementById('status').innerHTML = `<button id="okButton" onclick="passHand()" ${selectedOccIndex === -1 || selectedMinIndex === -1 ? 'disabled' : ''}>OK</button>`;
@@ -149,12 +189,12 @@
             players[0].pickedOcc.push(pickedOcc);
             players[0].pickedMin.push(pickedMin);
 
-            // 他のプレイヤー（AI）は最高rating ±10範囲内でランダムピック
+            // 他のプレイヤー（AI）は最高rating ±5範囲内でランダムピック
             for (let i = 1; i < 5; i++) {
                 // 職業: rating降順ソートして最高rating取得
-                players[i].occHand.sort((a, b) => (b.rating || 0) - (a.rating || 0));
-                const maxRating = players[i].occHand[0]?.rating || 0;
-                const candidatesOcc = players[i].occHand.filter(c => (c.rating || 0) >= maxRating - 10 && (c.rating || 0) <= maxRating + 10);
+                players[i].occHand.sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0));
+                const maxRating = players[i].occHand[0]?.[selectedRating] || 0;
+                const candidatesOcc = players[i].occHand.filter(c => (c[selectedRating] || 0) >= maxRating - 5 && (c[selectedRating] || 0) <= maxRating + 5);
                 if (candidatesOcc.length > 0) {
                     const randomIndex = Math.floor(Math.random() * candidatesOcc.length);
                     const bestOcc = candidatesOcc[randomIndex];
@@ -168,9 +208,9 @@
                 }
 
                 // 進歩: 同上
-                players[i].minHand.sort((a, b) => (b.rating || 0) - (a.rating || 0));
-                const maxRatingMin = players[i].minHand[0]?.rating || 0;
-                const candidatesMin = players[i].minHand.filter(c => (c.rating || 0) >= maxRatingMin - 10 && (c.rating || 0) <= maxRatingMin + 10);
+                players[i].minHand.sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0));
+                const maxRatingMin = players[i].minHand[0]?.[selectedRating] || 0;
+                const candidatesMin = players[i].minHand.filter(c => (c[selectedRating] || 0) >= maxRatingMin - 5 && (c[selectedRating] || 0) <= maxRatingMin + 5);
                 if (candidatesMin.length > 0) {
                     const randomIndex = Math.floor(Math.random() * candidatesMin.length);
                     const bestMin = candidatesMin[randomIndex];
@@ -209,7 +249,7 @@
             roundActionsDiv.style.display = 'block';
             roundActionsDiv.innerHTML = '<h2>ラウンドアクション選択</h2>';
             for (let r = 1; r <= 4; r++) {
-                roundActionsDiv.innerHTML += `<div class="round-section"><h3>R${r}</h3>` +
+                roundActionsDiv.innerHTML += `<div class="round-section"><h3 class="round-header">R${r}</h3>` +
                     createInput('1手目:') +
                     createInput('2手目:') +
                     '<br>' + // 飯以降開行
@@ -237,6 +277,17 @@
             });
             select += '</select>';
             return `<label class="round-label">${label} ${select}</label>`;
+        }
+
+        // コンボチェック関数（JSONに"combos"キーがある前提: c.combos = [{target_id: "ID", reason: "説明"} ]）
+        function checkCombos(card, allCards) {
+            if (!card.combos) return [];
+            return card.combos.filter(combo => allCards.some(p => p.id === combo.target_id)).map(combo => combo.reason);
+        }
+
+        // コンボ理由表示関数
+        function showComboReason(cardName, reasons) {
+            document.getElementById('comboInfo').innerHTML = `<h3>${cardName}のコンボ理由</h3><p>${reasons.replace(/\\n/g, '<br>')}</p>`;
         }
     </script>
 </body>

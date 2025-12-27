@@ -3,7 +3,8 @@
     "id": "m001",
     "type": "minor",
     "name_jp": "畑",
-    "rating": 65,
+    "rating_a": 65,
+    "rating_b": 65,
     "image_url": "agricola_images/eminorfield.jpg",
     "combos": ""
   },
@@ -11,7 +12,8 @@
     "id": "m002",
     "type": "minor",
     "name_jp": "釣竿",
-    "rating": 58,
+    "rating_a": 58,
+    "rating_b": 58,
     "image_url": "agricola_images/eminorfishingrod.jpg",
     "combos": ""
   },
@@ -19,7 +21,8 @@
     "id": "m003",
     "type": "minor",
     "name_jp": "斧",
-    "rating": 81,
+    "rating_a": 81,
+    "rating_b": 70,
     "image_url": "agricola_images/eminoraxe.jpg",
     "combos": ""
   },
@@ -27,7 +30,8 @@
     "id": "m004",
     "type": "minor",
     "name_jp": "パン焼き暖炉",
-    "rating": 51,
+    "rating_a": 51,
+    "rating_b": 75,
     "image_url": "agricola_images/eminorbakersoven.jpg",
     "combos": ""
   },
@@ -35,7 +39,8 @@
     "id": "m005",
     "type": "minor",
     "name_jp": "パン焼き桶",
-    "rating": 59,
+    "rating_a": 59,
+    "rating_b": 27,
     "image_url": "agricola_images/eminorbakingtray.jpg",
     "combos": ""
   },
@@ -43,7 +48,8 @@
     "id": "m006",
     "type": "minor",
     "name_jp": "建築資材",
-    "rating": 47,
+    "rating_a": 47,
+    "rating_b": 47,
     "image_url": "agricola_images/eminorbuildingmaterial.jpg",
     "combos": ""
   },
@@ -51,7 +57,8 @@
     "id": "m007",
     "type": "minor",
     "name_jp": "風車小屋",
-    "rating": 36,
+    "rating_a": 36,
+    "rating_b": 36,
     "image_url": "agricola_images/eminorwindmill.jpg",
     "combos": ""
   },
@@ -59,7 +66,8 @@
     "id": "m008",
     "type": "minor",
     "name_jp": "マメ畑",
-    "rating": 41,
+    "rating_a": 41,
+    "rating_b": 41,
     "image_url": "agricola_images/eminorbeanfield.jpg",
     "combos": ""
   },
@@ -67,7 +75,8 @@
     "id": "m009",
     "type": "minor",
     "name_jp": "三つ足やかん",
-    "rating": 30,
+    "rating_a": 30,
+    "rating_b": 30,
     "image_url": "agricola_images/eminorgypsysrock.jpg",
     "combos": [
       {
@@ -80,7 +89,8 @@
     "id": "m010",
     "type": "minor",
     "name_jp": "簡易かまど",
-    "rating": 62,
+    "rating_a": 62,
+    "rating_b": 62,
     "image_url": "agricola_images/eminorsimplefireplace.jpg",
     "combos": [
       {
@@ -93,12 +103,17 @@
     "id": "m011",
     "type": "minor",
     "name_jp": "木骨の小屋",
-    "rating": 64,
+    "rating_a": 64,
+    "rating_b": 64,
     "image_url": "agricola_images/eminorhalftimberedhouse.jpg",
     "combos": [
       {
         "target_id": "o015",
         "reason": "レンガ軽減"
+      },
+      {
+        "target_id": "o103",
+        "reason": "石石葦葦木木＋石石石"
       }
     ]
   },
@@ -106,7 +121,8 @@
     "id": "m012",
     "type": "minor",
     "name_jp": "いかだ",
-    "rating": 63,
+    "rating_a": 63,
+    "rating_b": 63,
     "image_url": "agricola_images/eminorraft.jpg",
     "combos": ""
   },
@@ -114,7 +130,8 @@
     "id": "m013",
     "type": "minor",
     "name_jp": "かいば桶",
-    "rating": 49,
+    "rating_a": 49,
+    "rating_b": 49,
     "image_url": "agricola_images/eminormanger.jpg",
     "combos": ""
   },
@@ -122,7 +139,8 @@
     "id": "m014",
     "type": "minor",
     "name_jp": "檻",
-    "rating": 68,
+    "rating_a": 68,
+    "rating_b": 84,
     "image_url": "agricola_images/eminoranimalpen.jpg",
     "combos": ""
   },
@@ -130,7 +148,8 @@
     "id": "m015",
     "type": "minor",
     "name_jp": "スパイス",
-    "rating": 35,
+    "rating_a": 35,
+    "rating_b": 35,
     "image_url": "agricola_images/eminorspices.jpg",
     "combos": ""
   },
@@ -138,7 +157,8 @@
     "id": "m016",
     "type": "minor",
     "name_jp": "かんな",
-    "rating": 24,
+    "rating_a": 24,
+    "rating_b": 17,
     "image_url": "agricola_images/eminorplane.jpg",
     "combos": ""
   },
@@ -146,7 +166,8 @@
     "id": "m017",
     "type": "minor",
     "name_jp": "木の暖炉",
-    "rating": 38,
+    "rating_a": 38,
+    "rating_b": 38,
     "image_url": "agricola_images/eminorwoodfiredoven.jpg",
     "combos": ""
   },
@@ -154,7 +175,8 @@
     "id": "m018",
     "type": "minor",
     "name_jp": "木のスリッパ",
-    "rating": 58,
+    "rating_a": 58,
+    "rating_b": 58,
     "image_url": "agricola_images/eminorclogs.jpg",
     "combos": ""
   },
@@ -162,15 +184,22 @@
     "id": "m019",
     "type": "minor",
     "name_jp": "角笛",
-    "rating": 23,
+    "rating_a": 23,
+    "rating_b": 23,
     "image_url": "agricola_images/eminorshepherdspipe.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o134",
+        "reason": "2種繁殖"
+      }
+    ]
   },
   {
     "id": "m020",
     "type": "minor",
     "name_jp": "カヌー",
-    "rating": 75,
+    "rating_a": 75,
+    "rating_b": 88,
     "image_url": "agricola_images/eminorcanoe.jpg",
     "combos": ""
   },
@@ -178,7 +207,8 @@
     "id": "m021",
     "type": "minor",
     "name_jp": "鯉の池",
-    "rating": 43,
+    "rating_a": 43,
+    "rating_b": 55,
     "image_url": "agricola_images/eminorcarppond.jpg",
     "combos": ""
   },
@@ -186,7 +216,8 @@
     "id": "m022",
     "type": "minor",
     "name_jp": "じゃがいも掘り",
-    "rating": 43,
+    "rating_a": 43,
+    "rating_b": 43,
     "image_url": "agricola_images/eminorpotatodibber.jpg",
     "combos": ""
   },
@@ -194,7 +225,8 @@
     "id": "m023",
     "type": "minor",
     "name_jp": "陶器",
-    "rating": 48,
+    "rating_a": 48,
+    "rating_b": 48,
     "image_url": "agricola_images/eminorceramics.jpg",
     "combos": [
       {
@@ -207,23 +239,31 @@
     "id": "m024",
     "type": "minor",
     "name_jp": "かご",
-    "rating": 27,
+    "rating_a": 27,
+    "rating_b": 30,
     "image_url": "agricola_images/eminorbasket.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m077",
+        "reason": "木材減らない"
+      }
+    ]
   },
   {
     "id": "m025",
     "type": "minor",
     "name_jp": "穀物スコップ",
-    "rating": 73,
+    "rating_a": 73,
+    "rating_b": 73,
     "image_url": "agricola_images/eminorcornscoop.jpg",
-    "combos": ""
+    "combos": "[{\"target_id\":\"o060\", \"reason\":\"木4、spスコップ\n林務官、畑\n飯3、麦麦\n畑、種まき\"}]"
   },
   {
     "id": "m026",
     "type": "minor",
     "name_jp": "レンガの屋根",
-    "rating": 100,
+    "rating_a": 100,
+    "rating_b": 93,
     "image_url": "agricola_images/eminorclayroof.jpg",
     "combos": [
       {
@@ -236,7 +276,8 @@
     "id": "m027",
     "type": "minor",
     "name_jp": "レンガの柱",
-    "rating": 84,
+    "rating_a": 84,
+    "rating_b": 96,
     "image_url": "agricola_images/eminorclaysupports.jpg",
     "combos": [
       {
@@ -249,7 +290,8 @@
     "id": "m028",
     "type": "minor",
     "name_jp": "聖マリア像",
-    "rating": 54,
+    "rating_a": 54,
+    "rating_b": 54,
     "image_url": "agricola_images/eminormadonnastatue.jpg",
     "combos": ""
   },
@@ -257,23 +299,44 @@
     "id": "m029",
     "type": "minor",
     "name_jp": "露店",
-    "rating": 33,
+    "rating_a": 33,
+    "rating_b": 17,
     "image_url": "agricola_images/eminormarketstall.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o084",
+        "reason": "麦バック"
+      },
+      {
+        "target_id": "o083",
+        "reason": "野菜2作れる"
+      }
+    ]
   },
   {
     "id": "m030",
     "type": "minor",
     "name_jp": "小牧場",
-    "rating": 68,
+    "rating_a": 68,
+    "rating_b": 68,
     "image_url": "agricola_images/eminorminipasture.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o049",
+        "reason": "農場主、猪、小牧場、木３、飯３、柵３、木３、柵３"
+      },
+      {
+        "target_id": "o134",
+        "reason": "2種繁殖"
+      }
+    ]
   },
   {
     "id": "m031",
     "type": "minor",
     "name_jp": "石臼",
-    "rating": 22,
+    "rating_a": 22,
+    "rating_b": 22,
     "image_url": "agricola_images/iminorhandmill.jpg",
     "combos": ""
   },
@@ -281,7 +344,8 @@
     "id": "m032",
     "type": "minor",
     "name_jp": "親切な隣人",
-    "rating": 46,
+    "rating_a": 46,
+    "rating_b": 46,
     "image_url": "agricola_images/eminorhelpfulneighbors.jpg",
     "combos": ""
   },
@@ -289,7 +353,8 @@
     "id": "m033",
     "type": "minor",
     "name_jp": "果物の木",
-    "rating": 66,
+    "rating_a": 66,
+    "rating_b": 66,
     "image_url": "agricola_images/eminorfruittree.jpg",
     "combos": ""
   },
@@ -297,7 +362,8 @@
     "id": "m034",
     "type": "minor",
     "name_jp": "離れのトイレ",
-    "rating": 47,
+    "rating_a": 47,
+    "rating_b": 48,
     "image_url": "agricola_images/eminorouthouse.jpg",
     "combos": [
       {
@@ -310,15 +376,22 @@
     "id": "m035",
     "type": "minor",
     "name_jp": "個人の森",
-    "rating": 69,
+    "rating_a": 69,
+    "rating_b": 63,
     "image_url": "agricola_images/eminorprivateforest.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o020",
+        "reason": "石葦木、個人の森、石葦木、木3、木3、家具製作所、増築、家具職人"
+      }
+    ]
   },
   {
     "id": "m036",
     "type": "minor",
     "name_jp": "荷車",
-    "rating": 43,
+    "rating_a": 43,
+    "rating_b": 43,
     "image_url": "agricola_images/eminorsackcart.jpg",
     "combos": ""
   },
@@ -326,7 +399,8 @@
     "id": "m037",
     "type": "minor",
     "name_jp": "レタス畑",
-    "rating": 63,
+    "rating_a": 63,
+    "rating_b": 63,
     "image_url": "agricola_images/eminorlettucepatch.jpg",
     "combos": ""
   },
@@ -334,7 +408,8 @@
     "id": "m038",
     "type": "minor",
     "name_jp": "葦の池",
-    "rating": 89,
+    "rating_a": 89,
+    "rating_b": 89,
     "image_url": "agricola_images/eminorreedpond.jpg",
     "combos": ""
   },
@@ -342,7 +417,8 @@
     "id": "m039",
     "type": "minor",
     "name_jp": "書き机",
-    "rating": 60,
+    "rating_a": 60,
+    "rating_b": 60,
     "image_url": "agricola_images/eminorwritingdesk.jpg",
     "combos": ""
   },
@@ -350,15 +426,22 @@
     "id": "m040",
     "type": "minor",
     "name_jp": "へら",
-    "rating": 50,
+    "rating_a": 50,
+    "rating_b": 50,
     "image_url": "agricola_images/eminorbuilderstrowel.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m122",
+        "reason": "石葦、へら、石葦、レン3、飯3、レン3、SPレン家、？"
+      }
+    ]
   },
   {
     "id": "m041",
     "type": "minor",
     "name_jp": "糸巻き棒",
-    "rating": 15,
+    "rating_a": 15,
+    "rating_b": 24,
     "image_url": "agricola_images/eminorspindle.jpg",
     "combos": ""
   },
@@ -366,7 +449,8 @@
     "id": "m042",
     "type": "minor",
     "name_jp": "厩",
-    "rating": 38,
+    "rating_a": 38,
+    "rating_b": 35,
     "image_url": "agricola_images/eminorstable.jpg",
     "combos": ""
   },
@@ -374,7 +458,8 @@
     "id": "m043",
     "type": "minor",
     "name_jp": "撹乳器",
-    "rating": 20,
+    "rating_a": 20,
+    "rating_b": 9,
     "image_url": "agricola_images/eminorbutterchurn.jpg",
     "combos": ""
   },
@@ -382,7 +467,8 @@
     "id": "m044",
     "type": "minor",
     "name_jp": "石切り場",
-    "rating": 91,
+    "rating_a": 91,
+    "rating_b": 97,
     "image_url": "agricola_images/eminorquarry.jpg",
     "combos": ""
   },
@@ -390,15 +476,22 @@
     "id": "m045",
     "type": "minor",
     "name_jp": "石の家増築",
-    "rating": 59,
+    "rating_a": 59,
+    "rating_b": 59,
     "image_url": "agricola_images/eminorstonehouseextension.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o131",
+        "reason": "石の家先行"
+      }
+    ]
   },
   {
     "id": "m046",
     "type": "minor",
     "name_jp": "石ばさみ",
-    "rating": 60,
+    "rating_a": 60,
+    "rating_b": 60,
     "image_url": "agricola_images/eminorstonetongs.jpg",
     "combos": ""
   },
@@ -406,7 +499,8 @@
     "id": "m047",
     "type": "minor",
     "name_jp": "ハト小屋",
-    "rating": 59,
+    "rating_a": 59,
+    "rating_b": 59,
     "image_url": "agricola_images/eminordovecote.jpg",
     "combos": ""
   },
@@ -414,23 +508,36 @@
     "id": "m048",
     "type": "minor",
     "name_jp": "家畜庭",
-    "rating": 53,
+    "rating_a": 53,
+    "rating_b": 53,
     "image_url": "agricola_images/eminoranimalyard.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o134",
+        "reason": "2種繁殖"
+      }
+    ]
   },
   {
     "id": "m049",
     "type": "minor",
     "name_jp": "水飲み場",
-    "rating": 35,
+    "rating_a": 35,
+    "rating_b": 35,
     "image_url": "agricola_images/eminordrinkingtrough.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o098",
+        "reason": "2マスが4頭"
+      }
+    ]
   },
   {
     "id": "m050",
     "type": "minor",
     "name_jp": "家畜市場",
-    "rating": 37,
+    "rating_a": 37,
+    "rating_b": 33,
     "image_url": "agricola_images/eminorcattlemarket.jpg",
     "combos": ""
   },
@@ -438,23 +545,36 @@
     "id": "m051",
     "type": "minor",
     "name_jp": "鋤車",
-    "rating": 65,
+    "rating_a": 65,
+    "rating_b": 65,
     "image_url": "agricola_images/eminorridingplow.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o024",
+        "reason": "畑種踏む"
+      }
+    ]
   },
   {
     "id": "m052",
     "type": "minor",
     "name_jp": "折り返し鋤",
-    "rating": 61,
+    "rating_a": 61,
+    "rating_b": 70,
     "image_url": "agricola_images/eminorturnwrestplow.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o024",
+        "reason": "畑種踏む"
+      }
+    ]
   },
   {
     "id": "m053",
     "type": "minor",
     "name_jp": "突き鋤",
-    "rating": 61,
+    "rating_a": 61,
+    "rating_b": 61,
     "image_url": "agricola_images/iminormoldboardplow.jpg",
     "combos": ""
   },
@@ -462,7 +582,8 @@
     "id": "m054",
     "type": "minor",
     "name_jp": "喜捨",
-    "rating": 52,
+    "rating_a": 52,
+    "rating_b": 74,
     "image_url": "agricola_images/iminoralms.jpg",
     "combos": ""
   },
@@ -470,7 +591,8 @@
     "id": "m055",
     "type": "minor",
     "name_jp": "パン焼き部屋",
-    "rating": 45,
+    "rating_a": 45,
+    "rating_b": 45,
     "image_url": "agricola_images/iminorbakerskitchen.jpg",
     "combos": ""
   },
@@ -478,7 +600,8 @@
     "id": "m056",
     "type": "minor",
     "name_jp": "村の井戸",
-    "rating": 60,
+    "rating_a": 60,
+    "rating_b": 60,
     "image_url": "agricola_images/iminorvillagewell.jpg",
     "combos": ""
   },
@@ -486,23 +609,40 @@
     "id": "m057",
     "type": "minor",
     "name_jp": "脱穀そり",
-    "rating": 34,
+    "rating_a": 34,
+    "rating_b": 34,
     "image_url": "agricola_images/iminorthreshingboard.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o024",
+        "reason": "畑種踏む"
+      }
+    ]
   },
   {
     "id": "m058",
     "type": "minor",
     "name_jp": "馬鍬",
-    "rating": 38,
+    "rating_a": 38,
+    "rating_b": 38,
     "image_url": "agricola_images/iminorharrow.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o024",
+        "reason": "畑種踏む"
+      },
+      {
+        "target_id": "m060",
+        "reason": "4畑"
+      }
+    ]
   },
   {
     "id": "m059",
     "type": "minor",
     "name_jp": "イチゴ花壇",
-    "rating": 55,
+    "rating_a": 55,
+    "rating_b": 84,
     "image_url": "agricola_images/iminorstrawberrypatch.jpg",
     "combos": ""
   },
@@ -510,15 +650,22 @@
     "id": "m060",
     "type": "minor",
     "name_jp": "地固め機",
-    "rating": 75,
+    "rating_a": 75,
+    "rating_b": 75,
     "image_url": "agricola_images/iminorpunner.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m058",
+        "reason": "4畑"
+      }
+    ]
   },
   {
     "id": "m061",
     "type": "minor",
     "name_jp": "別荘",
-    "rating": 21,
+    "rating_a": 21,
+    "rating_b": 21,
     "image_url": "agricola_images/iminorholidayhouse.jpg",
     "combos": ""
   },
@@ -526,7 +673,8 @@
     "id": "m062",
     "type": "minor",
     "name_jp": "ガチョウ池",
-    "rating": 55,
+    "rating_a": 55,
+    "rating_b": 55,
     "image_url": "agricola_images/iminorgoosepond.jpg",
     "combos": ""
   },
@@ -534,7 +682,8 @@
     "id": "m063",
     "type": "minor",
     "name_jp": "ゲスト",
-    "rating": 41,
+    "rating_a": 41,
+    "rating_b": 40,
     "image_url": "agricola_images/iminorguest.jpg",
     "combos": ""
   },
@@ -542,7 +691,8 @@
     "id": "m064",
     "type": "minor",
     "name_jp": "小麦車",
-    "rating": 75,
+    "rating_a": 75,
+    "rating_b": 75,
     "image_url": "agricola_images/iminorgraincart.jpg",
     "combos": ""
   },
@@ -550,7 +700,8 @@
     "id": "m065",
     "type": "minor",
     "name_jp": "手挽き臼",
-    "rating": 25,
+    "rating_a": 25,
+    "rating_b": 25,
     "image_url": "agricola_images/eminormillstone.jpg",
     "combos": ""
   },
@@ -558,7 +709,8 @@
     "id": "m066",
     "type": "minor",
     "name_jp": "くまで",
-    "rating": 50,
+    "rating_a": 50,
+    "rating_b": 50,
     "image_url": "agricola_images/iminorrake.jpg",
     "combos": ""
   },
@@ -566,7 +718,8 @@
     "id": "m067",
     "type": "minor",
     "name_jp": "牧人の杖",
-    "rating": 45,
+    "rating_a": 45,
+    "rating_b": 45,
     "image_url": "agricola_images/iminorshepherdscrook.jpg",
     "combos": ""
   },
@@ -574,23 +727,36 @@
     "id": "m068",
     "type": "minor",
     "name_jp": "雑木林",
-    "rating": 24,
+    "rating_a": 24,
+    "rating_b": 43,
     "image_url": "agricola_images/iminorcopse.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o060",
+        "reason": "木4職業、雑木林、林務官、木3、飯3、？、葦2、種"
+      }
+    ]
   },
   {
     "id": "m069",
     "type": "minor",
     "name_jp": "木材荷車",
-    "rating": 55,
+    "rating_a": 55,
+    "rating_b": 44,
     "image_url": "agricola_images/iminorwoodcart.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m024",
+        "reason": "木材減らない"
+      }
+    ]
   },
   {
     "id": "m070",
     "type": "minor",
     "name_jp": "林",
-    "rating": 82,
+    "rating_a": 82,
+    "rating_b": 86,
     "image_url": "agricola_images/iminorspinney.jpg",
     "combos": ""
   },
@@ -598,7 +764,8 @@
     "id": "m071",
     "type": "minor",
     "name_jp": "木の家増築",
-    "rating": 97,
+    "rating_a": 97,
+    "rating_b": 92,
     "image_url": "agricola_images/iminorwoodenhutextension.jpg",
     "combos": ""
   },
@@ -606,7 +773,8 @@
     "id": "m072",
     "type": "minor",
     "name_jp": "木のクレーン",
-    "rating": 51,
+    "rating_a": 51,
+    "rating_b": 51,
     "image_url": "agricola_images/iminorwoodencrane.jpg",
     "combos": ""
   },
@@ -614,7 +782,8 @@
     "id": "m073",
     "type": "minor",
     "name_jp": "林道",
-    "rating": 54,
+    "rating_a": 54,
+    "rating_b": 54,
     "image_url": "agricola_images/iminorwoodenpath.jpg",
     "combos": ""
   },
@@ -622,7 +791,8 @@
     "id": "m074",
     "type": "minor",
     "name_jp": "鶏小屋",
-    "rating": 55,
+    "rating_a": 55,
+    "rating_b": 79,
     "image_url": "agricola_images/iminorchickencoop.jpg",
     "combos": [
       {
@@ -635,7 +805,8 @@
     "id": "m075",
     "type": "minor",
     "name_jp": "調理コーナー",
-    "rating": 61,
+    "rating_a": 61,
+    "rating_b": 61,
     "image_url": "agricola_images/iminorcookingcorner.jpg",
     "combos": ""
   },
@@ -643,7 +814,8 @@
     "id": "m076",
     "type": "minor",
     "name_jp": "乾燥小屋",
-    "rating": 25,
+    "rating_a": 25,
+    "rating_b": 25,
     "image_url": "agricola_images/iminorcornstorehouse.jpg",
     "combos": ""
   },
@@ -651,7 +823,8 @@
     "id": "m077",
     "type": "minor",
     "name_jp": "かめ",
-    "rating": 59,
+    "rating_a": 59,
+    "rating_b": 59,
     "image_url": "agricola_images/iminorflagon.jpg",
     "combos": [
       {
@@ -664,7 +837,8 @@
     "id": "m078",
     "type": "minor",
     "name_jp": "投げ縄",
-    "rating": 64,
+    "rating_a": 64,
+    "rating_b": 64,
     "image_url": "agricola_images/iminorlasso.jpg",
     "combos": ""
   },
@@ -672,7 +846,8 @@
     "id": "m079",
     "type": "minor",
     "name_jp": "レンガ道",
-    "rating": 57,
+    "rating_a": 57,
+    "rating_b": 57,
     "image_url": "agricola_images/iminorclaypath.jpg",
     "combos": [
       {
@@ -685,7 +860,8 @@
     "id": "m080",
     "type": "minor",
     "name_jp": "プランター",
-    "rating": 62,
+    "rating_a": 62,
+    "rating_b": 62,
     "image_url": "agricola_images/iminorplanterbox.jpg",
     "combos": ""
   },
@@ -693,7 +869,8 @@
     "id": "m081",
     "type": "minor",
     "name_jp": "はしご",
-    "rating": 72,
+    "rating_a": 72,
+    "rating_b": 65,
     "image_url": "agricola_images/iminorladder.jpg",
     "combos": ""
   },
@@ -701,15 +878,22 @@
     "id": "m082",
     "type": "minor",
     "name_jp": "堆肥",
-    "rating": 32,
+    "rating_a": 32,
+    "rating_b": 32,
     "image_url": "agricola_images/iminormanure.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o060",
+        "reason": "回収早い"
+      }
+    ]
   },
   {
     "id": "m083",
     "type": "minor",
     "name_jp": "酪農場",
-    "rating": 38,
+    "rating_a": 38,
+    "rating_b": 38,
     "image_url": "agricola_images/iminormilkingshed.jpg",
     "combos": [
       {
@@ -722,7 +906,8 @@
     "id": "m084",
     "type": "minor",
     "name_jp": "舗装道路",
-    "rating": 36,
+    "rating_a": 36,
+    "rating_b": 36,
     "image_url": "agricola_images/iminorpavedroad.jpg",
     "combos": ""
   },
@@ -730,7 +915,8 @@
     "id": "m085",
     "type": "minor",
     "name_jp": "梁",
-    "rating": 79,
+    "rating_a": 79,
+    "rating_b": 68,
     "image_url": "agricola_images/iminorfishtrap.jpg",
     "combos": ""
   },
@@ -738,7 +924,8 @@
     "id": "m086",
     "type": "minor",
     "name_jp": "葦の交換",
-    "rating": 55,
+    "rating_a": 55,
+    "rating_b": 45,
     "image_url": "agricola_images/iminorreedexchange.jpg",
     "combos": [
       {
@@ -751,7 +938,8 @@
     "id": "m087",
     "type": "minor",
     "name_jp": "畜殺場",
-    "rating": 50,
+    "rating_a": 50,
+    "rating_b": 50,
     "image_url": "agricola_images/iminorslaughterhouse.jpg",
     "combos": ""
   },
@@ -759,15 +947,22 @@
     "id": "m088",
     "type": "minor",
     "name_jp": "火酒製造所",
-    "rating": 40,
+    "rating_a": 40,
+    "rating_b": 8,
     "image_url": "agricola_images/iminorschnapsdistillery.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o154",
+        "reason": "石葦木2回から"
+      }
+    ]
   },
   {
     "id": "m089",
     "type": "minor",
     "name_jp": "わら小屋",
-    "rating": 54,
+    "rating_a": 54,
+    "rating_b": 98,
     "image_url": "agricola_images/iminorstrawthatchedroof.jpg",
     "combos": ""
   },
@@ -775,7 +970,8 @@
     "id": "m090",
     "type": "minor",
     "name_jp": "酒場",
-    "rating": 90,
+    "rating_a": 90,
+    "rating_b": 77,
     "image_url": "agricola_images/iminortavern.jpg",
     "combos": ""
   },
@@ -783,7 +979,8 @@
     "id": "m091",
     "type": "minor",
     "name_jp": "家畜の餌",
-    "rating": 31,
+    "rating_a": 31,
+    "rating_b": 31,
     "image_url": "agricola_images/iminoranimalfeed.jpg",
     "combos": [
       {
@@ -796,15 +993,26 @@
     "id": "m092",
     "type": "minor",
     "name_jp": "動物園",
-    "rating": 42,
+    "rating_a": 42,
+    "rating_b": 42,
     "image_url": "agricola_images/iminorwildlifereserve.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o134",
+        "reason": "2種繁殖"
+      },
+      {
+        "target_id": "o148",
+        "reason": "飼える"
+      }
+    ]
   },
   {
     "id": "m093",
     "type": "minor",
     "name_jp": "水車",
-    "rating": 15,
+    "rating_a": 15,
+    "rating_b": 15,
     "image_url": "agricola_images/iminorwatermill.jpg",
     "combos": ""
   },
@@ -812,23 +1020,48 @@
     "id": "m094",
     "type": "minor",
     "name_jp": "週末市場",
-    "rating": 20,
+    "rating_a": 20,
+    "rating_b": 20,
     "image_url": "agricola_images/iminorweeklymarket.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o123",
+        "reason": "野菜2作れる"
+      },
+      {
+        "target_id": "o084",
+        "reason": "麦バック"
+      },
+      {
+        "target_id": "o083",
+        "reason": "野菜2作れる"
+      }
+    ]
   },
   {
     "id": "m095",
     "type": "minor",
     "name_jp": "平地",
-    "rating": 40,
+    "rating_a": 40,
+    "rating_b": 47,
     "image_url": "agricola_images/kminoracreage.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o103",
+        "reason": "無料出来高、sp平地、石石葦木、麦麦、nレンガ3か6、麦麦、nレンガ暖炉パン焼き、麦2撒きパン焼き"
+      },
+      {
+        "target_id": "o141",
+        "reason": "倉庫番、平地、石葦木麦、SP、石葦木麦、種"
+      }
+    ]
   },
   {
     "id": "m096",
     "type": "minor",
     "name_jp": "パン焼き小屋",
-    "rating": 44,
+    "rating_a": 44,
+    "rating_b": 44,
     "image_url": "agricola_images/kminorbakehouse.jpg",
     "combos": ""
   },
@@ -836,15 +1069,22 @@
     "id": "m097",
     "type": "minor",
     "name_jp": "建築用木材",
-    "rating": 45,
+    "rating_a": 45,
+    "rating_b": 45,
     "image_url": "agricola_images/kminorlumber.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "m098",
     "type": "minor",
     "name_jp": "ミツバチの巣",
-    "rating": 62,
+    "rating_a": 62,
+    "rating_b": 62,
     "image_url": "agricola_images/kminorbeehive.jpg",
     "combos": ""
   },
@@ -852,7 +1092,8 @@
     "id": "m099",
     "type": "minor",
     "name_jp": "焼き串",
-    "rating": 34,
+    "rating_a": 34,
+    "rating_b": 34,
     "image_url": "agricola_images/kminorspitroast.jpg",
     "combos": ""
   },
@@ -860,7 +1101,8 @@
     "id": "m100",
     "type": "minor",
     "name_jp": "醸造所",
-    "rating": 29,
+    "rating_a": 29,
+    "rating_b": 7,
     "image_url": "agricola_images/kminorbrewery.jpg",
     "combos": ""
   },
@@ -868,7 +1110,8 @@
     "id": "m101",
     "type": "minor",
     "name_jp": "パン焼き棒",
-    "rating": 35,
+    "rating_a": 35,
+    "rating_b": 35,
     "image_url": "agricola_images/kminorbreadpaddle.jpg",
     "combos": ""
   },
@@ -876,7 +1119,8 @@
     "id": "m102",
     "type": "minor",
     "name_jp": "本棚",
-    "rating": 71,
+    "rating_a": 71,
+    "rating_b": 71,
     "image_url": "agricola_images/kminorbookshelf.jpg",
     "combos": ""
   },
@@ -884,15 +1128,22 @@
     "id": "m103",
     "type": "minor",
     "name_jp": "脱穀棒",
-    "rating": 29,
+    "rating_a": 29,
+    "rating_b": 29,
     "image_url": "agricola_images/kminorflail.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o024",
+        "reason": "畑種踏む"
+      }
+    ]
   },
   {
     "id": "m104",
     "type": "minor",
     "name_jp": "鴨の池",
-    "rating": 58,
+    "rating_a": 58,
+    "rating_b": 71,
     "image_url": "agricola_images/kminorduckpond.jpg",
     "combos": ""
   },
@@ -900,7 +1151,8 @@
     "id": "m105",
     "type": "minor",
     "name_jp": "耕運鋤",
-    "rating": 57,
+    "rating_a": 57,
+    "rating_b": 69,
     "image_url": "agricola_images/kminorswingplow.jpg",
     "combos": ""
   },
@@ -908,7 +1160,8 @@
     "id": "m106",
     "type": "minor",
     "name_jp": "穀物倉庫",
-    "rating": 53,
+    "rating_a": 53,
+    "rating_b": 73,
     "image_url": "agricola_images/kminorgranary.jpg",
     "combos": [
       {
@@ -921,15 +1174,22 @@
     "id": "m107",
     "type": "minor",
     "name_jp": "温室",
-    "rating": 64,
+    "rating_a": 64,
+    "rating_b": 59,
     "image_url": "agricola_images/kminorgreenhouse.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o084",
+        "reason": "麦バック"
+      }
+    ]
   },
   {
     "id": "m108",
     "type": "minor",
     "name_jp": "肥溜め",
-    "rating": 38,
+    "rating_a": 38,
+    "rating_b": 52,
     "image_url": "agricola_images/kminorliquidmanure.jpg",
     "combos": ""
   },
@@ -937,7 +1197,8 @@
     "id": "m109",
     "type": "minor",
     "name_jp": "鉤型鋤",
-    "rating": 56,
+    "rating_a": 56,
+    "rating_b": 49,
     "image_url": "agricola_images/kminorcrookedplow.jpg",
     "combos": ""
   },
@@ -945,7 +1206,8 @@
     "id": "m110",
     "type": "minor",
     "name_jp": "ヤギ",
-    "rating": 87,
+    "rating_a": 87,
+    "rating_b": 87,
     "image_url": "agricola_images/kminorhousegoat.jpg",
     "combos": ""
   },
@@ -953,7 +1215,8 @@
     "id": "m111",
     "type": "minor",
     "name_jp": "木挽き台",
-    "rating": 84,
+    "rating_a": 84,
+    "rating_b": 84,
     "image_url": "agricola_images/kminorsawhorse.jpg",
     "combos": ""
   },
@@ -961,7 +1224,8 @@
     "id": "m112",
     "type": "minor",
     "name_jp": "製材所",
-    "rating": 43,
+    "rating_a": 43,
+    "rating_b": 43,
     "image_url": "agricola_images/kminorsawmill.jpg",
     "combos": ""
   },
@@ -969,7 +1233,8 @@
     "id": "m113",
     "type": "minor",
     "name_jp": "木の宝石箱",
-    "rating": 59,
+    "rating_a": 59,
+    "rating_b": 72,
     "image_url": "agricola_images/kminorwoodenstrongbox.jpg",
     "combos": ""
   },
@@ -977,7 +1242,8 @@
     "id": "m114",
     "type": "minor",
     "name_jp": "くびき",
-    "rating": 45,
+    "rating_a": 45,
+    "rating_b": 45,
     "image_url": "agricola_images/kminoryoke.jpg",
     "combos": ""
   },
@@ -985,7 +1251,8 @@
     "id": "m115",
     "type": "minor",
     "name_jp": "ほうき",
-    "rating": 74,
+    "rating_a": 74,
+    "rating_b": 74,
     "image_url": "agricola_images/kminorbroom.jpg",
     "combos": ""
   },
@@ -993,7 +1260,8 @@
     "id": "m116",
     "type": "minor",
     "name_jp": "柄付き網",
-    "rating": 73,
+    "rating_a": 73,
+    "rating_b": 78,
     "image_url": "agricola_images/kminorlandingnet.jpg",
     "combos": ""
   },
@@ -1001,7 +1269,8 @@
     "id": "m117",
     "type": "minor",
     "name_jp": "がらがら",
-    "rating": 23,
+    "rating_a": 23,
+    "rating_b": 23,
     "image_url": "agricola_images/kminorclapper.jpg",
     "combos": ""
   },
@@ -1009,7 +1278,8 @@
     "id": "m118",
     "type": "minor",
     "name_jp": "調理場",
-    "rating": 62,
+    "rating_a": 62,
+    "rating_b": 62,
     "image_url": "agricola_images/kminorcookinghearth.jpg",
     "combos": ""
   },
@@ -1017,7 +1287,8 @@
     "id": "m119",
     "type": "minor",
     "name_jp": "穀物の束",
-    "rating": 55,
+    "rating_a": 55,
+    "rating_b": 55,
     "image_url": "agricola_images/kminorcornsheaf.jpg",
     "combos": ""
   },
@@ -1025,7 +1296,8 @@
     "id": "m120",
     "type": "minor",
     "name_jp": "薬草畑",
-    "rating": 47,
+    "rating_a": 47,
+    "rating_b": 47,
     "image_url": "agricola_images/kminorherbgarden.jpg",
     "combos": ""
   },
@@ -1033,7 +1305,8 @@
     "id": "m121",
     "type": "minor",
     "name_jp": "レンガ坑",
-    "rating": 67,
+    "rating_a": 67,
+    "rating_b": 67,
     "image_url": "agricola_images/kminorclaypit.jpg",
     "combos": ""
   },
@@ -1041,8 +1314,117 @@
     "id": "m122",
     "type": "minor",
     "name_jp": "レンガの家増築",
-    "rating": 66,
+    "rating_a": 66,
+    "rating_b": 66,
     "image_url": "agricola_images/kminorclayhutextension.jpg",
+    "combos": [
+      {
+        "target_id": "o015",
+        "reason": "レンガ軽減"
+      },
+      {
+        "target_id": "m040",
+        "reason": "石葦、へら、石葦、レン３、飯３、レン３、SPレン家、？"
+      }
+    ]
+  },
+  {
+    "id": "m123",
+    "type": "minor",
+    "name_jp": "搾乳台",
+    "rating_a": 76,
+    "rating_b": 76,
+    "image_url": "agricola_images/kminormilkingstool.jpg",
+    "combos": ""
+  },
+  {
+    "id": "m124",
+    "type": "minor",
+    "name_jp": "牛車",
+    "rating_a": 79,
+    "rating_b": 79,
+    "image_url": "agricola_images/kminoroxteam.jpg",
+    "combos": ""
+  },
+  {
+    "id": "m125",
+    "type": "minor",
+    "name_jp": "ウマ",
+    "rating_a": 53,
+    "rating_b": 53,
+    "image_url": "agricola_images/kminorhorse.jpg",
+    "combos": ""
+  },
+  {
+    "id": "m126",
+    "type": "minor",
+    "name_jp": "柴屋根",
+    "rating_a": 54,
+    "rating_b": 48,
+    "image_url": "agricola_images/kminorbrushwoodroof.jpg",
+    "combos": ""
+  },
+  {
+    "id": "m127",
+    "type": "minor",
+    "name_jp": "カブ畑",
+    "rating_a": 92,
+    "rating_b": 92,
+    "image_url": "agricola_images/kminorturnipfield.jpg",
+    "combos": ""
+  },
+  {
+    "id": "m128",
+    "type": "minor",
+    "name_jp": "葦の家",
+    "rating_a": 89,
+    "rating_b": 85,
+    "image_url": "agricola_images/kminorreedhut.jpg",
+    "combos": ""
+  },
+  {
+    "id": "m129",
+    "type": "minor",
+    "name_jp": "寝室",
+    "rating_a": 73,
+    "rating_b": 73,
+    "image_url": "agricola_images/kminorsleepingcorner.jpg",
+    "combos": ""
+  },
+  {
+    "id": "m130",
+    "type": "minor",
+    "name_jp": "白鳥の湖",
+    "rating_a": 69,
+    "rating_b": 69,
+    "image_url": "agricola_images/kminorswanlake.jpg",
+    "combos": ""
+  },
+  {
+    "id": "m131",
+    "type": "minor",
+    "name_jp": "猪の飼育",
+    "rating_a": 37,
+    "rating_b": 46,
+    "image_url": "agricola_images/kminorboarbreeding.jpg",
+    "combos": ""
+  },
+  {
+    "id": "m132",
+    "type": "minor",
+    "name_jp": "石車",
+    "rating_a": 58,
+    "rating_b": 58,
+    "image_url": "agricola_images/kminorstonecart.jpg",
+    "combos": ""
+  },
+  {
+    "id": "m133",
+    "type": "minor",
+    "name_jp": "石の交換",
+    "rating_a": 48,
+    "rating_b": 48,
+    "image_url": "agricola_images/kminorstoneexchange.jpg",
     "combos": [
       {
         "target_id": "o015",
@@ -1051,98 +1433,11 @@
     ]
   },
   {
-    "id": "m123",
-    "type": "minor",
-    "name_jp": "搾乳台",
-    "rating": 76,
-    "image_url": "agricola_images/kminormilkingstool.jpg",
-    "combos": ""
-  },
-  {
-    "id": "m124",
-    "type": "minor",
-    "name_jp": "牛車",
-    "rating": 79,
-    "image_url": "agricola_images/kminoroxteam.jpg",
-    "combos": ""
-  },
-  {
-    "id": "m125",
-    "type": "minor",
-    "name_jp": "ウマ",
-    "rating": 53,
-    "image_url": "agricola_images/kminorhorse.jpg",
-    "combos": ""
-  },
-  {
-    "id": "m126",
-    "type": "minor",
-    "name_jp": "柴屋根",
-    "rating": 54,
-    "image_url": "agricola_images/kminorbrushwoodroof.jpg",
-    "combos": ""
-  },
-  {
-    "id": "m127",
-    "type": "minor",
-    "name_jp": "カブ畑",
-    "rating": 92,
-    "image_url": "agricola_images/kminorturnipfield.jpg",
-    "combos": ""
-  },
-  {
-    "id": "m128",
-    "type": "minor",
-    "name_jp": "葦の家",
-    "rating": 89,
-    "image_url": "agricola_images/kminorreedhut.jpg",
-    "combos": ""
-  },
-  {
-    "id": "m129",
-    "type": "minor",
-    "name_jp": "寝室",
-    "rating": 73,
-    "image_url": "agricola_images/kminorsleepingcorner.jpg",
-    "combos": ""
-  },
-  {
-    "id": "m130",
-    "type": "minor",
-    "name_jp": "白鳥の湖",
-    "rating": 69,
-    "image_url": "agricola_images/kminorswanlake.jpg",
-    "combos": ""
-  },
-  {
-    "id": "m131",
-    "type": "minor",
-    "name_jp": "猪の飼育",
-    "rating": 37,
-    "image_url": "agricola_images/kminorboarbreeding.jpg",
-    "combos": ""
-  },
-  {
-    "id": "m132",
-    "type": "minor",
-    "name_jp": "石車",
-    "rating": 58,
-    "image_url": "agricola_images/kminorstonecart.jpg",
-    "combos": ""
-  },
-  {
-    "id": "m133",
-    "type": "minor",
-    "name_jp": "石の交換",
-    "rating": 48,
-    "image_url": "agricola_images/kminorstoneexchange.jpg",
-    "combos": ""
-  },
-  {
     "id": "m134",
     "type": "minor",
     "name_jp": "ヴィラ",
-    "rating": 74,
+    "rating_a": 74,
+    "rating_b": 83,
     "image_url": "agricola_images/kminormansion.jpg",
     "combos": [
       {
@@ -1155,15 +1450,26 @@
     "id": "m135",
     "type": "minor",
     "name_jp": "森の牧場",
-    "rating": 61,
+    "rating_a": 61,
+    "rating_b": 81,
     "image_url": "agricola_images/kminorforestpasture.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o098",
+        "reason": "1点"
+      },
+      {
+        "target_id": "o134",
+        "reason": "2種繁殖"
+      }
+    ]
   },
   {
     "id": "m136",
     "type": "minor",
     "name_jp": "織機",
-    "rating": 69,
+    "rating_a": 69,
+    "rating_b": 69,
     "image_url": "agricola_images/kminorloom.jpg",
     "combos": ""
   },
@@ -1171,7 +1477,8 @@
     "id": "m137",
     "type": "minor",
     "name_jp": "レンガ置場",
-    "rating": 76,
+    "rating_a": 76,
+    "rating_b": 80,
     "image_url": "agricola_images/iminorclaydeposit.jpg",
     "combos": ""
   },
@@ -1179,7 +1486,8 @@
     "id": "m138",
     "type": "minor",
     "name_jp": "強力餌",
-    "rating": 36,
+    "rating_a": 36,
+    "rating_b": 36,
     "image_url": "agricola_images/eminorfeedpellets.jpg",
     "combos": [
       {
@@ -1192,7 +1500,8 @@
     "id": "m139",
     "type": "minor",
     "name_jp": "毛皮",
-    "rating": 82,
+    "rating_a": 82,
+    "rating_b": 82,
     "image_url": "agricola_images/kminorpelts.jpg",
     "combos": ""
   }
