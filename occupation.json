@@ -24,7 +24,12 @@
     "rating_a": 54,
     "rating_b": 54,
     "image_url": "agricola_images/occk1adoptiveparents.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o028",
+        "reason": "すぐ動く"
+      }
+    ]
   },
   {
     "id": "o004",
@@ -33,7 +38,12 @@
     "rating_a": 85,
     "rating_b": 91,
     "image_url": "agricola_images/occk4animalbreeder.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o052",
+        "reason": "厩柵コンボ"
+      }
+    ]
   },
   {
     "id": "o005",
@@ -42,7 +52,12 @@
     "rating_a": 71,
     "rating_b": 71,
     "image_url": "agricola_images/occi3animaldealer.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m078",
+        "reason": "牛2匹"
+      }
+    ]
   },
   {
     "id": "o006",
@@ -69,7 +84,12 @@
     "rating_a": 32,
     "rating_b": 32,
     "image_url": "agricola_images/occk1animaltamer.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o134",
+        "reason": "2種繁殖"
+      }
+    ]
   },
   {
     "id": "o009",
@@ -96,7 +116,7 @@
     "rating_a": 32,
     "rating_b": 32,
     "image_url": "agricola_images/occe4basketmaker.jpg",
-    "combos": ""
+    "combos": "[{\"target_id\":\"o066”, \"reason\":\"\"}]"
   },
   {
     "id": "o012",
@@ -105,7 +125,20 @@
     "rating_a": 80,
     "rating_b": 60,
     "image_url": "agricola_images/occe3berrypicker.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o077",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "o089",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "o165",
+        "reason": "対象マス増える"
+      }
+    ]
   },
   {
     "id": "o013",
@@ -238,12 +271,7 @@
     "rating_a": 30,
     "rating_b": 30,
     "image_url": "agricola_images/occi3cabinetmaker.jpg",
-    "combos": [
-      {
-        "target_id": "m035",
-        "reason": "石葦木、個人の森、石葦木、木3、木3、家具製作所、増築、家具職人"
-      }
-    ]
+    "combos": "[{\"target_id\":\"m035\", \"reason\":\"石葦木、個人の森、石葦木、木3、木3、家具製作所、増築、家具職人\"},{\"target_id\":\"o066”, \"reason\":\"\"}]"
   },
   {
     "id": "o021",
@@ -279,7 +307,7 @@
     "rating_a": 89,
     "rating_b": 89,
     "image_url": "agricola_images/occi1chamberlain.jpg",
-    "combos": "[{\"target_id\":\"o042\", \"reason\":\"畑種踏む\"},{\"target_id\":\"m052”, \"reason\":\"畑種踏む\"}]"
+    "combos": "[{\"target_id\":\"o042\", \"reason\":\"畑種踏む\"},{\"target_id\":\"m052”, \"reason\":\"畑種踏む\"},{\"target_id\":\"m051”, \"reason\":\"畑種踏む\"},{\"target_id\":\"m058”, \"reason\":\"畑種踏む\"}]"
   },
   {
     "id": "o025",
@@ -315,7 +343,12 @@
     "rating_a": 50,
     "rating_b": 50,
     "image_url": "agricola_images/occi1churchwarden.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o003",
+        "reason": "すぐ動く"
+      }
+    ]
   },
   {
     "id": "o029",
@@ -401,6 +434,10 @@
       {
         "target_id": "o119",
         "reason": "レンガ取れる"
+      },
+      {
+        "target_id": "o089",
+        "reason": "対象マス増える"
       }
     ]
   },
@@ -474,7 +511,12 @@
     "rating_a": 48,
     "rating_b": 38,
     "image_url": "agricola_images/occi3cowherd.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m078",
+        "reason": "牛2匹"
+      }
+    ]
   },
   {
     "id": "o044",
@@ -551,7 +593,12 @@
     "rating_a": 46,
     "rating_b": 46,
     "image_url": "agricola_images/occi1fencedeliveryman.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o069",
+        "reason": "柵終わる"
+      }
+    ]
   },
   {
     "id": "o052",
@@ -560,7 +607,16 @@
     "rating_a": 67,
     "rating_b": 67,
     "image_url": "agricola_images/occk1fenceoverseer.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o004",
+        "reason": "厩柵コンボ"
+      },
+      {
+        "target_id": "o134",
+        "reason": "厩コンボ"
+      }
+    ]
   },
   {
     "id": "o053",
@@ -569,7 +625,12 @@
     "rating_a": 69,
     "rating_b": 84,
     "image_url": "agricola_images/occi4fencer.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o134",
+        "reason": "2種繁殖"
+      }
+    ]
   },
   {
     "id": "o054",
@@ -578,7 +639,7 @@
     "rating_a": 85,
     "rating_b": 85,
     "image_url": "agricola_images/occe4fieldwarden.jpg",
-    "combos": ""
+    "combos": "[{\"target_id\":\"o057\", \"reason\":\"畑種1撒き強い\"},{\"target_id\":\"o075”, \"reason\":\"野菜踏める\"},{\"target_id\":\"o084”, \"reason\":\"野菜踏める\"}]"
   },
   {
     "id": "o055",
@@ -607,7 +668,15 @@
     "image_url": "agricola_images/occi1fieldsman.jpg",
     "combos": [
       {
+        "target_id": "o071",
+        "reason": "1撒き強い"
+      },
+      {
         "target_id": "o024",
+        "reason": "畑種踏む"
+      },
+      {
+        "target_id": "o054",
         "reason": "畑種踏む"
       },
       {
@@ -623,7 +692,12 @@
     "rating_a": 39,
     "rating_b": 39,
     "image_url": "agricola_images/occe3fisherman.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o059",
+        "reason": "実質2倍"
+      }
+    ]
   },
   {
     "id": "o059",
@@ -632,7 +706,24 @@
     "rating_a": 32,
     "rating_b": 50,
     "image_url": "agricola_images/occk4foreman.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o058",
+        "reason": "実質2倍"
+      },
+      {
+        "target_id": "o074",
+        "reason": "実質2倍"
+      },
+      {
+        "target_id": "o147",
+        "reason": "確定で取れる"
+      },
+      {
+        "target_id": "o024",
+        "reason": "確定で取れる"
+      }
+    ]
   },
   {
     "id": "o060",
@@ -649,6 +740,10 @@
       {
         "target_id": "m068",
         "reason": "木4職業、雑木林、林務官、木3、飯3、？、葦2、種"
+      },
+      {
+        "target_id": "m082",
+        "reason": "回収早い"
       }
     ]
   },
@@ -695,7 +790,24 @@
     "rating_a": 28,
     "rating_b": 28,
     "image_url": "agricola_images/occi4groom.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m045",
+        "reason": "石の家先行"
+      },
+      {
+        "target_id": "o052",
+        "reason": "厩コンボ"
+      },
+      {
+        "target_id": "o134",
+        "reason": "厩コンボ"
+      },
+      {
+        "target_id": "o077",
+        "reason": "厩4"
+      }
+    ]
   },
   {
     "id": "o066",
@@ -704,7 +816,7 @@
     "rating_a": 57,
     "rating_b": 60,
     "image_url": "agricola_images/occe3guildmaster.jpg",
-    "combos": ""
+    "combos": "[{\"target_id\":\"o020”, \"reason\":\"\"},{\"target_id\":\"m112”, \"reason\":\"\"},{\"target_id\":\"o011”, \"reason\":\"\"},{\"target_id\":\"o110\", \"reason\":\"\"},{\"target_id\":\"o070\", \"reason\":\"o082\"},{\"target_id\":\"o070\", \"reason\":\"o082\"}]"
   },
   {
     "id": "o067",
@@ -731,7 +843,12 @@
     "rating_a": 66,
     "rating_b": 66,
     "image_url": "agricola_images/occe1hedgekeeper.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o051",
+        "reason": "柵終わる"
+      }
+    ]
   },
   {
     "id": "o070",
@@ -749,7 +866,12 @@
     "rating_a": 49,
     "rating_b": 49,
     "image_url": "agricola_images/occe4hobbyfarmer.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o057",
+        "reason": "1撒き強い"
+      }
+    ]
   },
   {
     "id": "o072",
@@ -776,7 +898,12 @@
     "rating_a": 28,
     "rating_b": 28,
     "image_url": "agricola_images/occi4juggler.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o059",
+        "reason": "実質2倍"
+      }
+    ]
   },
   {
     "id": "o075",
@@ -785,7 +912,7 @@
     "rating_a": 53,
     "rating_b": 53,
     "image_url": "agricola_images/occe3landagent.jpg",
-    "combos": "[{\"target_id\":\"m052”, \"reason\":\"畑種踏む\"}]"
+    "combos": "[{\"target_id\":\"o054”, \"reason\":\"野菜踏める\"}]"
   },
   {
     "id": "o076",
@@ -803,7 +930,7 @@
     "rating_a": 71,
     "rating_b": 71,
     "image_url": "agricola_images/occe1lordofthemanor.jpg",
-    "combos": "[{\"target_id\":\"o106”, \"reason\":\"猪4点\"},{\"target_id\":\"o168\", \"reason\":\"他に注力\"},{\"target_id\":\"o070\", \"reason\":\"他に注力\"}]"
+    "combos": "[{\"target_id\":\"o106”, \"reason\":\"猪4点\"},{\"target_id\":\"o168\", \"reason\":\"他に注力\"},{\"target_id\":\"o070\", \"reason\":\"他に注力\"},{\"target_id\":\"o065\", \"reason\":\"厩4\"}]"
   },
   {
     "id": "o078",
@@ -839,7 +966,12 @@
     "rating_a": 36,
     "rating_b": 36,
     "image_url": "agricola_images/occi1manservant.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m045",
+        "reason": "石の家先行"
+      }
+    ]
   },
   {
     "id": "o082",
@@ -848,7 +980,7 @@
     "rating_a": 51,
     "rating_b": 51,
     "image_url": "agricola_images/occk3manufacturer.jpg",
-    "combos": ""
+    "combos": "[{\"target_id\":\"o066”, \"reason\":\"\"}]"
   },
   {
     "id": "o083",
@@ -875,7 +1007,7 @@
     "rating_a": 75,
     "rating_b": 90,
     "image_url": "agricola_images/occe1mason.jpg",
-    "combos": ""
+    "combos": "[{\"target_id\":\"m045\", \"reason\":\"石の家先行\"},{\"target_id\":\"o088”, \"reason\":\"3点\"}]"
   },
   {
     "id": "o086",
@@ -902,7 +1034,7 @@
     "rating_a": 53,
     "rating_b": 75,
     "image_url": "agricola_images/occe1masterbuilder.jpg",
-    "combos": ""
+    "combos": "[{\"target_id\":\"o085”, \"reason\":\"3点\"}]"
   },
   {
     "id": "o089",
@@ -911,7 +1043,32 @@
     "rating_a": 48,
     "rating_b": 56,
     "image_url": "agricola_images/occe4masterforester.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o166",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "097",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "o096",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "o036",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "m024",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "m069",
+        "reason": "対象マス増える"
+      }
+    ]
   },
   {
     "id": "o090",
@@ -920,7 +1077,12 @@
     "rating_a": 40,
     "rating_b": 40,
     "image_url": "agricola_images/occe4mastershepherd.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m136",
+        "reason": "羊"
+      }
+    ]
   },
   {
     "id": "o091",
@@ -956,7 +1118,12 @@
     "rating_a": 42,
     "rating_b": 27,
     "image_url": "agricola_images/occi4midwife.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m128",
+        "reason": "葦の家は家族ではない"
+      }
+    ]
   },
   {
     "id": "o095",
@@ -965,7 +1132,12 @@
     "rating_a": 75,
     "rating_b": 75,
     "image_url": "agricola_images/occi4milkinghand.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m086",
+        "reason": "木４、葦の交換、木材４、牛、木材３、飯３、増築厩２、牛"
+      }
+    ]
   },
   {
     "id": "o096",
@@ -974,7 +1146,12 @@
     "rating_a": 54,
     "rating_b": 32,
     "image_url": "agricola_images/occe1mushroomcollector.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o089",
+        "reason": "対象マス増える"
+      }
+    ]
   },
   {
     "id": "o097",
@@ -983,7 +1160,12 @@
     "rating_a": 34,
     "rating_b": 18,
     "image_url": "agricola_images/occi1netfisherman.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o089",
+        "reason": "対象マス増える"
+      }
+    ]
   },
   {
     "id": "o098",
@@ -1012,8 +1194,8 @@
     "image_url": "agricola_images/occi4outrider.jpg",
     "combos": [
       {
-        "target_id": "o024",
-        "reason": "畑種踏む"
+        "target_id": "o147",
+        "reason": "確定で取れる"
       }
     ]
   },
@@ -1083,7 +1265,16 @@
     "rating_a": 20,
     "rating_b": 20,
     "image_url": "agricola_images/occi4pigcatcher.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m077",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "o089",
+        "reason": "対象マス増える"
+      }
+    ]
   },
   {
     "id": "o106",
@@ -1101,7 +1292,12 @@
     "rating_a": 68,
     "rating_b": 68,
     "image_url": "agricola_images/occe1plowdriver.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m045",
+        "reason": "石の家先行"
+      }
+    ]
   },
   {
     "id": "o108",
@@ -1128,7 +1324,7 @@
     "rating_a": 31,
     "rating_b": 31,
     "image_url": "agricola_images/occe3potter.jpg",
-    "combos": ""
+    "combos": "[{\"target_id\":\"o066”, \"reason\":\"\"}]"
   },
   {
     "id": "o111",
@@ -1244,7 +1440,12 @@
     "rating_a": 74,
     "rating_b": 38,
     "image_url": "agricola_images/occk1scholar.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m045",
+        "reason": "石の家先行"
+      }
+    ]
   },
   {
     "id": "o122",
@@ -1294,7 +1495,7 @@
     "rating_a": 27,
     "rating_b": 27,
     "image_url": "agricola_images/occi4sheepwhisperer.jpg",
-    "combos": "[{\"target_id\":\"o077”, \"reason\":\"羊4点\"}]"
+    "combos": "[{\"target_id\":\"o077”, \"reason\":\"羊4点\"},{\"target_id\":\"m136\", \"reason\":\"羊\"}]"
   },
   {
     "id": "o127",
@@ -1303,7 +1504,12 @@
     "rating_a": 15,
     "rating_b": 6,
     "image_url": "agricola_images/occe4shepherd.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m136",
+        "reason": "羊"
+      }
+    ]
   },
   {
     "id": "o128",
@@ -1312,7 +1518,16 @@
     "rating_a": 24,
     "rating_b": 24,
     "image_url": "agricola_images/occk4shepherdboy.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m045",
+        "reason": "石の家先行"
+      },
+      {
+        "target_id": "m136",
+        "reason": "羊"
+      }
+    ]
   },
   {
     "id": "o129",
@@ -1376,32 +1591,7 @@
     "rating_a": 50,
     "rating_b": 75,
     "image_url": "agricola_images/occe4stockman.jpg",
-    "combos": [
-      {
-        "target_id": "m019",
-        "reason": "2種繁殖"
-      },
-      {
-        "target_id": "m030",
-        "reason": "2種繁殖"
-      },
-      {
-        "target_id": "m048",
-        "reason": "2種繁殖"
-      },
-      {
-        "target_id": "m092",
-        "reason": "2種繁殖"
-      },
-      {
-        "target_id": "m135",
-        "reason": "2種繁殖"
-      },
-      {
-        "target_id": "o133",
-        "reason": "2種繁殖"
-      }
-    ]
+    "combos": "[{\"target_id\":\"m019\", \"reason\":\"2種繁殖\"},{\"target_id\":\"m030\", \"reason\":\"2種繁殖\"},{\"target_id\":\"m048\", \"reason\":\"2種繁殖\"},{\"target_id\":\"m092\", \"reason\":\"2種繁殖\"},{\"target_id\":\"m135\", \"reason\":\"2種繁殖\"},{\"target_id\":\"o133\", \"reason\":\"2種繁殖\"},{\"target_id\":\"o140\", \"reason\":\"木8→13へ\"},[{\"target_id\":\"o052\", \"reason\":\"厩柵コンボ\"},{\"target_id\":\"o065\", \"reason\":\"厩コンボ\"}]"
   },
   {
     "id": "o135",
@@ -1419,7 +1609,12 @@
     "rating_a": 63,
     "rating_b": 63,
     "image_url": "agricola_images/occi4stonebuyer.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m056",
+        "reason": "わかりやすく強い"
+      }
+    ]
   },
   {
     "id": "o137",
@@ -1446,7 +1641,12 @@
     "rating_a": 65,
     "rating_b": 65,
     "image_url": "agricola_images/occe3stonecutter.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m097",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "o140",
@@ -1455,7 +1655,12 @@
     "rating_a": 47,
     "rating_b": 47,
     "image_url": "agricola_images/occk4storehouseclerk.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o134",
+        "reason": "木8→13へ"
+      }
+    ]
   },
   {
     "id": "o141",
@@ -1523,7 +1728,16 @@
     "rating_a": 89,
     "rating_b": 99,
     "image_url": "agricola_images/occi4taster.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o099",
+        "reason": "確定で取れる"
+      },
+      {
+        "target_id": "o059",
+        "reason": "確定で取れる"
+      }
+    ]
   },
   {
     "id": "o148",
@@ -1540,6 +1754,10 @@
       {
         "target_id": "o168",
         "reason": "返さなくていい"
+      },
+      {
+        "target_id": "m092",
+        "reason": "飼える"
       }
     ]
   },
@@ -1568,7 +1786,16 @@
     "rating_a": 55,
     "rating_b": 55,
     "image_url": "agricola_images/occk1travelingsalesman.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m005",
+        "reason": "小進歩になる"
+      },
+      {
+        "target_id": "m023",
+        "reason": "小進歩になる"
+      }
+    ]
   },
   {
     "id": "o152",
@@ -1645,7 +1872,12 @@
     "rating_a": 60,
     "rating_b": 60,
     "image_url": "agricola_images/occi1wellbuilder.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m056",
+        "reason": "井戸コンボ"
+      }
+    ]
   },
   {
     "id": "o160",
@@ -1690,7 +1922,12 @@
     "rating_a": 59,
     "rating_b": 78,
     "image_url": "agricola_images/occk1wooddeliveryman.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o024",
+        "reason": "改築柵確定"
+      }
+    ]
   },
   {
     "id": "o165",
@@ -1702,6 +1939,10 @@
     "combos": [
       {
         "target_id": "m077",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "m069",
         "reason": "対象マス増える"
       }
     ]
@@ -1716,6 +1957,14 @@
     "combos": [
       {
         "target_id": "m077",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "o089",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "o165",
         "reason": "対象マス増える"
       }
     ]
@@ -1738,7 +1987,7 @@
     "image_url": "agricola_images/occi3hidefarmer.jpg",
     "combos": [
       {
-        "target_id": "o168",
+        "target_id": "o148",
         "reason": "返さなくていい"
       }
     ]

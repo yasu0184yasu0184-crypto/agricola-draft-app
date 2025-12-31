@@ -15,7 +15,12 @@
     "rating_a": 58,
     "rating_b": 58,
     "image_url": "agricola_images/eminorfishingrod.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o165",
+        "reason": "対象マス増える"
+      }
+    ]
   },
   {
     "id": "m003",
@@ -24,7 +29,12 @@
     "rating_a": 81,
     "rating_b": 70,
     "image_url": "agricola_images/eminoraxe.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "m004",
@@ -42,7 +52,12 @@
     "rating_a": 59,
     "rating_b": 27,
     "image_url": "agricola_images/eminorbakingtray.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o151",
+        "reason": "小進歩になる"
+      }
+    ]
   },
   {
     "id": "m006",
@@ -60,7 +75,12 @@
     "rating_a": 36,
     "rating_b": 36,
     "image_url": "agricola_images/eminorwindmill.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "m008",
@@ -114,6 +134,10 @@
       {
         "target_id": "o103",
         "reason": "石石葦葦木木＋石石石"
+      },
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
       }
     ]
   },
@@ -124,7 +148,16 @@
     "rating_a": 63,
     "rating_b": 63,
     "image_url": "agricola_images/eminorraft.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o134",
+        "reason": "1手目を木に全ツするので葦を２手目に回せるので強い"
+      },
+      {
+        "target_id": "o165",
+        "reason": "対象マス増える"
+      }
+    ]
   },
   {
     "id": "m013",
@@ -169,7 +202,12 @@
     "rating_a": 38,
     "rating_b": 38,
     "image_url": "agricola_images/eminorwoodfiredoven.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "m018",
@@ -201,7 +239,16 @@
     "rating_a": 75,
     "rating_b": 88,
     "image_url": "agricola_images/eminorcanoe.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o134",
+        "reason": "1手目を木に全ツするので葦を２手目に回せるので強い"
+      },
+      {
+        "target_id": "o165",
+        "reason": "対象マス増える"
+      }
+    ]
   },
   {
     "id": "m021",
@@ -232,6 +279,10 @@
       {
         "target_id": "o015",
         "reason": "レンガ軽減"
+      },
+      {
+        "target_id": "o151",
+        "reason": "小進歩になる"
       }
     ]
   },
@@ -244,8 +295,12 @@
     "image_url": "agricola_images/eminorbasket.jpg",
     "combos": [
       {
-        "target_id": "m077",
+        "target_id": "m069",
         "reason": "木材減らない"
+      },
+      {
+        "target_id": "o089",
+        "reason": "対象マス増える"
       }
     ]
   },
@@ -256,7 +311,12 @@
     "rating_a": 73,
     "rating_b": 73,
     "image_url": "agricola_images/eminorcornscoop.jpg",
-    "combos": "[{\"target_id\":\"o060\", \"reason\":\"木4、spスコップ\n林務官、畑\n飯3、麦麦\n畑、種まき\"}]"
+    "combos": [
+      {
+        "target_id": "o060",
+        "reason": "木4、spスコップ、林務官、畑、飯3、麦麦、畑、種まき"
+      }
+    ]
   },
   {
     "id": "m026",
@@ -338,7 +398,12 @@
     "rating_a": 22,
     "rating_b": 22,
     "image_url": "agricola_images/iminorhandmill.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "m032",
@@ -347,7 +412,12 @@
     "rating_a": 46,
     "rating_b": 46,
     "image_url": "agricola_images/eminorhelpfulneighbors.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o015",
+        "reason": "レンガ軽減"
+      }
+    ]
   },
   {
     "id": "m033",
@@ -483,6 +553,26 @@
       {
         "target_id": "o131",
         "reason": "石の家先行"
+      },
+      {
+        "target_id": "o107",
+        "reason": "石の家先行"
+      },
+      {
+        "target_id": "o121",
+        "reason": "石の家先行"
+      },
+      {
+        "target_id": "o081",
+        "reason": "石の家先行"
+      },
+      {
+        "target_id": "o128",
+        "reason": "石の家先行"
+      },
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
       }
     ]
   },
@@ -502,7 +592,12 @@
     "rating_a": 59,
     "rating_b": 59,
     "image_url": "agricola_images/eminordovecote.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "m048",
@@ -594,7 +689,12 @@
     "rating_a": 45,
     "rating_b": 45,
     "image_url": "agricola_images/iminorbakerskitchen.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "m056",
@@ -603,7 +703,20 @@
     "rating_a": 60,
     "rating_b": 60,
     "image_url": "agricola_images/iminorvillagewell.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o159",
+        "reason": "井戸コンボ"
+      },
+      {
+        "target_id": "o136",
+        "reason": "わかりやすく強い"
+      },
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "m057",
@@ -703,7 +816,12 @@
     "rating_a": 25,
     "rating_b": 25,
     "image_url": "agricola_images/eminormillstone.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "m066",
@@ -721,7 +839,12 @@
     "rating_a": 45,
     "rating_b": 45,
     "image_url": "agricola_images/iminorshepherdscrook.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m136",
+        "reason": "羊"
+      }
+    ]
   },
   {
     "id": "m068",
@@ -734,6 +857,10 @@
       {
         "target_id": "o060",
         "reason": "木4職業、雑木林、林務官、木3、飯3、？、葦2、種"
+      },
+      {
+        "target_id": "m082",
+        "reason": "回収早い"
       }
     ]
   },
@@ -748,6 +875,14 @@
       {
         "target_id": "m024",
         "reason": "木材減らない"
+      },
+      {
+        "target_id": "o089",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "o165",
+        "reason": "対象マス増える"
       }
     ]
   },
@@ -840,7 +975,16 @@
     "rating_a": 64,
     "rating_b": 64,
     "image_url": "agricola_images/iminorlasso.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o005",
+        "reason": "牛2匹"
+      },
+      {
+        "target_id": "o043",
+        "reason": "牛2匹"
+      }
+    ]
   },
   {
     "id": "m079",
@@ -909,7 +1053,12 @@
     "rating_a": 36,
     "rating_b": 36,
     "image_url": "agricola_images/iminorpavedroad.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "m085",
@@ -931,6 +1080,18 @@
       {
         "target_id": "o015",
         "reason": "レンガ軽減"
+      },
+      {
+        "target_id": "o095",
+        "reason": "木４、葦の交換、木材４、牛、木材３、飯３、増築厩２、牛"
+      },
+      {
+        "target_id": "m123",
+        "reason": "木４、葦の交換、木材４、牛、木材３、飯３、増築厩２、牛"
+      },
+      {
+        "target_id": "m124",
+        "reason": "木４、葦の交換、木材４、牛、木材３、飯３、増築厩２、牛"
       }
     ]
   },
@@ -941,7 +1102,12 @@
     "rating_a": 50,
     "rating_b": 50,
     "image_url": "agricola_images/iminorslaughterhouse.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o015",
+        "reason": "レンガ軽減"
+      }
+    ]
   },
   {
     "id": "m088",
@@ -973,7 +1139,12 @@
     "rating_a": 90,
     "rating_b": 77,
     "image_url": "agricola_images/iminortavern.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "m091",
@@ -1031,10 +1202,6 @@
       {
         "target_id": "o084",
         "reason": "麦バック"
-      },
-      {
-        "target_id": "o083",
-        "reason": "野菜2作れる"
       }
     ]
   },
@@ -1048,7 +1215,7 @@
     "combos": [
       {
         "target_id": "o103",
-        "reason": "無料出来高、sp平地、石石葦木、麦麦、nレンガ3か6、麦麦、nレンガ暖炉パン焼き、麦2撒きパン焼き"
+        "reason": "無料出来高、sp平地、石石葦木、麦麦、レンガ3か6、麦麦、レンガ暖炉パン焼き、麦2撒きパン焼き"
       },
       {
         "target_id": "o141",
@@ -1063,7 +1230,12 @@
     "rating_a": 44,
     "rating_b": 44,
     "image_url": "agricola_images/kminorbakehouse.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "m097",
@@ -1104,7 +1276,12 @@
     "rating_a": 29,
     "rating_b": 7,
     "image_url": "agricola_images/kminorbrewery.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "m101",
@@ -1227,7 +1404,7 @@
     "rating_a": 43,
     "rating_b": 43,
     "image_url": "agricola_images/kminorsawmill.jpg",
-    "combos": ""
+    "combos": "[{\"target_id\":\"o066”, \"reason\":\"\"},{\"target_id\":\"o082”, \"reason\":\"\"}]"
   },
   {
     "id": "m113",
@@ -1335,7 +1512,12 @@
     "rating_a": 76,
     "rating_b": 76,
     "image_url": "agricola_images/kminormilkingstool.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m086",
+        "reason": "木４、葦の交換、木材４、牛、木材３、飯３、増築厩２、牛"
+      }
+    ]
   },
   {
     "id": "m124",
@@ -1344,7 +1526,12 @@
     "rating_a": 79,
     "rating_b": 79,
     "image_url": "agricola_images/kminoroxteam.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m086",
+        "reason": "木４、葦の交換、木材４、牛、木材３、飯３、増築厩２、牛"
+      }
+    ]
   },
   {
     "id": "m125",
@@ -1380,7 +1567,12 @@
     "rating_a": 89,
     "rating_b": 85,
     "image_url": "agricola_images/kminorreedhut.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o094",
+        "reason": "葦の家は家族ではない"
+      }
+    ]
   },
   {
     "id": "m129",
@@ -1471,7 +1663,28 @@
     "rating_a": 69,
     "rating_b": 69,
     "image_url": "agricola_images/kminorloom.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m067",
+        "reason": "羊"
+      },
+      {
+        "target_id": "m127",
+        "reason": "羊"
+      },
+      {
+        "target_id": "m128",
+        "reason": "羊"
+      },
+      {
+        "target_id": "m126",
+        "reason": "羊"
+      },
+      {
+        "target_id": "m090",
+        "reason": "羊"
+      }
+    ]
   },
   {
     "id": "m137",
