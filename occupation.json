@@ -1160,12 +1160,7 @@
     "rating_a": 34,
     "rating_b": 18,
     "image_url": "agricola_images/occi1netfisherman.jpg",
-    "combos": [
-      {
-        "target_id": "o089",
-        "reason": "対象マス増える"
-      }
-    ]
+    "combos": ""
   },
   {
     "id": "o098",
@@ -1938,11 +1933,23 @@
     "image_url": "agricola_images/occk1wooddistributor.jpg",
     "combos": [
       {
-        "target_id": "m077",
+        "target_id": "m069",
         "reason": "対象マス増える"
       },
       {
-        "target_id": "m069",
+        "target_id": "m002",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "m012",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "m020",
+        "reason": "対象マス増える"
+      },
+      {
+        "target_id": "m085",
         "reason": "対象マス増える"
       }
     ]
@@ -1955,10 +1962,6 @@
     "rating_b": 76,
     "image_url": "agricola_images/occe1woodcutter.jpg",
     "combos": [
-      {
-        "target_id": "m077",
-        "reason": "対象マス増える"
-      },
       {
         "target_id": "o089",
         "reason": "対象マス増える"
