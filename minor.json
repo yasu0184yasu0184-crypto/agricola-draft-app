@@ -1425,7 +1425,16 @@
     "rating_a": 43,
     "rating_b": 43,
     "image_url": "agricola_images/kminorsawmill.jpg",
-    "combos": "[{\"target_id\":\"o066”, \"reason\":\"\"},{\"target_id\":\"o082”, \"reason\":\"\"}]"
+    "combos": [
+      {
+        "target_id": "o066",
+        "reason": ""
+      },
+      {
+        "target_id": "o082",
+        "reason": ""
+      }
+    ]
   },
   {
     "id": "m113",
