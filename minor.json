@@ -343,6 +343,10 @@
       {
         "target_id": "o015",
         "reason": "レンガ軽減"
+      },
+      {
+        "target_id": "o165",
+        "reason": "増築剤調整"
       }
     ]
   },
@@ -550,6 +554,10 @@
     "rating_b": 59,
     "image_url": "agricola_images/eminorstonehouseextension.jpg",
     "combos": [
+      {
+        "target_id": "o061",
+        "reason": "軽減"
+      },
       {
         "target_id": "o131",
         "reason": "石の家先行"
@@ -798,7 +806,12 @@
     "rating_a": 41,
     "rating_b": 40,
     "image_url": "agricola_images/iminorguest.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o028",
+        "reason": "3点"
+      }
+    ]
   },
   {
     "id": "m064",
@@ -1047,6 +1060,10 @@
       {
         "target_id": "o015",
         "reason": "レンガ軽減"
+      },
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
       }
     ]
   },
@@ -1506,6 +1523,10 @@
       {
         "target_id": "m040",
         "reason": "石葦、へら、石葦、レン３、飯３、レン３、SPレン家、？"
+      },
+      {
+        "target_id": "o061",
+        "reason": "軽減"
       }
     ]
   },
@@ -1639,6 +1660,10 @@
       {
         "target_id": "o015",
         "reason": "レンガ軽減"
+      },
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
       }
     ]
   },
@@ -1673,19 +1698,19 @@
         "reason": "羊"
       },
       {
-        "target_id": "m127",
+        "target_id": "o127",
         "reason": "羊"
       },
       {
-        "target_id": "m128",
+        "target_id": "o128",
         "reason": "羊"
       },
       {
-        "target_id": "m126",
+        "target_id": "o126",
         "reason": "羊"
       },
       {
-        "target_id": "m090",
+        "target_id": "o090",
         "reason": "羊"
       }
     ]
