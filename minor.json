@@ -66,7 +66,12 @@
     "rating_a": 47,
     "rating_b": 47,
     "image_url": "agricola_images/eminorbuildingmaterial.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o119",
+        "reason": "レンガ取れる"
+      }
+    ]
   },
   {
     "id": "m007",
@@ -229,6 +234,10 @@
       {
         "target_id": "o134",
         "reason": "2種繁殖"
+      },
+      {
+        "target_id": "o098",
+        "reason": "2マスが4頭"
       }
     ]
   },
@@ -420,6 +429,10 @@
       {
         "target_id": "o015",
         "reason": "レンガ軽減"
+      },
+      {
+        "target_id": "o119",
+        "reason": "レンガ取れる"
       }
     ]
   },
@@ -535,7 +548,12 @@
     "rating_a": 20,
     "rating_b": 9,
     "image_url": "agricola_images/eminorbutterchurn.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o052",
+        "reason": "石軽減"
+      }
+    ]
   },
   {
     "id": "m044",
@@ -564,6 +582,10 @@
       },
       {
         "target_id": "o107",
+        "reason": "石の家先行"
+      },
+      {
+        "target_id": "o065",
         "reason": "石の家先行"
       },
       {
@@ -1099,6 +1121,10 @@
     "image_url": "agricola_images/iminorreedexchange.jpg",
     "combos": [
       {
+        "target_id": "o119",
+        "reason": "レンガ取れる"
+      },
+      {
         "target_id": "o015",
         "reason": "レンガ軽減"
       },
@@ -1127,6 +1153,10 @@
       {
         "target_id": "o015",
         "reason": "レンガ軽減"
+      },
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
       }
     ]
   },
@@ -1141,6 +1171,10 @@
       {
         "target_id": "o154",
         "reason": "石葦木2回から"
+      },
+      {
+        "target_id": "o139",
+        "reason": "石軽減"
       }
     ]
   },
@@ -1527,7 +1561,7 @@
     "combos": [
       {
         "target_id": "o015",
-        "reason": "レンガ軽減"
+        "reason": "レンガ2軽減"
       },
       {
         "target_id": "m040",
@@ -1574,7 +1608,12 @@
     "rating_a": 53,
     "rating_b": 53,
     "image_url": "agricola_images/kminorhorse.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o168",
+        "reason": "1種類は3点になる"
+      }
+    ]
   },
   {
     "id": "m126",
@@ -1655,6 +1694,10 @@
       {
         "target_id": "o015",
         "reason": "レンガ軽減"
+      },
+      {
+        "target_id": "o119",
+        "reason": "レンガ取れる"
       }
     ]
   },

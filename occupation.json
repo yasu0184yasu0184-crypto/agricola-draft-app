@@ -329,6 +329,10 @@
     "image_url": "agricola_images/occi1chamberlain.jpg",
     "combos": [
       {
+        "target_id": "o059",
+        "reason": "開く前のコマンドに置ける"
+      },
+      {
         "target_id": "o042",
         "reason": "畑種踏む"
       },
@@ -421,7 +425,12 @@
     "rating_a": 45,
     "rating_b": 45,
     "image_url": "agricola_images/occe4clayfirer.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o119",
+        "reason": "レンガ取れる"
+      }
+    ]
   },
   {
     "id": "o032",
@@ -575,7 +584,12 @@
     "rating_a": 52,
     "rating_b": 52,
     "image_url": "agricola_images/occe1dockworker.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o119",
+        "reason": "レンガ取れる"
+      }
+    ]
   },
   {
     "id": "o046",
@@ -652,16 +666,7 @@
     "rating_a": 67,
     "rating_b": 67,
     "image_url": "agricola_images/occk1fenceoverseer.jpg",
-    "combos": [
-      {
-        "target_id": "o004",
-        "reason": "厩柵コンボ"
-      },
-      {
-        "target_id": "o134",
-        "reason": "厩コンボ"
-      }
-    ]
+    "combos": "[{\"target_id\":\"o004\", \"reason\":\"厩柵コンボ\"},{\"target_id\":\"o134\", \"reason\":\"厩コンボ\"},{\"target_id\":\"m042\", \"reason\":\"厩コンボ\"}]]"
   },
   {
     "id": "o053",
@@ -813,7 +818,7 @@
         "reason": "軽減"
       },
       {
-        "target_id": "m045",
+        "target_id": "m122",
         "reason": "軽減"
       },
       {
@@ -900,10 +905,6 @@
         "reason": "工業コンボ"
       },
       {
-        "target_id": "o070",
-        "reason": "工業コンボ"
-      },
-      {
         "target_id": "o082",
         "reason": "工業コンボ"
       }
@@ -947,7 +948,7 @@
     "name_jp": "小作人",
     "rating_a": 53,
     "rating_b": 53,
-    "image_url": "agricola_images/occe3yeomanfarmer.jpg",
+    "image_url": "agricola_images/occi3hidefarmer.jpg",
     "combos": ""
   },
   {
@@ -980,7 +981,12 @@
     "rating_a": 83,
     "rating_b": 83,
     "image_url": "agricola_images/occe4hutbuilder.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o160",
+        "reason": "井戸コンボ"
+      }
+    ]
   },
   {
     "id": "o074",
@@ -1343,6 +1349,10 @@
       {
         "target_id": "m135",
         "reason": "1点"
+      },
+      {
+        "target_id": "m019",
+        "reason": "2マスが4頭"
       }
     ]
   },
@@ -1441,6 +1451,10 @@
     "rating_b": 40,
     "image_url": "agricola_images/occk4pigwhisperer.jpg",
     "combos": [
+      {
+        "target_id": "o077",
+        "reason": "猪4点"
+      },
       {
         "target_id": "o016",
         "reason": "猪7"
@@ -2066,7 +2080,12 @@
     "rating_a": 76,
     "rating_b": 78,
     "image_url": "agricola_images/occk1wetnurse.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o073",
+        "reason": "井戸コンボ"
+      }
+    ]
   },
   {
     "id": "o161",
@@ -2126,6 +2145,10 @@
         "reason": "対象マス増える"
       },
       {
+        "target_id": "o012",
+        "reason": "対象マス増える"
+      },
+      {
         "target_id": "m002",
         "reason": "漁コンボ"
       },
@@ -2180,11 +2203,15 @@
     "name_jp": "自由農夫",
     "rating_a": 43,
     "rating_b": 43,
-    "image_url": "agricola_images/occi3hidefarmer.jpg",
+    "image_url": "agricola_images/occe3yeomanfarmer.jpg",
     "combos": [
       {
         "target_id": "o148",
         "reason": "返さなくていい"
+      },
+      {
+        "target_id": "m125",
+        "reason": "1種類は3点になる"
       }
     ]
   },
