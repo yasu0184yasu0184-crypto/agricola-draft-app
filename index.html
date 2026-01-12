@@ -20,6 +20,13 @@
         .round-input { font-size: 2em; width: 200px; } /* 入力枠サイズ2倍調整 */
         .action-group { display: flex; flex-wrap: nowrap; align-items: center; } /* 飯以降同じ行 */
         .round-header { margin-right: 10px; font-size: 1.5em; font-weight: bold; } /* R表記調整, スペース追加 */
+        .candidate-zone { border: 1px solid #999; padding: 10px; margin: 10px; background: #f0f0f0; font-size: 16px; }
+        .candidate-container { display: flex; justify-content: space-between; } /* 横並びコンテナ */
+        .candidate-column { width: 45%; } /* 列幅調整 */
+        .candidate-hand { display: flex; flex-direction: row; flex-wrap: nowrap; overflow-x: auto; min-width: 100%; white-space: nowrap; } /* 横並び強制、横長枠 */
+        .candidate-card { width: 75px; margin: 5px; display: inline-block; } /* 候補カードサイズ1/2に調整, inline-blockで横強制 */
+        .candidate-card img { max-width: 100%; height: auto; }
+        .candidate-title { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 5px; }
     </style>
 </head>
 <body>
@@ -36,8 +43,8 @@
     <div id="comboInfo"></div> <!-- コンボ理由表示 -->
     <div id="status"></div>
     <div id="pickedCards"></div>
+    <div id="candidateZone" style="display: none;"></div> <!-- 候補表示ゾーン -->
     <div id="roundActions" style="display: none;"></div> <!-- ドラフト後ラウンド選択UI -->
-
     <script>
         let occupations = [];
         let minors = [];
@@ -48,9 +55,11 @@
         let selectedOccIndex = -1;
         let selectedMinIndex = -1;
         let selectedRating = 'rating_a'; // デフォルト
-
+        let sixthCandidatesOcc = []; // 6枚目候補 (職業，下位3枚)
+        let sixthCandidatesMin = []; // 6枚目候補 (進歩，下位3枚)
+        let seventhCandidatesOcc = []; // 7枚目候補 (職業，下位2枚)
+        let seventhCandidatesMin = []; // 7枚目候補 (進歩，下位2枚)
         const commands = ["木4", "木3", "SP", "大進歩", "レン3", "レン2", "レン6", "葦2", "葦1", "石1葦1木1", "飯-0職業", "飯-1職業", "小劇場", "漁", "畑", "麦", "種まき", "日雇い"];
-
         function shuffle(array) {
             let shuffled = array.slice();
             for (let i = shuffled.length - 1; i > 0; i--) {
@@ -59,55 +68,38 @@
             }
             return shuffled;
         }
-
-        async function loadCards() {
-            selectedRating = document.getElementById('ratingType').value; // 選択されたratingタイプ
-            try {
-                const occResponse = await fetch('occupation.json');
-                if (!occResponse.ok) {
-                    throw new Error(`occupation.jsonの読み込みエラー: ${occResponse.status}`);
-                }
-                occupations = await occResponse.json();
-
-                const minResponse = await fetch('minor.json');
-                if (!minResponse.ok) {
-                    throw new Error(`minor.jsonの読み込みエラー: ${minResponse.status}`);
-                }
-                minors = await minResponse.json();
-
-                // combosが文字列なら配列に変換
-                occupations.forEach(c => {
-                    if (typeof c.combos === 'string') {
-                        try {
-                            c.combos = JSON.parse(c.combos);
-                        } catch (e) {
-                            console.error('Combos parse error for occupation:', c.name_jp, e);
-                            c.combos = [];
-                        }
-                    }
-                });
-                minors.forEach(c => {
-                    if (typeof c.combos === 'string') {
-                        try {
-                            c.combos = JSON.parse(c.combos);
-                        } catch (e) {
-                            console.error('Combos parse error for minor:', c.name_jp, e);
-                            c.combos = [];
-                        }
-                    }
-                });
-
-                startDraft();
-            } catch (error) {
-                alert('JSONファイルの読み込みに失敗しました。ファイル名やパスを確認してね。エラー: ' + error.message);
-            }
+async function loadCards() {
+    selectedRating = document.getElementById('ratingType').value; // 選択されたratingタイプ
+    try {
+        const occResponse = await fetch('occupation.json');
+        if (!occResponse.ok) {
+            throw new Error(`occupation.jsonの読み込みエラー: ${occResponse.status}`);
         }
-
+        occupations = await occResponse.json();
+        occupations.forEach(c => {
+            if (!Array.isArray(c.combos)) {
+                c.combos = [];
+            }
+        });
+        const minResponse = await fetch('minor.json');
+        if (!minResponse.ok) {
+            throw new Error(`minor.jsonの読み込みエラー: ${minResponse.status}`);
+        }
+        minors = await minResponse.json();
+        minors.forEach(c => {
+            if (!Array.isArray(c.combos)) {
+                c.combos = [];
+            }
+        });
+        startDraft();
+    } catch (error) {
+        alert('JSONファイルの読み込みに失敗しました。ファイル名やパスを確認してね。エラー: ' + error.message);
+    }
+}
         function startDraft() {
             // 番手をランダム決定 (1-5)
             playerTurn = Math.floor(Math.random() * 5) + 1;
             // updateTurnInfo(); // 番手表示なし
-
             // デッキシャッフル＆配布（5人7枚ずつ、E/I/K全カードからランダム35枚ずつ抽出）
             let occDeck = shuffle(occupations).slice(0, 35);
             let minDeck = shuffle(minors).slice(0, 35);
@@ -124,18 +116,14 @@
             // document.getElementById('ratingSelection').style.display = 'none'; // ボタン消さない
             showHand();
         }
-
         // function updateTurnInfo() {
         //     document.getElementById('turnInfo').innerHTML = `<p style="font-weight: bold; color: blue;">あなたの番手: ${playerTurn}番手</p>`;
         // }
-
         function showHand() {
             // updateTurnInfo(); // 番手表示なし
-
             // 手札をrating降順ソート（表示時のみ、ピックには影響なし）
             const sortedOccHand = [...players[0].occHand].sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0)); // 選択されたrating使用
             const sortedMinHand = [...players[0].minHand].sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0));
-
             const handDiv = document.getElementById('playerHand');
             handDiv.innerHTML = '<h2>' + playerTurn + '番手の手札</h2>'; // 番手に置き換え
             handDiv.innerHTML += '<div class="hand"><h3>職業</h3>' + sortedOccHand.map((c) => {
@@ -167,10 +155,8 @@
                 const imgTag = c.image_url ? `<img src="${c.image_url}" alt="${c.name_jp || '不明'}" onerror="this.src='agricola_images/placeholder.jpg'">` : '';
                 return `<div class="card">${imgTag} <br>${c.name_jp || '不明'} ${c[selectedRating] || '?'}</div>`;
             }).join('') + '</div>';
-
             document.getElementById('status').innerHTML = `<button id="okButton" onclick="passHand()" ${selectedOccIndex === -1 || selectedMinIndex === -1 ? 'disabled' : ''}>OK</button>`;
         }
-
         function pickCard(type, index) {
             if (type === 'occ') {
                 selectedOccIndex = index;
@@ -179,50 +165,37 @@
             }
             showHand();
         }
-
         function passHand() {
             if (selectedOccIndex === -1 || selectedMinIndex === -1) return;
-
             // プレイヤー1のピック
             const pickedOcc = players[0].occHand.splice(selectedOccIndex, 1)[0];
             const pickedMin = players[0].minHand.splice(selectedMinIndex, 1)[0];
             players[0].pickedOcc.push(pickedOcc);
             players[0].pickedMin.push(pickedMin);
-
-            // 他のプレイヤー（AI）は最高rating ±5範囲内でランダムピック
-            for (let i = 1; i < 5; i++) {
-                // 職業: rating降順ソートして最高rating取得
-                players[i].occHand.sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0));
-                const maxRating = players[i].occHand[0]?.[selectedRating] || 0;
-                const candidatesOcc = players[i].occHand.filter(c => (c[selectedRating] || 0) >= maxRating - 5 && (c[selectedRating] || 0) <= maxRating + 5);
-                if (candidatesOcc.length > 0) {
-                    const randomIndex = Math.floor(Math.random() * candidatesOcc.length);
-                    const bestOcc = candidatesOcc[randomIndex];
-                    const handIndex = players[i].occHand.findIndex(c => c.name_jp === bestOcc.name_jp); // 名前でインデックス検索
-                    players[i].occHand.splice(handIndex, 1);
-                    players[i].pickedOcc.push(bestOcc);
-                } else {
-                    // 候補なしならランダム
-                    const randOcc = Math.floor(Math.random() * players[i].occHand.length);
-                    players[i].pickedOcc.push(players[i].occHand.splice(randOcc, 1)[0]);
-                }
-
-                // 進歩: 同上
-                players[i].minHand.sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0));
-                const maxRatingMin = players[i].minHand[0]?.[selectedRating] || 0;
-                const candidatesMin = players[i].minHand.filter(c => (c[selectedRating] || 0) >= maxRatingMin - 5 && (c[selectedRating] || 0) <= maxRatingMin + 5);
-                if (candidatesMin.length > 0) {
-                    const randomIndex = Math.floor(Math.random() * candidatesMin.length);
-                    const bestMin = candidatesMin[randomIndex];
-                    const handIndex = players[i].minHand.findIndex(c => c.name_jp === bestMin.name_jp);
-                    players[i].minHand.splice(handIndex, 1);
-                    players[i].pickedMin.push(bestMin);
-                } else {
-                    const randMin = Math.floor(Math.random() * players[i].minHand.length);
-                    players[i].pickedMin.push(players[i].minHand.splice(randMin, 1)[0]);
-                }
+            // 候補更新 (ピック後、残り手札から下位カード)
+            if (round === 0) { // 1枚目ピック後 (round=0)
+                // 残り手札からrating低い順にソート
+                const remainingOcc = players[0].occHand.sort((a, b) => (a[selectedRating] || 0) - (b[selectedRating] || 0));
+                const remainingMin = players[0].minHand.sort((a, b) => (a[selectedRating] || 0) - (b[selectedRating] || 0));
+                sixthCandidatesOcc = remainingOcc.slice(0, 3); // 下位3枚 (6枚目候補)
+                sixthCandidatesMin = remainingMin.slice(0, 3); // 下位3枚 (6枚目候補)
+            } else if (round === 1) { // 2枚目ピック後 (round=1)
+                const remainingOcc = players[0].occHand.sort((a, b) => (a[selectedRating] || 0) - (b[selectedRating] || 0));
+                const remainingMin = players[0].minHand.sort((a, b) => (a[selectedRating] || 0) - (b[selectedRating] || 0));
+                seventhCandidatesOcc = remainingOcc.slice(0, 2); // 下位2枚 (7枚目候補)
+                seventhCandidatesMin = remainingMin.slice(0, 2); // 下位2枚 (7枚目候補)
             }
-
+            // 候補ゾーン表示更新
+            updateCandidateZone();
+            // 他のプレイヤー（AI）は常に最高ratingのカードをピック
+            for (let i = 1; i < 5; i++) {
+                players[i].occHand.sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0));
+                const bestOcc = players[i].occHand.shift();
+                players[i].pickedOcc.push(bestOcc);
+                players[i].minHand.sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0));
+                const bestMin = players[i].minHand.shift();
+                players[i].pickedMin.push(bestMin);
+            }
             // 手札回転: 職業時計回り、進歩反時計回り
             const nextOcc = players.map(p => p.occHand);
             const nextMin = players.map(p => p.minHand);
@@ -230,20 +203,57 @@
                 players[i].occHand = nextOcc[(i + 1) % 5];
                 players[i].minHand = nextMin[(i + 4) % 5];
             }
-
             round++;
             selectedOccIndex = -1;
             selectedMinIndex = -1;
-
             if (round < 7) {
                 showHand();
             } else {
                 document.getElementById('status').innerHTML = 'ドラフト終了！';
+                document.getElementById('candidateZone').style.display = 'none'; // ドラフト終了後に候補ゾーン非表示
                 showHand(); // 最終手札はピック済みなので表示更新
                 showRoundActions(); // ドラフト後ラウンド選択UI表示
             }
         }
-
+        function updateCandidateZone() {
+            const candidateDiv = document.getElementById('candidateZone');
+            candidateDiv.style.display = 'block';
+            candidateDiv.innerHTML = '<h2>ピック候補</h2>';
+            candidateDiv.innerHTML += '<div class="candidate-container">';
+            candidateDiv.innerHTML += '<div class="candidate-column">';
+            candidateDiv.innerHTML += '<h3 class="candidate-title">6枚目候補</h3>';
+            candidateDiv.innerHTML += '<div class="candidate-hand">';
+            // 昇順 (低い順) から降順 (高い順) にソートして表示
+            sixthCandidatesOcc.sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0));
+            sixthCandidatesMin.sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0));
+            sixthCandidatesOcc.forEach(c => {
+                const imgTag = c.image_url ? `<img src="${c.image_url}" alt="${c.name_jp || '不明'}" onerror="this.src='agricola_images/placeholder.jpg'">` : '';
+                candidateDiv.innerHTML += `<div class="card candidate-card">${imgTag} <br>${c.name_jp || '不明'} ${c[selectedRating] || '?'}</div>`;
+            });
+            sixthCandidatesMin.forEach(c => {
+                const imgTag = c.image_url ? `<img src="${c.image_url}" alt="${c.name_jp || '不明'}" onerror="this.src='agricola_images/placeholder.jpg'">` : '';
+                candidateDiv.innerHTML += `<div class="card candidate-card">${imgTag} <br>${c.name_jp || '不明'} ${c[selectedRating] || '?'}</div>`;
+            });
+            candidateDiv.innerHTML += '</div>';
+            candidateDiv.innerHTML += '</div>';
+            candidateDiv.innerHTML += '<div class="candidate-column">';
+            candidateDiv.innerHTML += '<h3 class="candidate-title">7枚目候補</h3>';
+            candidateDiv.innerHTML += '<div class="candidate-hand">';
+            // 昇順 (低い順) から降順 (高い順) にソートして表示
+            seventhCandidatesOcc.sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0));
+            seventhCandidatesMin.sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0));
+            seventhCandidatesOcc.forEach(c => {
+                const imgTag = c.image_url ? `<img src="${c.image_url}" alt="${c.name_jp || '不明'}" onerror="this.src='agricola_images/placeholder.jpg'">` : '';
+                candidateDiv.innerHTML += `<div class="card candidate-card">${imgTag} <br>${c.name_jp || '不明'} ${c[selectedRating] || '?'}</div>`;
+            });
+            seventhCandidatesMin.forEach(c => {
+                const imgTag = c.image_url ? `<img src="${c.image_url}" alt="${c.name_jp || '不明'}" onerror="this.src='agricola_images/placeholder.jpg'">` : '';
+                candidateDiv.innerHTML += `<div class="card candidate-card">${imgTag} <br>${c.name_jp || '不明'} ${c[selectedRating] || '?'}</div>`;
+            });
+            candidateDiv.innerHTML += '</div>';
+            candidateDiv.innerHTML += '</div>';
+            candidateDiv.innerHTML += '</div>';
+        }
         function showRoundActions() {
             const roundActionsDiv = document.getElementById('roundActions');
             roundActionsDiv.style.display = 'block';
@@ -265,11 +275,9 @@
                     '</div>';
             }
         }
-
         function createInput(label) {
             return `<label class="round-label">${label} <input type="text" class="round-input" pattern="^[ぁ-ゖ]+$" title="全角ひらがなのみ入力してください"></label>`;
         }
-
         function createSelect(label, options) {
             let select = '<select class="round-select">';
             options.forEach(opt => {
@@ -278,13 +286,11 @@
             select += '</select>';
             return `<label class="round-label">${label} ${select}</label>`;
         }
-
         // コンボチェック関数（JSONに"combos"キーがある前提: c.combos = [{target_id: "ID", reason: "説明"} ]）
         function checkCombos(card, allCards) {
             if (!card.combos) return [];
             return card.combos.filter(combo => allCards.some(p => p.id === combo.target_id)).map(combo => combo.reason);
         }
-
         // コンボ理由表示関数
         function showComboReason(cardName, reasons) {
             document.getElementById('comboInfo').innerHTML = `<h3>${cardName}のコンボ理由</h3><p>${reasons.replace(/\\n/g, '<br>')}</p>`;

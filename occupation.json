@@ -28,6 +28,10 @@
       {
         "target_id": "o028",
         "reason": "すぐ動く"
+      },
+      {
+        "target_id": "o040",
+        "reason": "すぐ動いて飯1"
       }
     ]
   },
@@ -56,6 +60,10 @@
       {
         "target_id": "m078",
         "reason": "牛2匹"
+      },
+      {
+        "target_id": "o099",
+        "reason": "猪1牛1取れる"
       }
     ]
   },
@@ -119,7 +127,7 @@
     "combos": [
       {
         "target_id": "o066",
-        "reason": ""
+        "reason": "工業コンボ"
       }
     ]
   },
@@ -168,6 +176,10 @@
     "image_url": "agricola_images/occi1bricklayer.jpg",
     "combos": [
       {
+        "target_id": "m011",
+        "reason": "レンガ軽減"
+      },
+      {
         "target_id": "m133",
         "reason": "レンガ軽減"
       },
@@ -176,7 +188,15 @@
         "reason": "レンガ軽減"
       },
       {
+        "target_id": "m122",
+        "reason": "レンガ2軽減"
+      },
+      {
         "target_id": "m106",
+        "reason": "レンガ軽減"
+      },
+      {
+        "target_id": "m087",
         "reason": "レンガ軽減"
       },
       {
@@ -201,6 +221,10 @@
       },
       {
         "target_id": "m034",
+        "reason": "レンガ軽減"
+      },
+      {
+        "target_id": "m032",
         "reason": "レンガ軽減"
       },
       {
@@ -240,6 +264,10 @@
       {
         "target_id": "o106",
         "reason": "猪7"
+      },
+      {
+        "target_id": "o144",
+        "reason": "得点になる"
       }
     ]
   },
@@ -284,7 +312,7 @@
       },
       {
         "target_id": "o066",
-        "reason": ""
+        "reason": "工業コンボ"
       }
     ]
   },
@@ -298,7 +326,7 @@
     "combos": [
       {
         "target_id": "o061",
-        "reason": "軽減"
+        "reason": "石軽減"
       }
     ]
   },
@@ -347,6 +375,22 @@
       {
         "target_id": "m058",
         "reason": "畑種踏む"
+      },
+      {
+        "target_id": "m057",
+        "reason": "畑種踏む"
+      },
+      {
+        "target_id": "m103",
+        "reason": "畑種踏む"
+      },
+      {
+        "target_id": "o057",
+        "reason": "畑種踏む"
+      },
+      {
+        "target_id": "o164",
+        "reason": "改築柵確定"
       }
     ]
   },
@@ -516,7 +560,16 @@
     "rating_a": 63,
     "rating_b": 63,
     "image_url": "agricola_images/occk3constable.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o070",
+        "reason": "マイナスにならない"
+      },
+      {
+        "target_id": "o169",
+        "reason": "マイナスにならない"
+      }
+    ]
   },
   {
     "id": "o040",
@@ -525,7 +578,12 @@
     "rating_a": 58,
     "rating_b": 68,
     "image_url": "agricola_images/occe4cook.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o003",
+        "reason": "すぐ動いて飯1"
+      }
+    ]
   },
   {
     "id": "o041",
@@ -575,7 +633,12 @@
     "rating_a": 68,
     "rating_b": 68,
     "image_url": "agricola_images/occe4dancer.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o068",
+        "reason": "埋まってても入れる"
+      }
+    ]
   },
   {
     "id": "o045",
@@ -666,7 +729,28 @@
     "rating_a": 67,
     "rating_b": 67,
     "image_url": "agricola_images/occk1fenceoverseer.jpg",
-    "combos": "[{\"target_id\":\"o004\", \"reason\":\"厩柵コンボ\"},{\"target_id\":\"o134\", \"reason\":\"厩コンボ\"},{\"target_id\":\"m042\", \"reason\":\"厩コンボ\"}]]"
+    "combos": [
+      {
+        "target_id": "o004",
+        "reason": "厩柵コンボ"
+      },
+      {
+        "target_id": "o134",
+        "reason": "厩コンボ"
+      },
+      {
+        "target_id": "m042",
+        "reason": "厩コンボ"
+      },
+      {
+        "target_id": "o065",
+        "reason": "厩コンボ"
+      },
+      {
+        "target_id": "o068",
+        "reason": "厩埋まってても入れる"
+      }
+    ]
   },
   {
     "id": "o053",
@@ -815,15 +899,15 @@
     "combos": [
       {
         "target_id": "o021",
-        "reason": "軽減"
+        "reason": "石軽減"
       },
       {
         "target_id": "m122",
-        "reason": "軽減"
+        "reason": "レンガ軽減"
       },
       {
-        "target_id": "m071",
-        "reason": "軽減"
+        "target_id": "m45",
+        "reason": "石軽減"
       }
     ]
   },
@@ -834,7 +918,24 @@
     "rating_a": 63,
     "rating_b": 71,
     "image_url": "agricola_images/occi1gardener.jpg",
-    "combos": "[{\"target_id\":\"m138\", \"reason\":\"野菜無限\"},{\"target_id\":\"o124\", \"reason\":\"営農家、畑、畑好き、畑、飯３、麦種、庭師、麦種\"}{\"target_id\":\"o124\", \"reason\":\"畑好き、畑、畑、麦、麦、種、庭師、種\"}{\"target_id\":\"o042\", \"reason\":\"営農家、畑、畑好き、畑、飯３、麦種、庭師、麦種\"}]"
+    "combos": [
+      {
+        "target_id": "m138",
+        "reason": "野菜無限"
+      },
+      {
+        "target_id": "o124",
+        "reason": "営農家、畑、畑好き、畑、飯３、麦種、庭師、麦種"
+      },
+      {
+        "target_id": "o124",
+        "reason": "畑好き、畑、畑、麦、麦、種、庭師、種"
+      },
+      {
+        "target_id": "o042",
+        "reason": "営農家、畑、畑好き、畑、飯３、麦種、庭師、麦種"
+      }
+    ]
   },
   {
     "id": "o063",
@@ -926,7 +1027,32 @@
     "rating_a": 70,
     "rating_b": 74,
     "image_url": "agricola_images/occe4headofthefamily.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o044",
+        "reason": "埋まってても入れる"
+      },
+      {
+        "target_id": "o079",
+        "reason": "埋まってても入れる"
+      },
+      {
+        "target_id": "m112",
+        "reason": "厩埋まってても入れる"
+      },
+      {
+        "target_id": "o052",
+        "reason": "厩埋まってても入れる"
+      },
+      {
+        "target_id": "o134",
+        "reason": "厩埋まってても入れる"
+      },
+      {
+        "target_id": "m117",
+        "reason": "高職と家族埋まってても入れる"
+      }
+    ]
   },
   {
     "id": "o069",
@@ -949,7 +1075,16 @@
     "rating_a": 53,
     "rating_b": 53,
     "image_url": "agricola_images/occi3hidefarmer.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o077",
+        "reason": "他に注力"
+      },
+      {
+        "target_id": "o039",
+        "reason": "マイナスにならない"
+      }
+    ]
   },
   {
     "id": "o071",
@@ -985,6 +1120,10 @@
       {
         "target_id": "o160",
         "reason": "井戸コンボ"
+      },
+      {
+        "target_id": "m124",
+        "reason": "R11増員進歩で出せる"
       }
     ]
   },
@@ -1048,6 +1187,22 @@
       {
         "target_id": "o065",
         "reason": "厩4"
+      },
+      {
+        "target_id": "m136",
+        "reason": "羊4点狙いやすい"
+      },
+      {
+        "target_id": "m123",
+        "reason": "牛4点狙いやすい"
+      },
+      {
+        "target_id": "o095",
+        "reason": "牛4点狙いやすい"
+      },
+      {
+        "target_id": "m107",
+        "reason": "野菜4点狙いやすい"
       }
     ]
   },
@@ -1067,7 +1222,12 @@
     "rating_a": 63,
     "rating_b": 63,
     "image_url": "agricola_images/occk4magician.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o068",
+        "reason": "埋まってても入れる"
+      }
+    ]
   },
   {
     "id": "o080",
@@ -1107,6 +1267,10 @@
       {
         "target_id": "o151",
         "reason": "小進歩になる"
+      },
+      {
+        "target_id": "m112",
+        "reason": "取り直しが強い"
       }
     ]
   },
@@ -1173,6 +1337,14 @@
       {
         "target_id": "o088",
         "reason": "3点"
+      },
+      {
+        "target_id": "o131",
+        "reason": "3件で改築から増築"
+      },
+      {
+        "target_id": "m045",
+        "reason": "3件で改築から増築"
       }
     ]
   },
@@ -1239,6 +1411,10 @@
       {
         "target_id": "m069",
         "reason": "対象マス増える"
+      },
+      {
+        "target_id": "o134",
+        "reason": "木13貯めるのが安定する"
       }
     ]
   },
@@ -1308,6 +1484,10 @@
       {
         "target_id": "m086",
         "reason": "木４、葦の交換、木材４、牛、木材３、飯３、増築厩２、牛"
+      },
+      {
+        "target_id": "o077",
+        "reason": "牛4点狙いやすい"
       }
     ]
   },
@@ -1322,6 +1502,10 @@
       {
         "target_id": "o089",
         "reason": "対象マス増える"
+      },
+      {
+        "target_id": "m069",
+        "reason": "減らさなくて良い"
       }
     ]
   },
@@ -1367,6 +1551,18 @@
       {
         "target_id": "o147",
         "reason": "確定で取れる"
+      },
+      {
+        "target_id": "m048",
+        "reason": "石1取れる"
+      },
+      {
+        "target_id": "m072",
+        "reason": "石1取れる"
+      },
+      {
+        "target_id": "o005",
+        "reason": "猪1牛1取れる"
       }
     ]
   },
@@ -1602,6 +1798,18 @@
       {
         "target_id": "o036",
         "reason": "レンガ取れる"
+      },
+      {
+        "target_id": "m032",
+        "reason": "葦取れる"
+      },
+      {
+        "target_id": "m086",
+        "reason": "葦取れる"
+      },
+      {
+        "target_id": "m133",
+        "reason": "石取れる"
       }
     ]
   },
@@ -1748,6 +1956,10 @@
       {
         "target_id": "m045",
         "reason": "石の家先行"
+      },
+      {
+        "target_id": "o085",
+        "reason": "3件で改築から増築"
       }
     ]
   },
@@ -1781,7 +1993,48 @@
     "rating_a": 50,
     "rating_b": 75,
     "image_url": "agricola_images/occe4stockman.jpg",
-    "combos": "[{\"target_id\":\"m019\", \"reason\":\"2種繁殖\"},{\"target_id\":\"m030\", \"reason\":\"2種繁殖\"},{\"target_id\":\"m048\", \"reason\":\"2種繁殖\"},{\"target_id\":\"m092\", \"reason\":\"2種繁殖\"},{\"target_id\":\"m135\", \"reason\":\"2種繁殖\"},{\"target_id\":\"o133\", \"reason\":\"2種繁殖\"},{\"target_id\":\"o140\", \"reason\":\"木8→13へ\"},[{\"target_id\":\"o052\", \"reason\":\"厩柵コンボ\"},{\"target_id\":\"o065\", \"reason\":\"厩コンボ\"}]"
+    "combos": [
+      {
+        "target_id": "m019",
+        "reason": "2種繁殖"
+      },
+      {
+        "target_id": "m030",
+        "reason": "2種繁殖"
+      },
+      {
+        "target_id": "m048",
+        "reason": "2種繁殖"
+      },
+      {
+        "target_id": "m092",
+        "reason": "2種繁殖"
+      },
+      {
+        "target_id": "m135",
+        "reason": "2種繁殖"
+      },
+      {
+        "target_id": "o133",
+        "reason": "2種繁殖"
+      },
+      {
+        "target_id": "o140",
+        "reason": "木8→13へ"
+      },
+      {
+        "target_id": "o052",
+        "reason": "厩柵コンボ"
+      },
+      {
+        "target_id": "o065",
+        "reason": "厩コンボ"
+      },
+      {
+        "target_id": "o089",
+        "reason": "木13貯めるのが安定する"
+      }
+    ]
   },
   {
     "id": "o135",
@@ -1833,7 +2086,51 @@
     "image_url": "agricola_images/occe3stonecutter.jpg",
     "combos": [
       {
+        "target_id": "m003",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m007",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m017",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m031",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m045",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m047",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m055",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m065",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m084",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m096",
+        "reason": "石軽減"
+      },
+      {
         "target_id": "m097",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m100",
         "reason": "石軽減"
       }
     ]
@@ -1891,7 +2188,12 @@
     "rating_a": 54,
     "rating_b": 54,
     "image_url": "agricola_images/occe4swineherd.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o016",
+        "reason": "得点になる"
+      }
+    ]
   },
   {
     "id": "o145",
@@ -2212,6 +2514,14 @@
       {
         "target_id": "m125",
         "reason": "1種類は3点になる"
+      },
+      {
+        "target_id": "o077",
+        "reason": "他に注力"
+      },
+      {
+        "target_id": "o039",
+        "reason": "マイナスにならない"
       }
     ]
   },

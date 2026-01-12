@@ -432,7 +432,7 @@
       },
       {
         "target_id": "o119",
-        "reason": "レンガ取れる"
+        "reason": "葦取れる"
       }
     ]
   },
@@ -548,12 +548,7 @@
     "rating_a": 20,
     "rating_b": 9,
     "image_url": "agricola_images/eminorbutterchurn.jpg",
-    "combos": [
-      {
-        "target_id": "o052",
-        "reason": "石軽減"
-      }
-    ]
+    "combos": ""
   },
   {
     "id": "m044",
@@ -574,7 +569,7 @@
     "combos": [
       {
         "target_id": "o061",
-        "reason": "軽減"
+        "reason": "石軽減"
       },
       {
         "target_id": "o131",
@@ -603,6 +598,10 @@
       {
         "target_id": "o139",
         "reason": "石軽減"
+      },
+      {
+        "target_id": "o085",
+        "reason": "3件で改築から増築"
       }
     ]
   },
@@ -613,7 +612,12 @@
     "rating_a": 60,
     "rating_b": 60,
     "image_url": "agricola_images/eminorstonetongs.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o099",
+        "reason": "石1取れる"
+      }
+    ]
   },
   {
     "id": "m047",
@@ -918,6 +922,10 @@
       {
         "target_id": "o165",
         "reason": "対象マス増える"
+      },
+      {
+        "target_id": "o096",
+        "reason": "減らさなくて良い"
       }
     ]
   },
@@ -946,7 +954,12 @@
     "rating_a": 51,
     "rating_b": 51,
     "image_url": "agricola_images/iminorwoodencrane.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o099",
+        "reason": "石1取れる"
+      }
+    ]
   },
   {
     "id": "m073",
@@ -1110,7 +1123,12 @@
     "rating_a": 79,
     "rating_b": 68,
     "image_url": "agricola_images/iminorfishtrap.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o165",
+        "reason": "漁コンボ"
+      }
+    ]
   },
   {
     "id": "m086",
@@ -1122,7 +1140,7 @@
     "combos": [
       {
         "target_id": "o119",
-        "reason": "レンガ取れる"
+        "reason": "葦取れる"
       },
       {
         "target_id": "o015",
@@ -1413,6 +1431,10 @@
       {
         "target_id": "o084",
         "reason": "麦バック"
+      },
+      {
+        "target_id": "o077",
+        "reason": "野菜4点狙いやすい"
       }
     ]
   },
@@ -1450,7 +1472,12 @@
     "rating_a": 84,
     "rating_b": 84,
     "image_url": "agricola_images/kminorsawhorse.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o068",
+        "reason": "厩埋まってても入れる"
+      }
+    ]
   },
   {
     "id": "m112",
@@ -1462,11 +1489,11 @@
     "combos": [
       {
         "target_id": "o066",
-        "reason": ""
+        "reason": "工業コンボ"
       },
       {
         "target_id": "o082",
-        "reason": ""
+        "reason": "取り直しが強い"
       }
     ]
   },
@@ -1513,7 +1540,12 @@
     "rating_a": 23,
     "rating_b": 23,
     "image_url": "agricola_images/kminorclapper.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o068",
+        "reason": "高職と家族埋まってても入れる"
+      }
+    ]
   },
   {
     "id": "m118",
@@ -1569,7 +1601,7 @@
       },
       {
         "target_id": "o061",
-        "reason": "軽減"
+        "reason": "レンガ軽減"
       }
     ]
   },
@@ -1584,6 +1616,10 @@
       {
         "target_id": "m086",
         "reason": "木４、葦の交換、木材４、牛、木材３、飯３、増築厩２、牛"
+      },
+      {
+        "target_id": "o077",
+        "reason": "牛4点狙いやすい"
       }
     ]
   },
@@ -1598,6 +1634,10 @@
       {
         "target_id": "m086",
         "reason": "木４、葦の交換、木材４、牛、木材３、飯３、増築厩２、牛"
+      },
+      {
+        "target_id": "o073",
+        "reason": "R11増員進歩で出せる"
       }
     ]
   },
@@ -1697,7 +1737,7 @@
       },
       {
         "target_id": "o119",
-        "reason": "レンガ取れる"
+        "reason": "石取れる"
       }
     ]
   },
@@ -1764,6 +1804,10 @@
       {
         "target_id": "o090",
         "reason": "羊"
+      },
+      {
+        "target_id": "o077",
+        "reason": "羊4点狙いやすい"
       }
     ]
   },
