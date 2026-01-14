@@ -566,7 +566,7 @@
         "reason": "マイナスにならない"
       },
       {
-        "target_id": "o169",
+        "target_id": "o168",
         "reason": "マイナスにならない"
       }
     ]
@@ -749,6 +749,10 @@
       {
         "target_id": "o068",
         "reason": "厩埋まってても入れる"
+      },
+      {
+        "target_id": "m042",
+        "reason": "厩コンボ"
       }
     ]
   },
@@ -838,6 +842,10 @@
       {
         "target_id": "o059",
         "reason": "実質2倍"
+      },
+      {
+        "target_id": "o166",
+        "reason": "漁コンボ"
       }
     ]
   },
@@ -1288,7 +1296,7 @@
       },
       {
         "target_id": "m052",
-        "reason": "畑種で一気に植える"
+        "reason": "畑種踏む"
       }
     ]
   },
@@ -1553,7 +1561,7 @@
         "reason": "確定で取れる"
       },
       {
-        "target_id": "m048",
+        "target_id": "m046",
         "reason": "石1取れる"
       },
       {
@@ -1792,6 +1800,10 @@
         "reason": "レンガ取れる"
       },
       {
+        "target_id": "m006",
+        "reason": "レンガ取れる"
+      },
+      {
         "target_id": "o032",
         "reason": "レンガ取れる"
       },
@@ -1983,6 +1995,10 @@
       {
         "target_id": "o134",
         "reason": "2種繁殖"
+      },
+      {
+        "target_id": "m042",
+        "reason": "厩コンボ"
       }
     ]
   },
@@ -2119,6 +2135,10 @@
       },
       {
         "target_id": "m084",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m090",
         "reason": "石軽減"
       },
       {
@@ -2440,7 +2460,7 @@
     "combos": [
       {
         "target_id": "m027",
-        "reason": "増築剤調整"
+        "reason": "増築材調整"
       },
       {
         "target_id": "m069",
@@ -2464,6 +2484,10 @@
       },
       {
         "target_id": "m085",
+        "reason": "漁コンボ"
+      },
+      {
+        "target_id": "o058",
         "reason": "漁コンボ"
       },
       {
