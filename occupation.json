@@ -914,7 +914,7 @@
         "reason": "レンガ軽減"
       },
       {
-        "target_id": "m45",
+        "target_id": "m045",
         "reason": "石軽減"
       }
     ]
@@ -1183,6 +1183,10 @@
       {
         "target_id": "o106",
         "reason": "猪4点"
+      },
+      {
+        "target_id": "o126",
+        "reason": "羊4点"
       },
       {
         "target_id": "o168",
@@ -1878,7 +1882,12 @@
     "rating_a": 40,
     "rating_b": 40,
     "image_url": "agricola_images/occk4serf.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o062",
+        "reason": "営農家、畑、畑好き、畑、飯３、麦種、庭師、麦種"
+      }
+    ]
   },
   {
     "id": "o125",
@@ -2135,6 +2144,10 @@
       },
       {
         "target_id": "m084",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m087",
         "reason": "石軽減"
       },
       {

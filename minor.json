@@ -539,7 +539,12 @@
     "rating_a": 38,
     "rating_b": 35,
     "image_url": "agricola_images/eminorstable.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o133",
+        "reason": "厩コンボ"
+      }
+    ]
   },
   {
     "id": "m043",
@@ -691,7 +696,20 @@
     "rating_a": 61,
     "rating_b": 70,
     "image_url": "agricola_images/eminorturnwrestplow.jpg",
-    "combos": "[{\"target_id\":\"o024\", \"reason\":\"畑種踏む\"},{\"target_id\":\"o084\", \"reason\":\"畑種踏む\"},{\"target_id\":\"o083\", \"reason\":\"畑種踏む\"}"
+    "combos": [
+      {
+        "target_id": "o024",
+        "reason": "畑種踏む"
+      },
+      {
+        "target_id": "o084",
+        "reason": "畑種踏む"
+      },
+      {
+        "target_id": "o083",
+        "reason": "畑種踏む"
+      }
+    ]
   },
   {
     "id": "m053",
