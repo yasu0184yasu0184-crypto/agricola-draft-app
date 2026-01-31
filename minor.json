@@ -19,6 +19,10 @@
       {
         "target_id": "o165",
         "reason": "対象マス増える"
+      },
+      {
+        "target_id": "o162",
+        "reason": "職業スタートしてもSP打てる"
       }
     ]
   },
@@ -542,6 +546,10 @@
     "combos": [
       {
         "target_id": "o133",
+        "reason": "厩コンボ"
+      },
+      {
+        "target_id": "o052",
         "reason": "厩コンボ"
       }
     ]
@@ -1140,6 +1148,10 @@
       {
         "target_id": "o165",
         "reason": "漁コンボ"
+      },
+      {
+        "target_id": "o162",
+        "reason": "職業スタートしてもSP打てる"
       }
     ]
   },

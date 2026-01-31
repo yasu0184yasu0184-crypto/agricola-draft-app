@@ -472,7 +472,7 @@
     "combos": [
       {
         "target_id": "o119",
-        "reason": "レンガ取れる"
+        "reason": "石取れる"
       }
     ]
   },
@@ -844,7 +844,7 @@
         "reason": "実質2倍"
       },
       {
-        "target_id": "o166",
+        "target_id": "o165",
         "reason": "漁コンボ"
       }
     ]
@@ -1045,7 +1045,7 @@
         "reason": "埋まってても入れる"
       },
       {
-        "target_id": "m112",
+        "target_id": "m111",
         "reason": "厩埋まってても入れる"
       },
       {
@@ -1812,6 +1812,10 @@
         "reason": "レンガ取れる"
       },
       {
+        "target_id": "o031",
+        "reason": "石取れる"
+      },
+      {
         "target_id": "o036",
         "reason": "レンガ取れる"
       },
@@ -2056,6 +2060,10 @@
         "reason": "厩コンボ"
       },
       {
+        "target_id": "o068",
+        "reason": "厩コンボ"
+      },
+      {
         "target_id": "o089",
         "reason": "木13貯めるのが安定する"
       }
@@ -2116,6 +2124,10 @@
       },
       {
         "target_id": "m007",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m011",
         "reason": "石軽減"
       },
       {
@@ -2438,7 +2450,16 @@
     "rating_a": 57,
     "rating_b": 57,
     "image_url": "agricola_images/occk1woodcarver.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m002",
+        "reason": "職業スタートしてもSP打てる"
+      },
+      {
+        "target_id": "m085",
+        "reason": "職業スタートしてもSP打てる"
+      }
+    ]
   },
   {
     "id": "o163",
