@@ -186,14 +186,26 @@ async function loadCards() {
                 seventhCandidatesMin = remainingMin.slice(0, 2); // 下位2枚 (7枚目候補)
             }
             // 候補ゾーン表示更新
-            updateCandidateZone();
-            // 他のプレイヤー（AI）は常に最高ratingのカードをピック
+            updateCandidateZone();// 他のプレイヤー（AI）は常に最高rating±10のカードをピック
             for (let i = 1; i < 5; i++) {
+                // 職業
                 players[i].occHand.sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0));
-                const bestOcc = players[i].occHand.shift();
+                const maxOccRating = players[i].occHand.length > 0 ? (players[i].occHand[0][selectedRating] || 0) : 0;
+                let occCandidates = players[i].occHand.filter(c => (c[selectedRating] || 0) >= maxOccRating - 10 && (c[selectedRating] || 0) <= maxOccRating);
+                if (occCandidates.length === 0) occCandidates = [players[i].occHand[0]];
+                const bestOccIndex = Math.floor(Math.random() * occCandidates.length);
+                const bestOcc = occCandidates[bestOccIndex];
+                players[i].occHand = players[i].occHand.filter(c => c !== bestOcc);
                 players[i].pickedOcc.push(bestOcc);
+
+                // 進歩
                 players[i].minHand.sort((a, b) => (b[selectedRating] || 0) - (a[selectedRating] || 0));
-                const bestMin = players[i].minHand.shift();
+                const maxMinRating = players[i].minHand.length > 0 ? (players[i].minHand[0][selectedRating] || 0) : 0;
+                let minCandidates = players[i].minHand.filter(c => (c[selectedRating] || 0) >= maxMinRating - 10 && (c[selectedRating] || 0) <= maxMinRating);
+                if (minCandidates.length === 0) minCandidates = [players[i].minHand[0]];
+                const bestMinIndex = Math.floor(Math.random() * minCandidates.length);
+                const bestMin = minCandidates[bestMinIndex];
+                players[i].minHand = players[i].minHand.filter(c => c !== bestMin);
                 players[i].pickedMin.push(bestMin);
             }
             // 手札回転: 職業時計回り、進歩反時計回り
@@ -264,7 +276,7 @@ async function loadCards() {
                     createInput('2手目:') +
                     '<br>' + // 飯以降開行
                     '<div class="action-group">' +
-                    createSelect('飯', [0,1,2,3,4,5,6,7,8]) +
+                    createSelect('飯', [0,1,2,3,4,5,6,7,8,9,10]) +
                     createSelect('木', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]) +
                     createSelect('レ', [0,1,2,3,4,5,6]) +
                     createSelect('葦', [0,1,2,3,4,5]) +
