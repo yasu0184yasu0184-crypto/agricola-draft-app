@@ -311,6 +311,9 @@
             .container { padding: 8px 6px 80px; }
             .section { padding: 8px 8px; }
         }
+        .progress-bar { display: none !important; }
+        .category-title { display: none !important; }
+        .selected-preview { display: none !important; }
     </style>
 </head>
 <body>
@@ -500,6 +503,7 @@
             document.getElementById('roundActions').style.display = 'none';
             document.getElementById('summary').style.display = 'none';
             document.getElementById('otherPlayers').style.display = 'none';
+            document.getElementById('comboInfo').style.display = '';
             const ci0 = document.getElementById('comboInfo');
             ci0.className = 'empty-default';
             ci0.innerHTML = '<p class="empty">カードにマウスを乗せる／クリックすると、コンボ情報がここに表示されます。</p>';
@@ -663,6 +667,8 @@
             } else {
                 showHand();
                 document.getElementById('candidateZone').style.display = 'none';
+                document.getElementById('comboInfo').style.display = 'none';
+                document.getElementById('playerHandSection').style.display = 'none';
                 showSummary();
                 showRoundActions();
             }
@@ -676,6 +682,8 @@
             document.getElementById('summary').style.display = 'none';
             document.getElementById('roundActions').style.display = 'none';
             document.getElementById('otherPlayers').style.display = 'none';
+            document.getElementById('comboInfo').style.display = '';
+            document.getElementById('playerHandSection').style.display = '';
             showHand();
         }
 
