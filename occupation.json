@@ -1842,6 +1842,10 @@
       {
         "target_id": "m133",
         "reason": "石取れる"
+      },
+      {
+        "target_id": "o045",
+        "reason": "レンガ取れる"
       }
     ]
   },
@@ -2078,6 +2082,22 @@
       {
         "target_id": "o089",
         "reason": "木13貯めるのが安定する"
+      },
+      {
+        "target_id": "m012",
+        "reason": "1手目を木に全ツするので葦を２手目に回せるので強い"
+      },
+      {
+        "target_id": "m020",
+        "reason": "1手目を木に全ツするので葦を２手目に回せるので強い"
+      },
+      {
+        "target_id": "o008",
+        "reason": "2種繁殖"
+      },
+      {
+        "target_id": "o051",
+        "reason": "3種繁殖"
       }
     ]
   },
@@ -2188,6 +2208,22 @@
       },
       {
         "target_id": "m100",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m056",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m083",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m088",
+        "reason": "石軽減"
+      },
+      {
+        "target_id": "m134",
         "reason": "石軽減"
       }
     ]
