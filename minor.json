@@ -23,6 +23,10 @@
       {
         "target_id": "o162",
         "reason": "職業スタートしてもSP打てる"
+      },
+      {
+        "target_id": "o111",
+        "reason": "小劇場の飯が多い状態になる"
       }
     ]
   },
@@ -405,6 +409,10 @@
       {
         "target_id": "o134",
         "reason": "2種繁殖"
+      },
+      {
+        "target_id": "o092",
+        "reason": "1st牛しゃがみ"
       }
     ]
   },
@@ -735,7 +743,12 @@
     "rating_a": 52,
     "rating_b": 74,
     "image_url": "agricola_images/iminoralms.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o084",
+        "reason": "露天商までつなげる"
+      }
+    ]
   },
   {
     "id": "m055",
@@ -1076,7 +1089,12 @@
     "rating_a": 62,
     "rating_b": 62,
     "image_url": "agricola_images/iminorplanterbox.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m088",
+        "reason": "ボーナス"
+      }
+    ]
   },
   {
     "id": "m081",
@@ -1218,6 +1236,14 @@
       {
         "target_id": "o139",
         "reason": "石軽減"
+      },
+      {
+        "target_id": "o057",
+        "reason": "ボーナス"
+      },
+      {
+        "target_id": "m080",
+        "reason": "ボーナス"
       }
     ]
   },
@@ -1378,6 +1404,10 @@
       {
         "target_id": "o139",
         "reason": "石軽減"
+      },
+      {
+        "target_id": "o057",
+        "reason": "ボーナス"
       }
     ]
   },
@@ -1420,7 +1450,12 @@
     "rating_a": 58,
     "rating_b": 71,
     "image_url": "agricola_images/kminorduckpond.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o001",
+        "reason": "テンポ◯"
+      }
+    ]
   },
   {
     "id": "m105",
@@ -1696,7 +1731,12 @@
     "rating_a": 92,
     "rating_b": 92,
     "image_url": "agricola_images/kminorturnipfield.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o060",
+        "reason": "木も撒ける"
+      }
+    ]
   },
   {
     "id": "m128",
@@ -1837,6 +1877,10 @@
       {
         "target_id": "o077",
         "reason": "羊4点狙いやすい"
+      },
+      {
+        "target_id": "o050",
+        "reason": "１手軽減"
       }
     ]
   },

@@ -6,7 +6,12 @@
     "rating_a": 28,
     "rating_b": 28,
     "image_url": "agricola_images/occe3academic.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m104",
+        "reason": "テンポ◯"
+      }
+    ]
   },
   {
     "id": "o002",
@@ -15,7 +20,16 @@
     "rating_a": 49,
     "rating_b": 47,
     "image_url": "agricola_images/occk4acrobat.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o044",
+        "reason": "小劇場コンボ"
+      },
+      {
+        "target_id": "o079",
+        "reason": "小劇場コンボ"
+      }
+    ]
   },
   {
     "id": "o003",
@@ -613,6 +627,18 @@
       {
         "target_id": "o062",
         "reason": "営農家、畑、畑好き、畑、飯３、麦種、庭師、麦種"
+      },
+      {
+        "target_id": "o054",
+        "reason": "コンボ"
+      },
+      {
+        "target_id": "o075",
+        "reason": "コンボ"
+      },
+      {
+        "target_id": "o084",
+        "reason": "コンボ"
       }
     ]
   },
@@ -641,6 +667,10 @@
       {
         "target_id": "o068",
         "reason": "埋まってても入れる"
+      },
+      {
+        "target_id": "o002",
+        "reason": "小劇場コンボ"
       }
     ]
   },
@@ -706,7 +736,12 @@
     "rating_a": 51,
     "rating_b": 54,
     "image_url": "agricola_images/occi1fencebuilder.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m136",
+        "reason": "１手軽減"
+      }
+    ]
   },
   {
     "id": "o051",
@@ -788,6 +823,10 @@
       {
         "target_id": "o084",
         "reason": "野菜踏める"
+      },
+      {
+        "target_id": "o042",
+        "reason": "コンボ"
       }
     ]
   },
@@ -832,6 +871,14 @@
       {
         "target_id": "o042",
         "reason": "営農家、畑、畑農、麦種まき、飯3、畑、？、麦種まき"
+      },
+      {
+        "target_id": "m088",
+        "reason": "ボーナス"
+      },
+      {
+        "target_id": "m100",
+        "reason": "ボーナス"
       }
     ]
   },
@@ -850,6 +897,10 @@
       {
         "target_id": "o165",
         "reason": "漁コンボ"
+      },
+      {
+        "target_id": "o111",
+        "reason": "小劇場の飯が多い状態になる"
       }
     ]
   },
@@ -898,6 +949,10 @@
       {
         "target_id": "m082",
         "reason": "回収早い"
+      },
+      {
+        "target_id": "m127",
+        "reason": "木も撒ける"
       }
     ]
   },
@@ -990,6 +1045,10 @@
       {
         "target_id": "o077",
         "reason": "厩4"
+      },
+      {
+        "target_id": "o162",
+        "reason": "コスト０"
       }
     ]
   },
@@ -1164,6 +1223,10 @@
       {
         "target_id": "o054",
         "reason": "野菜踏める"
+      },
+      {
+        "target_id": "o042",
+        "reason": "コンボ"
       }
     ]
   },
@@ -1242,6 +1305,10 @@
       {
         "target_id": "o068",
         "reason": "埋まってても入れる"
+      },
+      {
+        "target_id": "o002",
+        "reason": "小劇場コンボ"
       }
     ]
   },
@@ -1335,6 +1402,14 @@
       {
         "target_id": "o054",
         "reason": "野菜踏める"
+      },
+      {
+        "target_id": "o042",
+        "reason": "コンボ"
+      },
+      {
+        "target_id": "m054",
+        "reason": "露天商までつなげる"
       }
     ]
   },
@@ -1468,7 +1543,12 @@
     "rating_a": 54,
     "rating_b": 66,
     "image_url": "agricola_images/occe1mendicant.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "m030",
+        "reason": "1st牛しゃがみ"
+      }
+    ]
   },
   {
     "id": "o093",
@@ -1734,7 +1814,16 @@
     "rating_a": 77,
     "rating_b": 77,
     "image_url": "agricola_images/occi4puppeteer.jpg",
-    "combos": ""
+    "combos": [
+      {
+        "target_id": "o058",
+        "reason": "小劇場の飯が多い状態になる"
+      },
+      {
+        "target_id": "m002",
+        "reason": "小劇場の飯が多い状態になる"
+      }
+    ]
   },
   {
     "id": "o112",
@@ -2506,6 +2595,10 @@
       {
         "target_id": "m085",
         "reason": "職業スタートしてもSP打てる"
+      },
+      {
+        "target_id": "o065",
+        "reason": "コスト０"
       }
     ]
   },
