@@ -933,7 +933,7 @@
       },
       {
         "target_id": "m082",
-        "reason": "回収早い"
+        "reason": "木材回収速い"
       },
       {
         "target_id": "m117",
@@ -1119,11 +1119,11 @@
     "combos": [
       {
         "target_id": "o060",
-        "reason": "回収早い"
+        "reason": "木材回収速い"
       },
       {
         "target_id": "m068",
-        "reason": "回収早い"
+        "reason": "木材回収速い"
       }
     ]
   },
