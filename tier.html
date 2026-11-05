@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アグリコラ ティアメーカー</title>
+<style>
+  :root {
+    --paper-bg: #f4e9d2;
+    --paper-bg-dark: #e8d8b3;
+    --ink-dark: #3b2a18;
+    --ink-mid: #5c3a21;
+    --ink-light: #8a6d4a;
+    --accent-brown: #a07140;
+    --accent-gold: #c9a66b;
+    --select: #2f6fd6;
+    --shadow: 0 2px 6px rgba(60, 40, 20, 0.25);
+    --shadow-strong: 0 4px 14px rgba(60, 40, 20, 0.35);
+    --radius: 8px;
+    --card-w: 64px;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; min-height: 100vh;
+    font-family: "Hiragino Mincho ProN", "游明朝", "Yu Mincho", "Noto Serif JP", serif;
+    color: var(--ink-dark);
+    background:
+      radial-gradient(circle at 20% 10%, rgba(255, 248, 220, 0.6), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(180, 130, 80, 0.18), transparent 50%),
+      linear-gradient(135deg, #f4e9d2 0%, #ead8b0 100%);
+    background-color: #f4e9d2;
+    background-attachment: fixed;
+  }
+  .container { max-width: 1400px; margin: 0 auto; padding: 12px 16px 120px; }
+
+  .top {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    padding: 10px 14px; margin-bottom: 12px;
+    background: linear-gradient(180deg, #5c3a21 0%, #3b2a18 100%);
+    color: var(--paper-bg); border-radius: var(--radius); box-shadow: var(--shadow-strong);
+    border-top: 3px solid var(--accent-gold);
+  }
+  .top a { color: var(--accent-gold); font-size: 0.9em; text-decoration: none; margin-left: auto; }
+  .tabs { display: flex; gap: 6px; }
+  .tab {
+    font-family: inherit; font-size: 1em; font-weight: 700; padding: 6px 16px;
+    border-radius: 6px; border: 1px solid var(--accent-gold);
+    background: transparent; color: var(--paper-bg); cursor: pointer;
+  }
+  .tab.active { background: linear-gradient(180deg, #c9a66b 0%, #a07140 100%); color: #fff; }
+
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+  .toolbar select, .toolbar button, .toolbar input {
+    font-family: inherit; font-size: 0.92em; padding: 6px 10px;
+    border-radius: 6px; border: 1px solid var(--accent-gold);
+    background: var(--paper-bg); color: var(--ink-dark);
+  }
+  .toolbar button { cursor: pointer; }
+  .toolbar button:hover { background: var(--paper-bg-dark); }
+  .toolbar .sep { width: 1px; height: 24px; background: var(--accent-gold); opacity: 0.6; }
+  .toolbar label { font-size: 0.9em; display: inline-flex; align-items: center; gap: 4px; }
+
+  #board { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: #3b2a18; }
+  .tier { display: flex; min-height: calc(var(--card-w) * 1.56 + 8px); border-bottom: 2px solid #3b2a18; }
+  .tier:last-child { border-bottom: none; }
+  .tier-label {
+    flex: 0 0 72px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.5em; font-weight: 700; color: #2a1d10; cursor: pointer; user-select: none;
+    text-align: center; word-break: break-all; padding: 4px;
+  }
+  .tier-cards {
+    flex: 1; display: flex; flex-wrap: wrap; align-content: flex-start; gap: 4px; padding: 4px;
+    background: #f7efdc; min-width: 0;
+  }
+  .tier-cards.drop-hint, .pool.drop-hint { outline: 3px dashed var(--select); outline-offset: -3px; }
+  .tier-cards.tap-target { cursor: copy; }
+
+  .card {
+    position: relative; width: var(--card-w); aspect-ratio: 229 / 357; flex: 0 0 auto;
+    border-radius: 4px; overflow: hidden; background: var(--paper-bg-dark);
+    box-shadow: 0 1px 3px rgba(60,40,20,0.35); cursor: grab; user-select: none;
+    -webkit-user-select: none; -webkit-touch-callout: none;
+  }
+  .card img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+  .card .nm {
+    position: absolute; left: 0; right: 0; bottom: 0; font-size: 10px; line-height: 1.2;
+    padding: 1px 2px; background: rgba(59,42,24,0.78); color: #fff; text-align: center;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  body.hide-names .card .nm { display: none; }
+  .card.selected { outline: 3px solid var(--select); outline-offset: -1px; box-shadow: 0 0 0 3px rgba(47,111,214,0.35); }
+  .card.dragging { opacity: 0.35; }
+  .card.dim { display: none; }
+
+  .pool-head { display: flex; align-items: baseline; gap: 10px; margin: 16px 0 6px; flex-wrap: wrap; }
+  .pool-head h2 { margin: 0; font-size: 1.1em; color: var(--ink-mid); }
+  .pool-head .count { font-size: 0.9em; color: var(--ink-light); }
+  .pool {
+    display: flex; flex-wrap: wrap; gap: 4px; padding: 8px; min-height: 120px;
+    background: rgba(255,250,235,0.6); border: 1px solid #c9b291; border-radius: var(--radius);
+  }
+  .pool .empty { color: var(--ink-light); font-size: 0.9em; padding: 8px; }
+
+  .selbar {
+    position: fixed; left: 50%; bottom: 12px; transform: translateX(-50%);
+    display: none; align-items: center; gap: 8px; padding: 8px 12px;
+    background: #3b2a18; color: var(--paper-bg); border-radius: 10px; box-shadow: var(--shadow-strong);
+    max-width: calc(100vw - 24px); flex-wrap: wrap; justify-content: center; z-index: 20;
+  }
+  .selbar.show { display: flex; }
+  .selbar .nm { font-weight: 700; }
+  .selbar .hint { font-size: 0.85em; color: var(--accent-gold); }
+  .selbar button {
+    font-family: inherit; font-size: 0.9em; padding: 5px 10px; border-radius: 6px;
+    border: 1px solid var(--accent-gold); background: transparent; color: var(--paper-bg); cursor: pointer;
+  }
+
+  .modal {
+    position: fixed; inset: 0; background: rgba(20,12,4,0.7); display: none;
+    align-items: center; justify-content: center; z-index: 30; padding: 16px;
+  }
+  .modal.show { display: flex; }
+  .modal img { max-width: min(90vw, 360px); max-height: 85vh; border-radius: 8px; box-shadow: var(--shadow-strong); }
+
+  .toast {
+    position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 40;
+    background: #3b2a18; color: var(--paper-bg); padding: 8px 16px; border-radius: 8px;
+    box-shadow: var(--shadow-strong); font-size: 0.92em; display: none;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 8px 8px 140px; }
+    .tier-label { flex-basis: 48px; font-size: 1.2em; }
+    .top a { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="top">
+    <div class="tabs">
+      <button class="tab active" data-kind="occupation">職業</button>
+      <button class="tab" data-kind="minor">小進歩</button>
+    </div>
+    <a href="./">← ドラフト練習へ</a>
+  </div>
+
+  <div class="toolbar">
+    <label>自動配置 <select id="ratingSel"><option value="rating_a">rating_a</option><option value="rating_b">rating_b</option></select></label>
+    <button id="autoBtn">評価値で並べる</button>
+    <span class="sep"></span>
+    <label>サイズ <select id="sizeSel"><option value="48">小</option><option value="64" selected>中</option><option value="88">大</option></select></label>
+    <label><input type="checkbox" id="namesChk" checked> 名前</label>
+    <span class="sep"></span>
+    <button id="pngBtn">画像で保存</button>
+    <button id="exportBtn">書き出し</button>
+    <button id="importBtn">読み込み</button>
+    <button id="resetBtn">リセット</button>
+  </div>
+
+  <div id="board"></div>
+
+  <div class="pool-head">
+    <h2>未分類</h2><span class="count" id="poolCount"></span>
+    <div class="toolbar" style="margin:0;">
+      <input type="search" id="searchBox" placeholder="カード名で絞り込み" style="width: 14em;">
+      <select id="poolSort"><option value="id">ID順</option><option value="rating">評価値順</option><option value="name">名前順</option></select>
+    </div>
+  </div>
+  <div class="pool" id="pool" data-tier="pool"></div>
+</div>
+
+<div class="selbar" id="selbar">
+  <span class="nm" id="selName"></span>
+  <span class="hint">置きたい段をタップ</span>
+  <button id="zoomBtn">拡大</button>
+  <button id="toPoolBtn">未分類へ戻す</button>
+  <button id="cancelBtn">選択解除</button>
+</div>
+<div class="modal" id="modal"><img id="modalImg" alt=""></div>
+<div class="toast" id="toast"></div>
+<input type="file" id="importFile" accept="application/json,.json" style="display:none">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+const TIERS = [
+  { key: 'S', color: '#ff7f7f' },
+  { key: 'A', color: '#ffbf7f' },
+  { key: 'B', color: '#ffdf7f' },
+  { key: 'C', color: '#bfff7f' },
+  { key: 'D', color: '#7fbfff' },
+];
+const AUTO_THRESHOLDS = { S: 80, A: 65, B: 50, C: 35 }; // それ未満は D
+const STORE_KEY = 'agricolaTier.v1';
+const PREF_KEY = 'agricolaTier.prefs.v1';
+
+let cardsByKind = { occupation: [], minor: [] };
+let cardIndex = {};
+let kind = 'occupation';
+let state = { occupation: null, minor: null }; // { labels: {S:'S',...}, tiers: {S:[ids],...} }
+let selectedId = null;
+
+function loadJSON(key) { try { return JSON.parse(localStorage.getItem(key)); } catch (e) { return null; } }
+function saveJSON(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {} }
+function save() { saveJSON(STORE_KEY, state); }
+
+function emptyState() {
+  const s = { labels: {}, tiers: {} };
+  TIERS.forEach(t => { s.labels[t.key] = t.key; s.tiers[t.key] = []; });
+  return s;
+}
+function normalize(s, k) {
+  // 既知IDだけ残し、重複を除く
+  const out = emptyState();
+  if (!s) return out;
+  const seen = new Set();
+  TIERS.forEach(t => {
+    if (s.labels && typeof s.labels[t.key] === 'string') out.labels[t.key] = s.labels[t.key];
+    (s.tiers && Array.isArray(s.tiers[t.key]) ? s.tiers[t.key] : []).forEach(id => {
+      if (cardIndex[id] && cardIndex[id].kind === k && !seen.has(id)) { seen.add(id); out.tiers[t.key].push(id); }
+    });
+  });
+  return out;
+}
+function placedSet(k) {
+  const s = new Set();
+  TIERS.forEach(t => state[k].tiers[t.key].forEach(id => s.add(id)));
+  return s;
+}
+function findTierOf(id) {
+  for (const t of TIERS) if (state[kind].tiers[t.key].includes(id)) return t.key;
+  return 'pool';
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+function cardHtml(c) {
+  const sel = c.id === selectedId ? ' selected' : '';
+  return '<div class="card' + sel + '" draggable="true" data-id="' + c.id + '" title="' + escapeHtml(c.name_jp) + '">' +
+    '<img src="' + escapeHtml(c.image_url) + '" alt="' + escapeHtml(c.name_jp) + '" loading="lazy">' +
+    '<span class="nm">' + escapeHtml(c.name_jp) + '</span></div>';
+}
+
+function render() {
+  const s = state[kind];
+  const board = document.getElementById('board');
+  board.innerHTML = TIERS.map(t =>
+    '<div class="tier">' +
+      '<div class="tier-label" style="background:' + t.color + '" data-label="' + t.key + '" title="クリックで名前を変更">' + escapeHtml(s.labels[t.key]) + '</div>' +
+      '<div class="tier-cards' + (selectedId ? ' tap-target' : '') + '" data-tier="' + t.key + '">' +
+        s.tiers[t.key].map(id => cardHtml(cardIndex[id])).join('') +
+      '</div>' +
+    '</div>'
+  ).join('');
+  renderPool();
+  updateSelbar();
+}
+function renderPool() {
+  const placed = placedSet(kind);
+  const q = document.getElementById('searchBox').value.trim();
+  const sort = document.getElementById('poolSort').value;
+  const rk = document.getElementById('ratingSel').value;
+  let list = cardsByKind[kind].filter(c => !placed.has(c.id));
+  const total = list.length;
+  if (q) list = list.filter(c => (c.name_jp || '').includes(q));
+  if (sort === 'rating') list = [...list].sort((a, b) => (b[rk] || 0) - (a[rk] || 0));
+  else if (sort === 'name') list = [...list].sort((a, b) => (a.name_jp || '').localeCompare(b.name_jp || '', 'ja'));
+  const pool = document.getElementById('pool');
+  pool.classList.toggle('tap-target', !!selectedId);
+  pool.innerHTML = list.length ? list.map(cardHtml).join('') : '<span class="empty">' + (total ? '該当するカードがありません' : 'すべて配置済みです') + '</span>';
+  document.getElementById('poolCount').textContent = total + ' / ' + cardsByKind[kind].length + '枚';
+}
+
+function moveCard(id, toTier, beforeId) {
+  const s = state[kind];
+  TIERS.forEach(t => { const a = s.tiers[t.key]; const i = a.indexOf(id); if (i >= 0) a.splice(i, 1); });
+  if (toTier !== 'pool') {
+    const arr = s.tiers[toTier];
+    const i = beforeId ? arr.indexOf(beforeId) : -1;
+    if (i >= 0) arr.splice(i, 0, id); else arr.push(id);
+  }
+  save();
+  render();
+}
+
+// ---- 選択（タップ操作） ----
+function select(id) { selectedId = (selectedId === id) ? null : id; render(); }
+function updateSelbar() {
+  const bar = document.getElementById('selbar');
+  if (!selectedId) { bar.classList.remove('show'); return; }
+  const c = cardIndex[selectedId];
+  document.getElementById('selName').textContent = c.name_jp;
+  document.getElementById('toPoolBtn').style.display = findTierOf(selectedId) === 'pool' ? 'none' : '';
+  bar.classList.add('show');
+}
+
+document.addEventListener('click', e => {
+  const label = e.target.closest('.tier-label');
+  if (label) {
+    const key = label.dataset.label;
+    const cur = state[kind].labels[key];
+    const v = prompt('段の名前', cur);
+    if (v !== null) { state[kind].labels[key] = v.trim() || key; save(); render(); }
+    return;
+  }
+  const card = e.target.closest('.card');
+  const zone = e.target.closest('[data-tier]');
+  if (card) {
+    if (selectedId && selectedId !== card.dataset.id) {
+      // 選択中に別のカードをタップ → そのカードの前に挿入
+      const target = zone ? zone.dataset.tier : 'pool';
+      if (target === 'pool') { select(card.dataset.id); return; }
+      const id = selectedId; selectedId = null;
+      moveCard(id, target, card.dataset.id);
+      return;
+    }
+    select(card.dataset.id);
+    return;
+  }
+  if (zone && selectedId) {
+    const id = selectedId; selectedId = null;
+    moveCard(id, zone.dataset.tier, null);
+  }
+});
+document.addEventListener('dblclick', e => {
+  const card = e.target.closest('.card');
+  if (card) openModal(card.dataset.id);
+});
+document.getElementById('cancelBtn').onclick = () => { selectedId = null; render(); };
+document.getElementById('toPoolBtn').onclick = () => { const id = selectedId; selectedId = null; moveCard(id, 'pool'); };
+document.getElementById('zoomBtn').onclick = () => openModal(selectedId);
+function openModal(id) {
+  const c = cardIndex[id]; if (!c) return;
+  document.getElementById('modalImg').src = c.image_url;
+  document.getElementById('modal').classList.add('show');
+}
+document.getElementById('modal').onclick = () => document.getElementById('modal').classList.remove('show');
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { document.getElementById('modal').classList.remove('show'); if (selectedId) { selectedId = null; render(); } }
+});
+
+// ---- ドラッグ＆ドロップ（マウス） ----
+let dragId = null;
+document.addEventListener('dragstart', e => {
+  const card = e.target.closest('.card');
+  if (!card) return;
+  dragId = card.dataset.id;
+  card.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+  try { e.dataTransfer.setData('text/plain', dragId); } catch (err) {}
+});
+document.addEventListener('dragend', () => {
+  dragId = null;
+  document.querySelectorAll('.dragging').forEach(el => el.classList.remove('dragging'));
+  document.querySelectorAll('.drop-hint').forEach(el => el.classList.remove('drop-hint'));
+});
+document.addEventListener('dragover', e => {
+  if (!dragId) return;
+  const zone = e.target.closest('[data-tier]');
+  document.querySelectorAll('.drop-hint').forEach(el => { if (el !== zone) el.classList.remove('drop-hint'); });
+  if (zone) { e.preventDefault(); zone.classList.add('drop-hint'); }
+});
+document.addEventListener('drop', e => {
+  if (!dragId) return;
+  const zone = e.target.closest('[data-tier]');
+  if (!zone) return;
+  e.preventDefault();
+  const tier = zone.dataset.tier;
+  let beforeId = null;
+  if (tier !== 'pool') {
+    // ドロップ位置より後ろにある最初のカードの前に入れる
+    const cards = [...zone.querySelectorAll('.card')].filter(el => el.dataset.id !== dragId);
+    for (const el of cards) {
+      const r = el.getBoundingClientRect();
+      if (e.clientY < r.top) { beforeId = el.dataset.id; break; }
+      if (e.clientY <= r.bottom && e.clientX < r.left + r.width / 2) { beforeId = el.dataset.id; break; }
+    }
+  }
+  const id = dragId; dragId = null; selectedId = null;
+  moveCard(id, tier, beforeId);
+});
+
+// ---- ツールバー ----
+document.querySelectorAll('.tab').forEach(btn => btn.onclick = () => {
+  kind = btn.dataset.kind; selectedId = null;
+  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b === btn));
+  savePrefs(); render();
+});
+document.getElementById('searchBox').oninput = renderPool;
+document.getElementById('poolSort').onchange = () => { savePrefs(); renderPool(); };
+document.getElementById('ratingSel').onchange = () => { savePrefs(); renderPool(); };
+document.getElementById('sizeSel').onchange = e => { applySize(e.target.value); savePrefs(); };
+document.getElementById('namesChk').onchange = e => { document.body.classList.toggle('hide-names', !e.target.checked); savePrefs(); };
+function applySize(v) { document.documentElement.style.setProperty('--card-w', v + 'px'); }
+
+document.getElementById('autoBtn').onclick = () => {
+  const rk = document.getElementById('ratingSel').value;
+  const label = kind === 'occupation' ? '職業' : '小進歩';
+  if (!confirm(label + 'の配置を ' + rk + ' で並べ直します。今の配置は上書きされます。よろしいですか？')) return;
+  const s = state[kind];
+  TIERS.forEach(t => s.tiers[t.key] = []);
+  const sorted = [...cardsByKind[kind]].sort((a, b) => (b[rk] || 0) - (a[rk] || 0));
+  sorted.forEach(c => {
+    const r = c[rk] || 0;
+    const key = r >= AUTO_THRESHOLDS.S ? 'S' : r >= AUTO_THRESHOLDS.A ? 'A' : r >= AUTO_THRESHOLDS.B ? 'B' : r >= AUTO_THRESHOLDS.C ? 'C' : 'D';
+    s.tiers[key].push(c.id);
+  });
+  selectedId = null; save(); render();
+  toast('S:80以上 / A:65〜 / B:50〜 / C:35〜 / D:それ未満 で並べました');
+};
+document.getElementById('resetBtn').onclick = () => {
+  const label = kind === 'occupation' ? '職業' : '小進歩';
+  if (!confirm(label + 'のティアをすべて未分類に戻します。よろしいですか？')) return;
+  state[kind] = emptyState(); selectedId = null; save(); render();
+};
+document.getElementById('exportBtn').onclick = () => {
+  const blob = new Blob([JSON.stringify({ app: 'agricola-tier', version: 1, data: state }, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'agricola-tier-' + new Date().toISOString().slice(0, 10) + '.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+};
+document.getElementById('importBtn').onclick = () => document.getElementById('importFile').click();
+document.getElementById('importFile').onchange = async e => {
+  const f = e.target.files[0]; e.target.value = '';
+  if (!f) return;
+  try {
+    const j = JSON.parse(await f.text());
+    const d = j && j.data ? j.data : j;
+    if (!d || (!d.occupation && !d.minor)) throw new Error('形式が違います');
+    if (!confirm('読み込んだ内容で今の配置（職業・小進歩とも）を置き換えます。よろしいですか？')) return;
+    state.occupation = normalize(d.occupation, 'occupation');
+    state.minor = normalize(d.minor, 'minor');
+    selectedId = null; save(); render(); toast('読み込みました');
+  } catch (err) { alert('読み込めませんでした：' + err.message); }
+};
+document.getElementById('pngBtn').onclick = async () => {
+  if (typeof html2canvas !== 'function') { alert('画像保存用のライブラリを読み込めませんでした。通信状態を確認してください。'); return; }
+  const prev = selectedId; selectedId = null; render();
+  toast('画像を作成中…');
+  try {
+    const canvas = await html2canvas(document.getElementById('board'), { backgroundColor: '#3b2a18', scale: 2, useCORS: true });
+    const a = document.createElement('a');
+    a.href = canvas.toDataURL('image/png');
+    a.download = 'agricola-tier-' + (kind === 'occupation' ? 'occupation' : 'minor') + '.png';
+    document.body.appendChild(a); a.click(); a.remove();
+    toast('画像を保存しました');
+  } catch (err) { alert('画像を作成できませんでした：' + err.message); }
+  selectedId = prev; render();
+};
+
+let toastTimer = null;
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.style.display = 'block';
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.style.display = 'none', 2600);
+}
+
+function savePrefs() {
+  saveJSON(PREF_KEY, {
+    kind, size: document.getElementById('sizeSel').value, names: document.getElementById('namesChk').checked,
+    sort: document.getElementById('poolSort').value, rating: document.getElementById('ratingSel').value,
+  });
+}
+function loadPrefs() {
+  const p = loadJSON(PREF_KEY) || {};
+  if (p.kind === 'minor' || p.kind === 'occupation') kind = p.kind;
+  if (p.size) document.getElementById('sizeSel').value = p.size;
+  if (typeof p.names === 'boolean') document.getElementById('namesChk').checked = p.names;
+  if (p.sort) document.getElementById('poolSort').value = p.sort;
+  if (p.rating) document.getElementById('ratingSel').value = p.rating;
+  applySize(document.getElementById('sizeSel').value);
+  document.body.classList.toggle('hide-names', !document.getElementById('namesChk').checked);
+  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.kind === kind));
+}
+
+async function init() {
+  try {
+    const [occ, min] = await Promise.all([
+      fetch('occupation.json').then(r => r.json()),
+      fetch('minor.json').then(r => r.json()),
+    ]);
+    cardsByKind.occupation = occ.map(c => ({ ...c, kind: 'occupation' }));
+    cardsByKind.minor = min.map(c => ({ ...c, kind: 'minor' }));
+    [...cardsByKind.occupation, ...cardsByKind.minor].forEach(c => cardIndex[c.id] = c);
+  } catch (err) {
+    document.getElementById('board').innerHTML = '<p style="color:#f4e9d2;padding:16px;">カードデータを読み込めませんでした。</p>';
+    return;
+  }
+  const saved = loadJSON(STORE_KEY) || {};
+  state.occupation = normalize(saved.occupation, 'occupation');
+  state.minor = normalize(saved.minor, 'minor');
+  loadPrefs();
+  render();
+}
+init();
+</script>
+</body>
+</html>
