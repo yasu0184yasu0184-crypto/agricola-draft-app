@@ -60,6 +60,10 @@
       {
         "target_id": "o052",
         "reason": "厩柵コンボ"
+      },
+      {
+        "target_id": "m030",
+        "reason": "即時起動"
       }
     ]
   },

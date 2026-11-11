@@ -413,6 +413,10 @@
       {
         "target_id": "o092",
         "reason": "1st牛しゃがみ"
+      },
+      {
+        "target_id": "o004",
+        "reason": "即時起動"
       }
     ]
   },
